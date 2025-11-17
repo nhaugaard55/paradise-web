@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static site_extras %}
+{% block title %}The Paradise · Hostería, Restaurante y Experiencias{% endblock %}
+{% block content %}
+<section class="home-hero fade-in">
+    <div class="hero-slider-bg" aria-hidden="true">
+        <div class="hero-slide" style="background-image:url('{% static 'imagenes/Home/Patio cola de ballena 2.JPG' %}');"></div>
+        <div class="hero-slide" style="background-image:url('{% static 'imagenes/Home/Patio cola de ballena.JPG' %}');"></div>
+        <div class="hero-slide" style="background-image:url('{% static 'imagenes/Home/Atardecer vista patio 2.JPG' %}');"></div>
+        <div class="hero-slide" style="background-image:url('{% static 'imagenes/Home/Atardecer vista patio.JPG' %}');"></div>
+    </div>
+    <div class="home-hero__texture" aria-hidden="true"></div>
+    <div class="hero-content">
+        <p class="eyebrow">Puerto Pirámides · Península Valdés</p>
+        <h1>Hostería y restaurante</h1>
+        <p class="hero-subtitle">Nuestra casa frente al mar patagónico combina gastronomía, hospitalidad y aventuras diseñadas a medida.</p>
+        <div class="cta-group">
+            <a class="btn btn-primary" href="{% url 'hotel:list' %}">Planear estadía</a>
+            <a class="btn btn-ghost" href="{% url 'menu:menu' %}">Ver restaurante</a>
+        </div>
+    </div>
+</section>
+
+<section class="section home-experiencias">
+    <div class="home-experiencias__grid">
+        <article class="paper-card">
+            <h3>Hostería</h3>
+            <p>Suites boutique con vistas al bosque y mar, amenities de autor y servicio cálido.</p>
+            <a class="btn btn-ghost" href="{% url 'hotel:list' %}">Explorar suites</a>
+        </article>
+        <article class="paper-card">
+            <h3>Restaurante</h3>
+            <p>Cocina patagónica con guiños mediterráneos, carta ilustrada bilingüe y vinos seleccionados.</p>
+            <a class="btn btn-ghost" href="{% url 'menu:menu' %}">Ver carta</a>
+        </article>
+        <article class="paper-card">
+            <h3>Excursiones</h3>
+            <p>Programas curados para vivir Península Valdés: trekking, MTB y salidas especiales.</p>
+            <a class="btn btn-ghost" href="{% url 'activities:list' %}">Ver experiencias</a>
+        </article>
+    </div>
+</section>
+
+<section class="section home-valores">
+    <div class="home-valores__grid">
+        <article>
+            <h3>Gastronomía honesta</h3>
+            <p>Ingredientes frescos, productores de la península y opciones para todos los gustos.</p>
+        </article>
+        <article>
+            <h3>Bienestar boutique</h3>
+            <p>12 suites curadas, amenities de autor y calma frente al mar.</p>
+        </article>
+        <article>
+            <h3>Experiencias locales</h3>
+            <p>Excursiones guiadas por anfitriones patagónicos, todo el año.</p>
+        </article>
+    </div>
+</section>
+
+{% endblock %}

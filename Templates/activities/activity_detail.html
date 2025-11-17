@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load site_extras %}
+{% localized activity 'title' as activity_title %}
+{% localized activity 'desc' as activity_desc %}
+{% block title %}{{ activity_title }} · Excursión{% endblock %}
+{% block content %}
+<section class="activity-hero" style="background-image:url('{{ activity.photo_url }}');">
+    <div>
+        <p class="eyebrow">{{ activity.get_category_display }}</p>
+        <h1>{{ activity_title }}</h1>
+        <p>{{ activity_desc|truncatewords:35 }}</p>
+        <div class="cta-group">
+            <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+            {% if activity.external_url %}<a class="btn btn-ghost" href="{{ activity.external_url }}" target="_blank" rel="noopener">Más info</a>{% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Detalles de la experiencia</h2>
+    <ul class="details-list">
+        <li>Duración: {{ activity.duration }}</li>
+        <li>Dificultad: {{ activity.difficulty }}</li>
+        <li>Temporada: {{ activity.season }}</li>
+    </ul>
+    <p>{{ activity_desc }}</p>
+</section>
+{% endblock %}

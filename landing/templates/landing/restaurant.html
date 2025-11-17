@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Restaurante – The Paradise{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div>
+        <p class="eyebrow">Restaurante</p>
+        <h1>Cocina de autor patagónica</h1>
+        <p>Carta estacional que combina mar, estepa y huerta propia con técnicas contemporáneas.</p>
+    </div>
+</section>
+
+<section class="restaurant page-block">
+    <div class="restaurant-text">
+        <p class="eyebrow">Highlights</p>
+        <h2>Menú degustación</h2>
+        <ul class="menu-highlights">
+            <li>Trucha ahumada con emulsión de hierbas.</li>
+            <li>Cordero fueguino braseado en cocción lenta.</li>
+            <li>Degustación de postres con frutos rojos patagónicos.</li>
+        </ul>
+        <p>Consultanos por opciones vegetarianas, veganas o sin TACC.</p>
+    </div>
+    <div class="restaurant-media">
+        <div class="menu-card">
+            <p class="eyebrow">Carta</p>
+            <h3>Menú Experiencia</h3>
+            <p>5 pasos + maridaje opcional</p>
+            <p>Disponible todas las noches con reserva previa.</p>
+        </div>
+    </div>
+</section>
+
+<section class="menu-download page-block">
+    <div class="section-heading">
+        <p class="eyebrow">Carta digital</p>
+        <h2>Menú completo The Paradise</h2>
+        <p>Revisá la carta actualizada tal como la ofrecemos en el restaurante. Podés abrirla en otra pestaña o descargarla para compartir.</p>
+    </div>
+
+    <div class="menu-actions">
+        <a class="btn primary" target="_blank" rel="noopener" href="{% static 'landing/menu/the-paradise-menu.pdf' %}">Abrir menú en nueva pestaña</a>
+        <a class="btn ghost" download href="{% static 'landing/menu/the-paradise-menu.pdf' %}">Descargar PDF</a>
+    </div>
+
+    <div class="menu-frame">
+        <iframe src="{% static 'landing/menu/the-paradise-menu.pdf' %}" title="Menú The Paradise" loading="lazy"></iframe>
+        <p class="menu-frame__note">Si no ves el menú incrustado, <a href="{% static 'landing/menu/the-paradise-menu.pdf' %}" target="_blank" rel="noopener">abrilo aquí</a>.</p>
+    </div>
+</section>
+{% endblock %}

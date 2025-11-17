@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Nosotros · The Paradise{% endblock %}
+{% block content %}
+{% block head_extra %}
+{% endblock %}
+<section class="section">
+    <h1>Nuestra historia</h1>
+    <p>Desde 1986 elegimos Puerto Pirámides como nuestro lugar en el mundo. Todo comenzó cuando Mumo conoció este pequeño pueblo costero y, junto a Malvina, descubrieron un rincón que los enamoró para siempre. En aquellos años de juventud, entre estudios y viajes, nació el sueño de construir un espacio propio frente al mar.</p>
+    <p>El viejo Hotel Español fue el escenario de los primeros pasos: un salón desocupado, un pub sencillo y muchas ganas de recibir a familias, viajeros y amigos. Ese pequeño comienzo se transformó, con el tiempo, en una hostería boutique con restaurante propio, donde la calidez patagónica y el espíritu familiar se sienten en cada detalle.</p>
+    <p>A lo largo de los años, The Paradise creció paso a paso. Fuimos mejorando espacios, ampliando servicios y aprendiendo de cada huésped que nos eligió. Nuestras familias, amigos y la comunidad se sumaron al proyecto, ayudándonos a darle forma a un lugar que hoy combina comodidad, gastronomía patagónica y la esencia simple y auténtica de la vida en la península.</p>
+    <p>Nos inspira la naturaleza que nos rodea, la historia de este lugar y las personas que pasan por él. Creemos en recibir con amabilidad, escuchar, mejorar y compartir todo aquello que hace especial a Puerto Pirámides. Cada mesa servida, cada charla, cada visita y cada regreso forman parte del corazón de The Paradise.</p>
+    <p>Hoy, décadas después, seguimos avanzando con la misma pasión: crear un espacio cálido, honesto y cercano, donde cada huésped pueda sentirse como en casa y descubrir lo mejor de este rincón patagónico que tanto amamos.</p>
+</section>
+
+<section class="section collage-nosotros" data-lightbox-gallery>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-01.jpg' %}" alt="Fachada original de The Paradise">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-02.jpg' %}" alt="Equipo en los inicios de The Paradise">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-03.jpg' %}" alt="Interior del antiguo pub">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-04.jpg' %}" alt="Plato clásico del restaurante">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-05.jpg' %}" alt="Momentos en la península">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-06.jpg' %}" alt="Familia y amigos en The Paradise">
+    </figure>
+</section>
+
+<div class="lightbox-nosotros" data-lightbox-modal hidden aria-modal="true" role="dialog" aria-label="Galería histórica">
+    <div class="lightbox-inner" role="document">
+        <button class="lightbox-close" type="button" aria-label="Cerrar">×</button>
+        <button class="lightbox-nav prev" type="button" aria-label="Foto anterior">‹</button>
+        <img src="" alt="" data-lightbox-image>
+        <p class="lightbox-caption" data-lightbox-caption></p>
+        <button class="lightbox-nav next" type="button" aria-label="Foto siguiente">›</button>
+    </div>
+</div>
+
+<section class="section">
+    <h2>Nuestra idiosincrasia</h2>
+    <ul class="details-list">
+        <li>Transitar el amor por la tierra, la fauna y las riquezas naturales que nos rodean.</li>
+        <li>Legar a las nuevas generaciones un patrimonio vivo, compartido entre huéspedes, vecinos y equipo.</li>
+        <li>Crear experiencias cómodas y seguras, escuchando cada comentario para mejorar.</li>
+        <li>Recomendar las actividades más destacadas de la península con guías locales.</li>
+    </ul>
+</section>
+{% endblock %}

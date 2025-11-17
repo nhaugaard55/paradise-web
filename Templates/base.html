@@ -1,0 +1,93 @@
+{% load static %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'es' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}The Paradise{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Hostería, restaurante y excursiones boutique en Puerto Pirámides.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
+    {% block head_extra %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/site.css' %}?v=nav-grid-final">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="{% url 'core:home' %}" class="navbar-logo">
+                <img id="navbar-logo" src="{% static 'imagenes/iconos/Logo.png' %}" alt="The Paradise">
+            </a>
+            <nav class="nav-links">
+                <a href="{% url 'core:home' %}">Inicio</a>
+                <a href="{% url 'core:about' %}">Nosotros</a>
+                <a href="{% url 'menu:menu' %}">Restaurante</a>
+                <a href="{% url 'hotel:list' %}">Hostería</a>
+                <a href="{% url 'activities:list' %}">Excursiones</a>
+                <a href="{% url 'core:contact' %}">Contacto</a>
+            </nav>
+            <div class="nav-cta">
+                {% if site_settings %}
+                    <a class="btn btn-instagram" href="{{ site_settings.instagram_url|default:'https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr' }}" target="_blank" rel="noopener">Instagram</a>
+                    <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">WhatsApp</a>
+                {% else %}
+                    <a class="btn btn-instagram" href="https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                    <a class="btn btn-whatsapp" href="{% url 'core:contact' %}">WhatsApp</a>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% if messages %}
+            <section class="flash">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer legacy-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-copy">
+                <p>Copyrights © 2020 Derechos Reservados - The Paradise Hotel</p>
+                <p>
+                    <span class="footer-icon">✉️</span>
+                    <a href="mailto:{{ site_settings.email|default:'info@hosteriaparadise.com.ar' }}">info@hosteriaparadise.com.ar</a>
+                </p>
+                <p>
+                    <span class="footer-icon">📞</span>
+                    <a href="tel:{{ site_settings.phone|default:'+5492804305363' }}">+54 9 280 4305363</a>
+                </p>
+            </div>
+
+            <div class="footer-col footer-address">
+                <p>Segunda Bajada al Mar, Puerto Pirámides,</p>
+                <p>Chubut - Patagonia Argentina</p>
+            </div>
+
+            <div class="footer-col footer-badges">
+                <a class="badge badge-maps" href="https://maps.app.goo.gl/gLmgnAkg6oezVTpm9?g_st=ipc" target="_blank" rel="noopener">Google Maps</a>
+            </div>
+        </div>
+        <button class="footer-back-to-top" type="button" aria-label="Volver arriba">⌃</button>
+    </footer>
+
+    {% block scripts %}
+    <script src="{% static 'js/lightbox-nosotros.js' %}" defer></script>
+    <script src="{% static 'js/menu-gallery.js' %}" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var backTop = document.querySelector('.footer-back-to-top');
+        if (backTop) {
+          backTop.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+      });
+    </script>
+    {% endblock %}
+</body>
+</html>

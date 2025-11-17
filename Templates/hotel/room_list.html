@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Hostería · Habitaciones{% endblock %}
+{% block content %}
+<section class="section hosteria-hero">
+  <h1>Hostería</h1>
+  <p>Habitaciones boutique inspiradas en el paisaje de Península Valdés. Elegí la categoría que mejor se adapte a tu viaje.</p>
+</section>
+
+<section class="section hosteria-grid">
+  <article class="room-card" data-category="doble-matrimonial">
+    <div class="room-card__media">
+      <img src="{% static 'Imagenes/rooms/doble-matrimonial/doble-matrimonial-01.jpg' %}" alt="Doble matrimonial">
+    </div>
+    <div class="room-card__body">
+      <h3>Doble matrimonial</h3>
+      <p>Habitaciones para dos con cama matrimonial, luz cálida y una atmósfera tranquila para desconectar después de un día de playa o excursión.</p>
+      <div class="room-card__actions">
+        <button class="btn btn-outline room-photos-btn" data-gallery="doble-matrimonial">Ver fotos</button>
+        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Doble%20matrimonial" target="_blank" rel="noopener">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="room-card" data-category="doble-twin">
+    <div class="room-card__media">
+      <img src="{% static 'Imagenes/rooms/doble-twin/doble-twin-01.jpg' %}" alt="Doble twin">
+    </div>
+    <div class="room-card__body">
+      <h3>Doble twin</h3>
+      <p>Dos camas individuales para viajar con amigos o en familia, con espacios luminosos y funcionales para descansar cómodamente.</p>
+      <div class="room-card__actions">
+        <button class="btn btn-outline room-photos-btn" data-gallery="doble-twin">Ver fotos</button>
+        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Doble%20twin" target="_blank" rel="noopener">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="room-card" data-category="triple-matrimonial-single">
+    <div class="room-card__media">
+      <img src="{% static 'Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-01.jpg' %}" alt="Triple matrimonial + single">
+    </div>
+    <div class="room-card__body">
+      <h3>Triple matrimonial + single</h3>
+      <p>Ideal para familias: cama matrimonial más una simple, ambiente cálido y amplitud para relajarse después de explorar la península.</p>
+      <div class="room-card__actions">
+        <button class="btn btn-outline room-photos-btn" data-gallery="triple-matrimonial-single">Ver fotos</button>
+        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Triple%20matrimonial%20%2B%20single" target="_blank" rel="noopener">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="room-card" data-category="triple-twin">
+    <div class="room-card__media">
+      <img src="{% static 'Imagenes/rooms/triple-twin/triple-twin-01.jpg' %}" alt="Triple twin">
+    </div>
+    <div class="room-card__body">
+      <h3>Triple twin</h3>
+      <p>Tres camas individuales, espacio generoso y mucha luz para grupos de amigos o familias que buscan practicidad y confort.</p>
+      <div class="room-card__actions">
+        <button class="btn btn-outline room-photos-btn" data-gallery="triple-twin">Ver fotos</button>
+        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Triple%20twin" target="_blank" rel="noopener">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="room-card" data-category="suites">
+    <div class="room-card__media">
+      <img src="{% static 'Imagenes/rooms/suites/suite-01.jpg' %}" alt="Suites vista al mar">
+    </div>
+    <div class="room-card__body">
+      <h3>Suites vista al mar</h3>
+      <p>Cama king size, ventanales hacia el mar y espacios amplios con toques boutique para descansar con la mejor vista de la hostería.</p>
+      <div class="room-card__actions">
+        <button class="btn btn-outline room-photos-btn" data-gallery="suites">Ver fotos</button>
+        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Suites%20vista%20al%20mar" target="_blank" rel="noopener">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<div id="room-gallery-modal" class="room-gallery-modal" hidden>
+  <div class="room-gallery-modal__backdrop" data-close="true"></div>
+  <div class="room-gallery-modal__dialog" role="dialog" aria-modal="true" aria-label="Galería de habitaciones">
+    <button class="room-gallery-modal__close" type="button" aria-label="Cerrar">×</button>
+    <div class="room-gallery-modal__content">
+      <button class="room-gallery-modal__nav room-gallery-modal__nav--prev" type="button" aria-label="Foto anterior">‹</button>
+      <img id="room-gallery-image" src="" alt="Foto de habitación">
+      <button class="room-gallery-modal__nav room-gallery-modal__nav--next" type="button" aria-label="Foto siguiente">›</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script>
+    window.hosteriaGalleries = {
+      'doble-matrimonial': [
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-01.jpg" %}',
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-02.jpg" %}',
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-03.jpg" %}',
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-04.jpg" %}',
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-05.jpg" %}',
+        '{% static "Imagenes/rooms/doble-matrimonial/doble-matrimonial-06.jpg" %}',
+      ],
+      'doble-twin': [
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-01.jpg" %}',
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-02.jpg" %}',
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-03.jpg" %}',
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-04.jpg" %}',
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-05.jpg" %}',
+        '{% static "Imagenes/rooms/doble-twin/doble-twin-06.jpg" %}',
+      ],
+      'triple-matrimonial-single': [
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-01.jpg" %}',
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-02.jpg" %}',
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-03.jpg" %}',
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-04.jpg" %}',
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-05.jpg" %}',
+        '{% static "Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-06.jpg" %}',
+      ],
+      'triple-twin': [
+        '{% static "Imagenes/rooms/triple-twin/triple-twin-01.jpg" %}',
+        '{% static "Imagenes/rooms/triple-twin/triple-twin-02.jpg" %}',
+        '{% static "Imagenes/rooms/triple-twin/triple-twin-03.jpg" %}',
+        '{% static "Imagenes/rooms/triple-twin/triple-twin-04.jpg" %}',
+        '{% static "Imagenes/rooms/triple-twin/triple-twin-05.jpg" %}',
+      ],
+      suites: [
+        '{% static "Imagenes/rooms/suites/suite-01.jpg" %}',
+        '{% static "Imagenes/rooms/suites/suite-02.jpg" %}',
+        '{% static "Imagenes/rooms/suites/suite-03.jpg" %}',
+        '{% static "Imagenes/rooms/suites/suite-04.jpg" %}',
+        '{% static "Imagenes/rooms/suites/suite-05.jpg" %}',
+        '{% static "Imagenes/rooms/suites/suite-06.jpg" %}',
+      ],
+    };
+  </script>
+  <script src="{% static 'js/hosteria-gallery.js' %}" defer></script>
+{% endblock %}

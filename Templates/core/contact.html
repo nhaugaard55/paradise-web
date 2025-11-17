@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Contacto · The Paradise{% endblock %}
+{% block content %}
+<section class="section">
+    <h1>Contactanos</h1>
+    <p>Coordiná tu estadía, reservas gastronómicas o excursiones especiales. Respondemos por WhatsApp, email o formulario.</p>
+    <div class="contact-grid">
+        <div class="contact-card">
+            {% if site_settings %}
+                <p><strong>Email:</strong> <a href="mailto:{{ site_settings.email }}">{{ site_settings.email }}</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:{{ site_settings.phone }}">{{ site_settings.phone }}</a></p>
+                <p><strong>WhatsApp:</strong> <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">Chatear ahora</a></p>
+                <p><strong>Instagram:</strong> <a href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener">@theparadisepiramides</a></p>
+                <p><strong>Dirección:</strong> {{ site_settings.address_es }}</p>
+            {% endif %}
+        </div>
+        <div class="contact-card">
+            <form method="post" class="contact-form">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div>
+                    <label for="{{ form.name.id_for_label }}">Nombre</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                </div>
+                <div>
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+                <div>
+                    <label for="{{ form.message.id_for_label }}">Mensaje</label>
+                    {{ form.message }}
+                    {{ form.message.errors }}
+                </div>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

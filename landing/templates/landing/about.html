@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nosotros – The Paradise{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div>
+        <p class="eyebrow">Nosotros</p>
+        <h1>Hostería y Restaurant</h1>
+        <p>Nuestra idiosincrasia es transmitir el amor a nuestra tierra y fauna, mostrarles las riquezas naturales y su valor.</p>
+    </div>
+</section>
+
+<section class="about-intro">
+    <p><strong>Tenemos como sueño legarles a nuestras generaciones futuras todos los seres vivos y hábitos que hoy conforman nuestro patrimonio, vuestro y de todos los que vengan a visitar este hermoso lugar.</strong></p>
+    <p>Queremos que en su estadía se sientan cómodos, seguros y puedan relajarse en nuestras instalaciones, satisfaciendo todas sus necesidades y mejorando a través de sus comentarios.</p>
+    <p>Los esperamos para conocernos y que disfruten de estas maravillas que nos toca tener cerca.</p>
+</section>
+
+<section class="about-story page-block">
+    <div class="founders-gallery">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-01.jpg' %}" alt="Primeros años de The Paradise">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-02.jpg' %}" alt="The Paradise Pub en sus orígenes">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-03.jpg' %}" alt="Interior del pub The Paradise">
+        <img src="{% static 'imagenes/Fotos-historicas-Paradise/paradise-retro-04.jpg' %}" alt="Plato clásico del restaurante">
+    </div>
+    <div class="founders-text">
+        <p class="eyebrow">Historia de sus fundadores</p>
+        <h2>Hola bienvenidos, soy Malvina y quiero contarles la historia de The Paradise…</h2>
+        <p>Corría julio de 1986 cuando Mumo conoció Puerto Pirámides. Nos conocimos en Neuquén estudiando turismo, y lo invité a que me acompañe en vacaciones de invierno, a este, mi lugar en el mundo.</p>
+        <p>Mientras lo llevaba de city tour en un verdadero día paradisíaco, nació la idea de poner un pub en el salón desocupado del viejo Hotel Español, al lado del bar popular de entonces. En ese lugar durante 7 años, hasta fines de 1992, construimos un espacio de servicio y una imagen cada vez más armada, según crecía la demanda y donde desarrollamos nuestras vidas, al servicio de los que necesitasen una comida, un lugar de estar, de escuchar música, de encuentros increíbles, de momentos únicos, que fueron dando forma a lo que hoy somos.</p>
+        <p>Crecimos por etapas y también marcamos caminos a quienes como nosotros encontraron en este marco geográfico su lugar en el mundo. Se fueron sumando nuestras familias y amigos a este proyecto, un Paraíso en Patagonia. Incluso nuestros clientes huéspedes nos fueron y van modelándonos a sus necesidades y anhelos.</p>
+    </div>
+</section>
+{% endblock %}

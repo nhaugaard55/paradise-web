@@ -1,0 +1,322 @@
+[
+  {
+    "model": "core.sitesettings",
+    "pk": 1,
+    "fields": {
+      "email": "info@hosteriaparadise.com.ar",
+      "phone": "+54 9 280 430 5363",
+      "whatsapp_url": "https://wa.me/5492804305363",
+      "instagram_url": "https://www.instagram.com/theparadisepiramides/",
+      "maps_url": "https://maps.google.com/?q=Segunda+Bajada+al+Mar+Puerto+Pirámides",
+      "address_es": "Segunda Bajada al Mar, Puerto Pirámides, Chubut",
+      "address_en": "Second Beach Access, Puerto Pirámides, Patagonia"
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 1,
+    "fields": {
+      "title_es": "Entradas",
+      "title_en": "Starters",
+      "slug": "entradas",
+      "order": 1
+    }
+  },
+  {
+    "model": "menu.menusection",
+    "pk": 2,
+    "fields": {
+      "title_es": "Principales",
+      "title_en": "Main Courses",
+      "slug": "principales",
+      "order": 2
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+      "section": 1,
+      "name_es": "Sopa crema del día",
+      "name_en": "Seasonal soup",
+      "desc_es": "Verduras orgánicas, hierbas de huerta y pan de masa madre.",
+      "desc_en": "",
+      "price_ars": "15000.00",
+      "diet_flags": ["vegetarian"]
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+      "section": 1,
+      "name_es": "Brochette de ternera",
+      "name_en": "Beef brochette",
+      "desc_es": "Con hojas verdes, tomates confitados y alioli.",
+      "desc_en": "",
+      "price_ars": "22000.00",
+      "diet_flags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+      "section": 1,
+      "name_es": "Ensalada del mar",
+      "name_en": "Sea salad",
+      "desc_es": "Mix de hojas, langostinos, choclo y lima.",
+      "desc_en": "",
+      "price_ars": "20000.00",
+      "diet_flags": ["gluten-free"]
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 4,
+    "fields": {
+      "section": 2,
+      "name_es": "Pesca del día oliva y limón",
+      "name_en": "Catch of the day",
+      "desc_es": "Papas crocantes y wok de vegetales.",
+      "desc_en": "",
+      "price_ars": "30000.00",
+      "diet_flags": ["gluten-free"]
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 5,
+    "fields": {
+      "section": 2,
+      "name_es": "Ragout de cordero",
+      "name_en": "Lamb ragout",
+      "desc_es": "Con puré de papas ahumado y verduras de estepa.",
+      "desc_en": "",
+      "price_ars": "32000.00",
+      "diet_flags": []
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 6,
+    "fields": {
+      "section": 2,
+      "name_es": "Ravioles de espinaca",
+      "name_en": "Spinach ravioli",
+      "desc_es": "Con crema de puerro y parmesano.",
+      "desc_en": "",
+      "price_ars": "26000.00",
+      "diet_flags": ["vegetarian"]
+    }
+  },
+  {
+    "model": "hotel.room",
+    "pk": 1,
+    "fields": {
+      "slug": "suite-bosque",
+      "name_es": "Suite Bosque",
+      "name_en": "",
+      "desc_es": "Cama king, jacuzzi privado y deck con vista al bosque nativo.",
+      "desc_en": "",
+      "capacity": 2,
+      "price_from_ars": "85000.00",
+      "photo_url": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "hotel.room",
+    "pk": 2,
+    "fields": {
+      "slug": "suite-lago",
+      "name_es": "Suite Lago",
+      "name_en": "",
+      "desc_es": "Terraza panorámica, chimenea ecológica y amenities de autor.",
+      "desc_en": "",
+      "capacity": 2,
+      "price_from_ars": "92000.00",
+      "photo_url": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "hotel.room",
+    "pk": 3,
+    "fields": {
+      "slug": "loft-familiar",
+      "name_es": "Loft Familiar",
+      "name_en": "",
+      "desc_es": "Dos ambientes conectados, kitchenette y playroom.",
+      "desc_en": "",
+      "capacity": 5,
+      "price_from_ars": "99000.00",
+      "photo_url": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "hotel.room",
+    "pk": 4,
+    "fields": {
+      "slug": "garden-studio",
+      "name_es": "Garden Studio",
+      "name_en": "",
+      "desc_es": "Deck privado con fogón, ducha exterior y huerta aromática.",
+      "desc_en": "",
+      "capacity": 3,
+      "price_from_ars": "78000.00",
+      "photo_url": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 1,
+    "fields": {
+      "slug": "trekking-valdes",
+      "title_es": "Trekking Península Valdés",
+      "title_en": "",
+      "desc_es": "Caminata guiada por acantilados, playas fósiles y miradores de fauna.",
+      "desc_en": "",
+      "category": "trekking",
+      "duration": "5 hs",
+      "difficulty": "Media",
+      "season": "Todo el año",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 2,
+    "fields": {
+      "slug": "trekking-loberia",
+      "title_es": "Sendero Lobería",
+      "title_en": "",
+      "desc_es": "Circuito corto con interpretación ambiental y avistaje de lobos marinos.",
+      "desc_en": "",
+      "category": "trekking",
+      "duration": "3 hs",
+      "difficulty": "Baja",
+      "season": "Septiembre a abril",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 3,
+    "fields": {
+      "slug": "trekking-nocturno",
+      "title_es": "Trekking nocturno",
+      "title_en": "",
+      "desc_es": "Experiencia bajo las estrellas con fogón y relato ancestral.",
+      "desc_en": "",
+      "category": "trekking",
+      "duration": "4 hs",
+      "difficulty": "Baja",
+      "season": "Verano",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 4,
+    "fields": {
+      "slug": "mtb-senderos",
+      "title_es": "Mountain Bike Senderos de la Estepa",
+      "title_en": "",
+      "desc_es": "Recorrido de 25 km con desnivel suave y miradores naturales.",
+      "desc_en": "",
+      "category": "mtb",
+      "duration": "4 hs",
+      "difficulty": "Media",
+      "season": "Todo el año",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 5,
+    "fields": {
+      "slug": "mtb-punta-norte",
+      "title_es": "MTB Punta Norte",
+      "title_en": "",
+      "desc_es": "Costeá colonias de elefantes marinos con guías certificados.",
+      "desc_en": "",
+      "category": "mtb",
+      "duration": "6 hs",
+      "difficulty": "Alta",
+      "season": "Otoño / Primavera",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 6,
+    "fields": {
+      "slug": "mtb-luna-llena",
+      "title_es": "Moonlight Ride",
+      "title_en": "",
+      "desc_es": "Salida en bici bajo luna llena con picnic gourmet.",
+      "desc_en": "",
+      "category": "mtb",
+      "duration": "2 hs",
+      "difficulty": "Media",
+      "season": "Verano",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 7,
+    "fields": {
+      "slug": "especial-ballenas",
+      "title_es": "Salida especial Ballenas",
+      "title_en": "",
+      "desc_es": "Navegación privada con guía naturalista y brindis a bordo.",
+      "desc_en": "",
+      "category": "special",
+      "duration": "3 hs",
+      "difficulty": "Baja",
+      "season": "Junio a diciembre",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 8,
+    "fields": {
+      "slug": "especial-foodies",
+      "title_es": "Experiencia Foodies",
+      "title_en": "",
+      "desc_es": "Clase de cocina con el chef + cena maridada.",
+      "desc_en": "",
+      "category": "special",
+      "duration": "4 hs",
+      "difficulty": "Baja",
+      "season": "Todo el año",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=60"
+    }
+  },
+  {
+    "model": "activities.activity",
+    "pk": 9,
+    "fields": {
+      "slug": "especial-eventos",
+      "title_es": "Eventos Boutique",
+      "title_en": "",
+      "desc_es": "Producción integral para aniversarios, bodas íntimas y sesiones creativas.",
+      "desc_en": "",
+      "category": "special",
+      "duration": "Según propuesta",
+      "difficulty": "Personalizada",
+      "season": "Todo el año",
+      "external_url": "",
+      "photo_url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=60"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load site_extras %}
+{% localized room 'name' as room_name %}
+{% localized room 'desc' as room_desc %}
+{% block title %}{{ room_name }} · Hostería{% endblock %}
+{% block content %}
+<section class="section">
+    <a href="{% url 'hotel:list' %}">← Volver a habitaciones</a>
+    <article class="paper-card" style="margin-top:var(--space-md);">
+        <h1>{{ room_name }}</h1>
+        {% if room.photo_url %}<img src="{{ room.photo_url }}" alt="{{ room_name }}">{% endif %}
+        <p>{{ room_desc }}</p>
+        <ul class="details-list">
+            <li>Capacidad: {{ room.capacity }} huéspedes</li>
+            <li>Desde ${{ room.price_from_ars }}</li>
+        </ul>
+        <a class="btn btn-primary" href="{% url 'core:contact' %}">Consultar disponibilidad</a>
+    </article>
+</section>
+{% endblock %}

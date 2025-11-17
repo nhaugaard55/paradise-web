@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Restaurante · The Paradise{% endblock %}
+{% block content %}
+<section class="menu-section">
+  <div class="menu-section-inner">
+    <div class="menu-header">
+      <div class="menu-header__copy">
+        <h1 class="menu-title">Carta ilustrada</h1>
+        <p class="menu-lead">
+          Te dejamos nuestra carta completa para que puedas explorar platos, vinos y postres antes o durante tu visita.
+          Los precios y opciones pueden variar según temporada.
+        </p>
+      </div>
+
+      <div class="menu-toolbar">
+        <a
+          href="{% static 'docs/Menu digital paradise.pdf' %}"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline menu-fullscreen-btn"
+        >
+          Ver en pantalla completa
+        </a>
+      </div>
+    </div>
+
+    <div class="menu-pdf-wrapper">
+      <div class="menu-pdf-frame">
+        <object
+          id="menu-pdf-embed"
+          data="{% static 'docs/Menu digital paradise.pdf' %}"
+          type="application/pdf"
+        >
+          <p>
+            No se pudo cargar la carta.
+            <a href="{% static 'docs/Menu digital paradise.pdf' %}" target="_blank" rel="noopener">
+              Abrir menú en una nueva pestaña
+            </a>.
+          </p>
+        </object>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section collage-nosotros">
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Platos/plato-01.jpg' %}" alt="Parrillada de mar">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Platos/plato-02.jpg' %}" alt="Ostras gratinadas">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Platos/plato-03.jpg' %}" alt="Langostinos con papas">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Platos/plato-04.jpg' %}" alt="Pizza de mar">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+        <img src="{% static 'imagenes/Platos/plato-05.jpg' %}" alt="Ilustración del menú">
+    </figure>
+</section>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Excursiones – The Paradise{% endblock %}
+
+{% block content %}
+<section class="excursions-page">
+  <header class="excursions-header">
+    <h1>Guía de actividades</h1>
+    <p>
+      En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades
+      que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a
+      disponibilidad y condiciones del clima.
+    </p>
+
+    <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+      <button
+        type="button"
+        class="excursions-lang-btn is-active"
+        data-lang="es"
+        role="tab"
+        aria-selected="true"
+      >
+        Español
+      </button>
+      <button
+        type="button"
+        class="excursions-lang-btn"
+        data-lang="en"
+        role="tab"
+        aria-selected="false"
+      >
+        English
+      </button>
+    </div>
+
+    <div class="excursions-downloads">
+      <a
+        href="{% static 'docs/Folleto actividades The Paradise Español.pdf' %}"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+      >
+        Descargar PDF en español
+      </a>
+      <a
+        href="{% static 'docs/Folleto Ingles Actividades.pdf' %}"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-ghost"
+      >
+        Download PDF in English
+      </a>
+    </div>
+  </header>
+
+  <div class="excursions-pdf-wrapper">
+    <object
+      data="{% static 'docs/Folleto actividades The Paradise Español.pdf' %}"
+      type="application/pdf"
+      class="excursions-pdf"
+      data-lang="es"
+    >
+      <p>
+        No se puede mostrar el PDF en el navegador. Descargá la guía en español usando el botón de arriba.
+      </p>
+    </object>
+
+    <object
+      data="{% static 'docs/Folleto Ingles Actividades.pdf' %}"
+      type="application/pdf"
+      class="excursions-pdf is-hidden"
+      data-lang="en"
+    >
+      <p>
+        PDF preview is not available. Please use the download button above.
+      </p>
+    </object>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'js/excursions.js' %}" defer></script>
+{% endblock %}

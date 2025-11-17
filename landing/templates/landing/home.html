@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}The Paradise – Hostería y Restaurante{% endblock %}
+
+{% block content %}
+<section class="feature-hero" id="hero">
+    <div class="feature-hero__content">
+        <p class="eyebrow">Patagonia · Puerto Pirámides</p>
+        <h1>Vivir The Paradise</h1>
+        <p>Hostería boutique, restaurante de autor y experiencias curadas entre ballenas, estepa y mar.</p>
+        <ul class="hero-stats">
+            <li><strong>12</strong> suites boutique</li>
+            <li><strong>+20</strong> años de historia</li>
+            <li><strong>365</strong> días de experiencias</li>
+        </ul>
+        <div class="hero-cta">
+            <a href="{% url 'landing:hosteria' %}" class="btn primary">Planear estadía</a>
+            <a href="{% url 'landing:restaurant' %}" class="btn ghost">Ver carta</a>
+        </div>
+    </div>
+    <div class="feature-hero__aside">
+        <div class="hero-badge">
+            <p>Segunda Bajada al Mar<br>Puerto Pirámides · Chubut</p>
+            <div class="hero-socials">
+                <a class="chip" href="https://www.google.com/maps/place/Segunda+Bajada+al+Mar,+Puerto+Pir%C3%A1mides,+Chubut" target="_blank" rel="noopener">
+                    <span class="icon icon-map"></span>
+                    <div>
+                        <strong>Cómo llegar</strong>
+                        <span>Google Maps</span>
+                    </div>
+                </a>
+                <a class="chip" href="https://www.instagram.com/theparadisepiramides/" target="_blank" rel="noopener">
+                    <span class="icon icon-instagram"></span>
+                    <div>
+                        <strong>Seguinos</strong>
+                        <span>@theparadisepiramides</span>
+                    </div>
+                </a>
+                <a class="chip" href="https://wa.me/5492804305363" target="_blank" rel="noopener">
+                    <span class="icon icon-whatsapp"></span>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>+54 9 280 430 5363</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="details-strip">
+    <article>
+        <p class="detail-label">Hostería</p>
+        <h3>Suites con vista</h3>
+        <p>Ambientes cálidos, amenities de autor y servicio personalizado.</p>
+        <a href="{% url 'landing:hosteria' %}">Ver más →</a>
+    </article>
+    <article>
+        <p class="detail-label">Restaurante</p>
+        <h3>Lunch & Dinner</h3>
+        <p>Cocina patagónica con guiños mediterráneos y carta en PDF.</p>
+        <a href="{% url 'landing:restaurant' %}">Carta completa →</a>
+    </article>
+    <article>
+        <p class="detail-label">Excursiones</p>
+        <h3>Curaduría local</h3>
+        <p>Trekking, avistajes y travesías diseñadas por anfitriones locales.</p>
+        <a href="{% url 'landing:excursions' %}">Explorar →</a>
+    </article>
+    <article>
+        <p class="detail-label">Reservas</p>
+        <h3>Atención directa</h3>
+        <p>Coordinamos estadías y experiencias a medida durante todo el año.</p>
+        <a href="{% url 'landing:contact' %}">Contactar →</a>
+    </article>
+</section>
+
+<section class="section-flex">
+    <div class="section-flex__text">
+        <p class="eyebrow">Nosotros</p>
+        <h2>Un proyecto familiar en Península Valdés</h2>
+        <p>Desde 1986 Malvina y Mumo reciben viajeros con la hospitalidad de la Patagonia. Crecimos junto a nuestras familias, vecinos y huéspedes que buscaban un refugio entre mar y estepa.</p>
+        <ul class="info-list">
+            <li>Hostería boutique con 12 suites y espacios comunes luminosos.</li>
+            <li>Restaurante propio con menú bilingüe y opciones veggie, sin TACC y kids friendly.</li>
+            <li>Equipo local que diseña excursiones exclusivas durante todo el año.</li>
+        </ul>
+        <a href="{% url 'landing:about' %}" class="btn ghost">Leer historia completa</a>
+    </div>
+    <div class="section-flex__visual">
+        <div class="visual-card">
+            <p class="eyebrow">Hostería & Restaurant</p>
+            <h3>El paraíso existe</h3>
+            <p>Segunda Bajada al Mar, Puerto Pirámides</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-flex section-flex--reverse">
+    <div class="section-flex__text">
+        <p class="eyebrow">Hostería</p>
+        <h2>Suites inspiradas en la naturaleza</h2>
+        <p>Habitaciones con vista al bosque, al mar o a los jardines internos, diseñadas para desconectar con calma.</p>
+        <ul class="info-list">
+            <li>Suite Bosque · cama king, jacuzzi y deck privado.</li>
+            <li>Suite Lago · terraza panorámica y chimenea ecológica.</li>
+            <li>Loft Familiar · dos ambientes, kitchenette y playroom.</li>
+        </ul>
+        <a href="{% url 'landing:hosteria' %}" class="btn primary">Ver todas las habitaciones</a>
+    </div>
+    <div class="section-flex__visual">
+        <div class="gallery-row">
+            <span>Vista bosque</span>
+            <span>Suite Lago</span>
+            <span>Loft Familiar</span>
+        </div>
+    </div>
+</section>
+
+<section class="section-flex">
+    <div class="section-flex__text">
+        <p class="eyebrow">Restaurante</p>
+        <h2>Lunch & Dinner con identidad patagónica</h2>
+        <p>Carta estacional ilustrada, disponible en PDF bilingüe, con íconos dietarios iguales a los del menú impreso.</p>
+        <ul class="info-list">
+            <li>Menú degustación de 5 pasos con maridaje opcional.</li>
+            <li>Del mar: rabas, langostinos apanados, tabla de mariscos.</li>
+            <li>Clásicos de la casa: cordero fueguino, pesca del día, opciones vegetarianas.</li>
+        </ul>
+        <div class="hero-cta">
+            <a href="{% url 'landing:restaurant' %}" class="btn primary">Abrir menú</a>
+            <a href="{% url 'landing:restaurant' %}#menu" class="btn ghost">Descargar PDF</a>
+        </div>
+    </div>
+    <div class="section-flex__visual">
+        <div class="visual-card visual-card--menu">
+            <p class="eyebrow">Carta digital</p>
+            <h3>the-paradise-menu.pdf</h3>
+            <p>Actualizada temporada 2024</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-flex section-flex--reverse">
+    <div class="section-flex__text">
+        <p class="eyebrow">Excursiones</p>
+        <h2>Programas a medida en Península Valdés</h2>
+        <p>Inspirados en el formato de Tracción a Sangre: fichas claras, datos rápidos y storytelling que te prepara para la experiencia.</p>
+        <ul class="info-list">
+            <li>Trekking en Península Valdés · 10 km · Nivel medio.</li>
+            <li>Travesía Lago Escondido · Kayak + picnic gourmet.</li>
+            <li>Safari nocturno · avistaje de fauna y fogón.</li>
+        </ul>
+        <a href="{% url 'landing:excursions' %}" class="btn primary">Ver todas las excursiones</a>
+    </div>
+    <div class="section-flex__visual">
+        <div class="badge-grid">
+            <div>
+                <p class="detail-label">Duración</p>
+                <strong>4 a 8 hs</strong>
+            </div>
+            <div>
+                <p class="detail-label">Temporada</p>
+                <strong>todo el año</strong>
+            </div>
+            <div>
+                <p class="detail-label">Cupos</p>
+                <strong>grupos pequeños</strong>
+            </div>
+            <div>
+                <p class="detail-label">Reservas</p>
+                <strong>48 hs anticipación</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div>
+        <p class="eyebrow">Reservas & contacto directo</p>
+        <h2>Coordinemos tu próxima estadía</h2>
+        <p>Escribinos a <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a> o por WhatsApp al <a href="tel:+5492804305363">+54 9 280 430 5363</a>. Diseñamos experiencias a medida para viajeros, familias y grupos.</p>
+    </div>
+    <a href="{% url 'landing:contact' %}" class="btn primary">Contactar ahora</a>
+</section>
+{% endblock %}

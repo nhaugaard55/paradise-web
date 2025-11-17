@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static site_extras %}
+
+{% block title %}Excursiones y actividades{% endblock %}
+
+{% block content %}
+<section class="excursions-page">
+  <header class="excursions-header">
+    <h1>Guía de actividades</h1>
+    <p>
+      En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades
+      que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a
+      disponibilidad y condiciones del clima.
+    </p>
+
+    <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+      <button
+        type="button"
+        class="excursions-lang-btn is-active"
+        data-lang-toggle="es"
+        role="tab"
+        aria-selected="true"
+      >
+        Español
+      </button>
+      <button
+        type="button"
+        class="excursions-lang-btn"
+        data-lang-toggle="en"
+        role="tab"
+        aria-selected="false"
+      >
+        English
+      </button>
+    </div>
+  </header>
+
+  <div class="excursions-pdf-wrapper">
+    <iframe
+      id="excursions-pdf"
+      class="excursions-pdf"
+      src="{% static 'docs/Folleto actividades The Paradise Español.pdf' %}"
+      data-src-es="{% static 'docs/Folleto actividades The Paradise Español.pdf' %}"
+      data-src-en="{% static 'docs/Folleto Ingles Actividades.pdf' %}"
+    ></iframe>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script src="{% static 'js/excursions.js' %}" defer></script>
+{% endblock %}
