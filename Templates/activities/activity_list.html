@@ -13,24 +13,33 @@
       disponibilidad y condiciones del clima.
     </p>
 
-    <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+    <div class="excursions-toolbar">
+      <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+        <button
+          type="button"
+          class="excursions-lang-btn is-active"
+          data-lang-toggle="es"
+          role="tab"
+          aria-selected="true"
+        >
+          Español
+        </button>
+        <button
+          type="button"
+          class="excursions-lang-btn"
+          data-lang-toggle="en"
+          role="tab"
+          aria-selected="false"
+        >
+          English
+        </button>
+      </div>
       <button
         type="button"
-        class="excursions-lang-btn is-active"
-        data-lang-toggle="es"
-        role="tab"
-        aria-selected="true"
+        class="btn menu-fullscreen-btn excursions-fullscreen-btn"
+        data-excursions-fullscreen
       >
-        Español
-      </button>
-      <button
-        type="button"
-        class="excursions-lang-btn"
-        data-lang-toggle="en"
-        role="tab"
-        aria-selected="false"
-      >
-        English
+        Ver en pantalla completa
       </button>
     </div>
   </header>

@@ -18,7 +18,15 @@
             <a href="{% url 'core:home' %}" class="navbar-logo">
                 <img id="navbar-logo" src="{% static 'imagenes/iconos/Logo.png' %}" alt="The Paradise">
             </a>
-            <nav class="nav-links">
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-menu">
+                <span class="nav-toggle__bars" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="nav-toggle__label">Menú</span>
+            </button>
+            <nav class="nav-links" id="primary-menu">
                 <a href="{% url 'core:home' %}">Inicio</a>
                 <a href="{% url 'core:about' %}">Nosotros</a>
                 <a href="{% url 'menu:menu' %}">Restaurante</a>
@@ -26,15 +34,6 @@
                 <a href="{% url 'activities:list' %}">Excursiones</a>
                 <a href="{% url 'core:contact' %}">Contacto</a>
             </nav>
-            <div class="nav-cta">
-                {% if site_settings %}
-                    <a class="btn btn-instagram" href="{{ site_settings.instagram_url|default:'https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr' }}" target="_blank" rel="noopener">Instagram</a>
-                    <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">WhatsApp</a>
-                {% else %}
-                    <a class="btn btn-instagram" href="https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
-                    <a class="btn btn-whatsapp" href="{% url 'core:contact' %}">WhatsApp</a>
-                {% endif %}
-            </div>
         </div>
     </header>
 
@@ -68,8 +67,28 @@
                 <p>Chubut - Patagonia Argentina</p>
             </div>
 
-            <div class="footer-col footer-badges">
-                <a class="badge badge-maps" href="https://maps.app.goo.gl/gLmgnAkg6oezVTpm9?g_st=ipc" target="_blank" rel="noopener">Google Maps</a>
+            <div class="footer-col footer-social-block">
+                <p class="footer-social-title">Redes Sociales</p>
+                <div class="footer-social-links">
+                    {% if site_settings %}
+                        <a class="footer-social-btn footer-social-btn--whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">
+                            <span class="sr-only">WhatsApp</span>
+                        </a>
+                        <a class="footer-social-btn footer-social-btn--instagram" href="{{ site_settings.instagram_url|default:'https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr' }}" target="_blank" rel="noopener">
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    {% else %}
+                        <a class="footer-social-btn footer-social-btn--whatsapp" href="{% url 'core:contact' %}" target="_blank" rel="noopener">
+                            <span class="sr-only">WhatsApp</span>
+                        </a>
+                        <a class="footer-social-btn footer-social-btn--instagram" href="https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    {% endif %}
+                    <a class="footer-social-btn footer-social-btn--maps" href="https://maps.app.goo.gl/gLmgnAkg6oezVTpm9?g_st=ipc" target="_blank" rel="noopener">
+                        <span class="sr-only">Google Maps</span>
+                    </a>
+                </div>
             </div>
         </div>
         <button class="footer-back-to-top" type="button" aria-label="Volver arriba">⌃</button>
@@ -84,6 +103,22 @@
         if (backTop) {
           backTop.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+
+        var navToggle = document.querySelector('.nav-toggle');
+        var siteMenu = document.getElementById('primary-menu');
+        if (navToggle && siteMenu) {
+          navToggle.addEventListener('click', function () {
+            var isOpen = siteMenu.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+
+          siteMenu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+              siteMenu.classList.remove('is-open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            });
           });
         }
       });
