@@ -41,7 +41,7 @@ body {
     font-family: var(--font-body);
     color: var(--brand-text);
     background-color: var(--brand-bg-paper);
-    background-image: url("../imagenes/Texturas/paper-texture.jpg");
+    background-image: url("../Imagenes/Texturas/paper-texture.jpg");
     background-size: cover;
     background-attachment: fixed;
     line-height: 1.6;
@@ -113,7 +113,7 @@ p {
     width: min(100%, 1200px);
     height: 110px;
     margin: var(--space-lg) auto;
-    background: url("../imagenes/Ornaments/watercolor-divider.svg") no-repeat center;
+    background: url("../Imagenes/Ornaments/watercolor-divider.svg") no-repeat center;
     background-size: contain;
     opacity: 0.6;
 }
@@ -417,7 +417,7 @@ header.navbar,
 .home-hero__texture {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.05) url("../imagenes/Texturas/paper-texture.jpg") center/1200px repeat;
+    background: rgba(255, 255, 255, 0.05) url("../Imagenes/Texturas/paper-texture.jpg") center/1200px repeat;
     mix-blend-mode: screen;
     opacity: 0.18;
     z-index: 1;
@@ -1632,7 +1632,7 @@ header.navbar,
     }
 }
 
-/* TODO: replace placeholder textures/ornaments with final assets under static/imagenes */
+/* TODO: replace placeholder textures/ornaments with final assets under static/Imagenes */
 
 
 .excursions-page {

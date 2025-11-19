@@ -62,8 +62,8 @@ Podés editar o ampliar la data desde el admin (`/admin/`) usando el superusuari
 ## Guía rápida de estilo y assets
 
 - **Textura y ornamentos**:  
-  - Reemplazá `static/imagenes/Texturas/paper-texture.jpg` por la textura final (JPG 2000px).  
-  - Los ornamentos del hero fueron removidos (sin ballena/lobos). Otros SVG/PNGs bajo `static/imagenes/Ornaments/` pueden actualizarse cuando se usen en secciones específicas.
+  - Reemplazá `static/Imagenes/Texturas/paper-texture.jpg` por la textura final (JPG 2000px).  
+  - Los ornamentos del hero fueron removidos (sin ballena/lobos). Otros SVG/PNGs bajo `static/Imagenes/Ornaments/` pueden actualizarse cuando se usen en secciones específicas.
 - **Collages**:  
   - Las fotos históricas y gastronómicas usan el estilo definido en `static/css/site.css` (bordes suaves + sombra). Solo necesitás colocar las imágenes dentro de las estructuras de collage en `templates/core/about.html` y `templates/menu/menu.html`; no se requieren marcos adicionales.
 - **Cambiar a paleta B**: editá los custom properties del bloque `:root` en `static/css/site.css` (`--brand-*`, `--neutral-*`) y ajustá `--font-heading`/`--font-body` si deseás otras familias.
@@ -77,4 +77,4 @@ Podés editar o ampliar la data desde el admin (`/admin/`) usando el superusuari
 | Watercolor divider | `width: min(100%,1200px)`, `height:110px` | igual que desktop | `height:70px` |
 
 Para reemplazar los archivos:
-- Ajustá `static/imagenes/Ornaments/watercolor-divider*.{svg,png}` por los nuevos separadores. Ajusta rutas en `site.css` si modificás los nombres.
+- Ajustá `static/Imagenes/Ornaments/watercolor-divider*.{svg,png}` por los nuevos separadores. Ajusta rutas en `site.css` si modificás los nombres.
