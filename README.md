@@ -23,6 +23,22 @@ python manage.py runserver
 
 Luego ingresá a `http://127.0.0.1:8000/`.
 
+## Despliegue en Render
+
+1. Creá un servicio **Web Service → Python** y una base **PostgreSQL** (free alcanza). Si preferís automatizar todo, podés usar directamente `render.yaml` como blueprint.
+2. Configurá los comandos:
+   - **Build command:** `pip install -r requirements.txt && python manage.py collectstatic --noinput`
+   - **Start command:** `python manage.py migrate --noinput && gunicorn paradise_site.wsgi:application`
+3. Variables recomendadas:
+   - `DJANGO_SECRET_KEY`: generá una random y marcala como secreta.
+   - `DJANGO_ALLOWED_HOSTS`: por ejemplo `localhost,127.0.0.1,paradise-web.onrender.com`.
+   - `DJANGO_DEBUG=0`
+   - `PYTHON_VERSION=3.13.0`
+   - `DATABASE_URL`: Render lo completa automáticamente si ligás la base del paso 1.
+4. Una vez desplegado, abrí una consola en Render y corré `python manage.py loaddata core/fixtures/demo_data.json` si querés precargar la data demo.
+
+Con esos pasos Render ejecuta `collectstatic` durante el build y corre las migraciones antes de levantar Gunicorn, evitando los errores 500 de tablas inexistentes o manifestos faltantes.
+
 ## Estructura
 
 - `core` · páginas generales (home, nosotros, contacto) + SiteSettings y formulario de contacto.

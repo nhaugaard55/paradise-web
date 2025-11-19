@@ -1,0 +1,28 @@
+databases:
+  - name: paradise-db
+    plan: free
+
+services:
+  - type: web
+    name: paradise-web
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: |
+      python manage.py migrate --noinput
+      gunicorn paradise_site.wsgi:application
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: paradise-db
+          property: connectionString
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_ALLOWED_HOSTS
+        value: localhost,127.0.0.1,paradise-web.onrender.com
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: PYTHON_VERSION
+        value: "3.13.0"
