@@ -7,6 +7,8 @@ Sitio multipágina inspirado en la estructura de https://www.traccionasangre.com
 - Python 3.13
 - pip
 
+> Para despliegue en Render se usa PostgreSQL, por lo que la dependencia `psycopg[binary]` ya está incluida en `requirements.txt`.
+
 ## Puesta en marcha
 
 ```bash
