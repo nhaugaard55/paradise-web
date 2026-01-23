@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static site_extras %}
+{% load static site_extras i18n %}
 {% block title %}The Paradise · Hostería, Restaurante y Experiencias{% endblock %}
 {% block content %}
 <section class="home-hero fade-in">
@@ -11,12 +11,12 @@
     </div>
     <div class="home-hero__texture" aria-hidden="true"></div>
     <div class="hero-content">
-        <p class="eyebrow">Puerto Pirámides · Península Valdés</p>
-        <h1>Hostería y restaurante</h1>
-        <p class="hero-subtitle">La atención que esperabas, en el paraíso de la Patagonia.</p>
+        <p class="eyebrow">{% trans "Puerto Pirámides · Península Valdés" %}</p>
+        <h1>{% trans "Hostería y restaurante" %}</h1>
+        <p class="hero-subtitle">{% trans "La atención que esperabas, en el paraíso de la Patagonia." %}</p>
         <div class="cta-group">
-            <a class="btn btn-primary" href="{% url 'hotel:list' %}">Planear estadía</a>
-            <a class="btn btn-ghost" href="{% url 'menu:menu' %}">Ver restaurante</a>
+            <a class="btn btn-primary" href="{% url 'hotel:list' %}">{% trans "Planear estadía" %}</a>
+            <a class="btn btn-ghost" href="{% url 'menu:menu' %}">{% trans "Ver restaurante" %}</a>
         </div>
     </div>
 </section>
@@ -24,33 +24,33 @@
 <section class="section home-experiencias">
     <div class="home-experiencias__grid">
         <article class="paper-card">
-            <h3>Hostería</h3>
+            <h3>{% trans "Hostería" %}</h3>
             <div class="paper-card__copy">
-                <p>Suites boutique con vistas al bosque y mar, amenities de autor y servicio cálido.</p>
-                <p>12 suites curadas, amenities de autor y calma frente al mar.</p>
+                <p>{% trans "Suites boutique pensadas para el descanso, con luz natural, detalles cálidos y una atmósfera serena frente al paisaje patagónico." %}</p>
+                <p>{% trans "12 suites curadas, ambientes tranquilos y el ritmo pausado ideal para desconectar junto al mar." %}</p>
             </div>
             <div class="paper-card__cta">
-                <a class="btn btn-ghost" href="{% url 'hotel:list' %}">Explorar suites</a>
+                <a class="btn btn-ghost" href="{% url 'hotel:list' %}">{% trans "Explorar suites" %}</a>
             </div>
         </article>
         <article class="paper-card">
-            <h3>Restaurante</h3>
+            <h3>{% trans "Restaurante" %}</h3>
             <div class="paper-card__copy">
-                <p>Cocina patagónica con guiños mediterráneos, carta ilustrada bilingüe y vinos seleccionados.</p>
-                <p>Ingredientes frescos, productores de la península y opciones para todos los gustos.</p>
+                <p>{% trans "Cocina patagónica de impronta casera, con productos frescos de la región y una carta simple, honesta y cuidada." %}</p>
+                <p>{% trans "Sabores locales, vinos seleccionados y una propuesta pensada para disfrutar sin apuro." %}</p>
             </div>
             <div class="paper-card__cta">
-                <a class="btn btn-ghost" href="{% url 'menu:menu' %}">Ver carta</a>
+                <a class="btn btn-ghost" href="{% url 'menu:menu' %}">{% trans "Ver carta" %}</a>
             </div>
         </article>
         <article class="paper-card">
-            <h3>Excursiones</h3>
+            <h3>{% trans "Excursiones" %}</h3>
             <div class="paper-card__copy">
-                <p>Programas curados para vivir Península Valdés: trekking, MTB y salidas especiales.</p>
-                <p>Excursiones guiadas por anfitriones patagónicos, todo el año.</p>
+                <p>{% trans "Experiencias para descubrir la Península Valdés y su entorno: naturaleza, fauna y paisajes únicos todo el año." %}</p>
+                <p>{% trans "Salidas guiadas por anfitriones locales, con recorridos tranquilos y en contacto directo con el lugar." %}</p>
             </div>
             <div class="paper-card__cta">
-                <a class="btn btn-ghost" href="{% url 'activities:list' %}">Ver experiencias</a>
+                <a class="btn btn-ghost" href="{% url 'activities:list' %}">{% trans "Ver experiencias" %}</a>
             </div>
         </article>
     </div>

@@ -1,0 +1,331 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: The Paradise\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-23 00:00+0000\n"
+"PO-Revision-Date: 2026-01-23 00:00+0000\n"
+"Last-Translator: Codex Assistant\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Nosotros"
+msgstr "About"
+
+msgid "Restaurante"
+msgstr "Restaurant"
+
+msgid "Hostería"
+msgstr "Inn"
+
+msgid "Excursiones"
+msgstr "Excursions"
+
+msgid "Contacto"
+msgstr "Contact"
+
+msgid "Puerto Pirámides · Península Valdés"
+msgstr "Puerto Pirámides · Península Valdés"
+
+msgid "Hostería y restaurante"
+msgstr "Inn & Restaurant"
+
+msgid "La atención que esperabas, en el paraíso de la Patagonia."
+msgstr "The care you expected, in Patagonia’s paradise."
+
+msgid "Planear estadía"
+msgstr "Plan your stay"
+
+msgid "Ver restaurante"
+msgstr "See restaurant"
+
+msgid "Suites boutique pensadas para el descanso, con luz natural, detalles cálidos y una atmósfera serena frente al paisaje patagónico."
+msgstr "Boutique suites designed for rest, with natural light, warm details, and a serene atmosphere facing the Patagonian landscape."
+
+msgid "12 suites curadas, ambientes tranquilos y el ritmo pausado ideal para desconectar junto al mar."
+msgstr "12 curated suites, calm spaces, and the relaxed pace that’s ideal for unwinding by the sea."
+
+msgid "Explorar suites"
+msgstr "Explore suites"
+
+msgid "Cocina patagónica de impronta casera, con productos frescos de la región y una carta simple, honesta y cuidada."
+msgstr "Patagonian cooking with a homemade touch, using fresh regional produce and a simple, honest, carefully curated menu."
+
+msgid "Sabores locales, vinos seleccionados y una propuesta pensada para disfrutar sin apuro."
+msgstr "Local flavors, selected wines, and a proposal designed to be enjoyed without haste."
+
+msgid "Ver carta"
+msgstr "See menu"
+
+msgid "Experiencias para descubrir la Península Valdés y su entorno: naturaleza, fauna y paisajes únicos todo el año."
+msgstr "Experiences to discover the Península Valdés and its surroundings: nature, wildlife, and unique landscapes all year."
+
+msgid "Salidas guiadas por anfitriones locales, con recorridos tranquilos y en contacto directo con el lugar."
+msgstr "Outings guided by local hosts, with calm routes and direct contact with the place."
+
+msgid "Ver experiencias"
+msgstr "See experiences"
+
+msgid "Hostería, restaurante y excursiones boutique en Puerto Pirámides."
+msgstr "Boutique inn, restaurant, and excursions in Puerto Pirámides."
+
+msgid "Copyrights © 2020 Derechos Reservados - The Paradise Hotel"
+msgstr "Copyright © 2020 All Rights Reserved - The Paradise Hotel"
+
+msgid "Segunda Bajada al Mar, Puerto Pirámides,"
+msgstr "Segunda Bajada al Mar, Puerto Pirámides,"
+
+msgid "Chubut - Patagonia Argentina"
+msgstr "Chubut - Argentinian Patagonia"
+
+msgid "Redes Sociales"
+msgstr "Social Media"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Google Maps"
+msgstr "Google Maps"
+
+msgid "Volver arriba"
+msgstr "Back to top"
+
+msgid "Nosotros · The Paradise"
+msgstr "About · The Paradise"
+
+msgid "Nuestra historia"
+msgstr "Our story"
+
+msgid "Desde 1986 elegimos Puerto Pirámides como nuestro lugar en el mundo. Todo comenzó cuando Mumo conoció este pequeño pueblo costero y, junto a Malvina, descubrieron un rincón que los enamoró para siempre. En aquellos años de juventud, entre estudios y viajes, nació el sueño de construir un espacio propio frente al mar."
+msgstr "Since 1986 we’ve chosen Puerto Pirámides as our place in the world. Everything began when Mumo discovered this small coastal town and, together with Malvina, fell in love with a corner that would stay with them forever. In those youthful years, between studies and travels, the dream of building a space of their own by the sea was born."
+
+msgid "El viejo Hotel Español fue el escenario de los primeros pasos: un salón desocupado, un pub sencillo y muchas ganas de recibir a familias, viajeros y amigos. Ese pequeño comienzo se transformó, con el tiempo, en una hostería boutique con restaurante propio, donde la calidez patagónica y el espíritu familiar se sienten en cada detalle."
+msgstr "The old Hotel Español was the setting for the first steps: an empty hall, a simple pub, and a great desire to welcome families, travelers, and friends. That small beginning eventually became a boutique inn with its own restaurant, where Patagonian warmth and a family spirit can be felt in every detail."
+
+msgid "A lo largo de los años, The Paradise creció paso a paso. Fuimos mejorando espacios, ampliando servicios y aprendiendo de cada huésped que nos eligió. Nuestras familias, amigos y la comunidad se sumaron al proyecto, ayudándonos a darle forma a un lugar que hoy combina comodidad, gastronomía patagónica y la esencia simple y auténtica de la vida en la península."
+msgstr "Over the years, The Paradise grew step by step. We improved spaces, expanded services, and learned from every guest who chose us. Our families, friends, and community joined the project, helping shape a place that now combines comfort, Patagonian cuisine, and the simple, authentic essence of life on the peninsula."
+
+msgid "Nos inspira la naturaleza que nos rodea, la historia de este lugar y las personas que pasan por él. Creemos en recibir con amabilidad, escuchar, mejorar y compartir todo aquello que hace especial a Puerto Pirámides. Cada mesa servida, cada charla, cada visita y cada regreso forman parte del corazón de The Paradise."
+msgstr "We’re inspired by the nature around us, the history of this place, and the people who pass through it. We believe in welcoming with kindness, listening, improving, and sharing everything that makes Puerto Pirámides special. Every served table, every conversation, every visit, and every return are part of the heart of The Paradise."
+
+msgid "Hoy, décadas después, seguimos avanzando con la misma pasión: crear un espacio cálido, honesto y cercano, donde cada huésped pueda sentirse como en casa y descubrir lo mejor de este rincón patagónico que tanto amamos."
+msgstr "Today, decades later, we continue with the same passion: creating a warm, honest, close space where every guest feels at home and can discover the best of this Patagonian corner we love so much."
+
+msgid "Fachada original de The Paradise"
+msgstr "Original façade of The Paradise"
+
+msgid "Equipo en los inicios de The Paradise"
+msgstr "Team in the early days of The Paradise"
+
+msgid "Interior del antiguo pub"
+msgstr "Interior of the old pub"
+
+msgid "Plato clásico del restaurante"
+msgstr "Classic restaurant dish"
+
+msgid "Momentos en la península"
+msgstr "Moments on the peninsula"
+
+msgid "Familia y amigos en The Paradise"
+msgstr "Family and friends at The Paradise"
+
+msgid "Galería histórica"
+msgstr "Historic gallery"
+
+msgid "Cerrar"
+msgstr "Close"
+
+msgid "Foto anterior"
+msgstr "Previous photo"
+
+msgid "Foto siguiente"
+msgstr "Next photo"
+
+msgid "Nuestra idiosincrasia"
+msgstr "Our identity"
+
+msgid "Transitar el amor por la tierra, la fauna y las riquezas naturales que nos rodean."
+msgstr "Embrace the love for the land, wildlife, and natural treasures around us."
+
+msgid "Legar a las nuevas generaciones un patrimonio vivo, compartido entre huéspedes, vecinos y equipo."
+msgstr "Pass on a living heritage to new generations, shared among guests, neighbors, and our team."
+
+msgid "Crear experiencias cómodas y seguras, escuchando cada comentario para mejorar."
+msgstr "Create comfortable, safe experiences, listening to every comment to keep improving."
+
+msgid "Recomendar las actividades más destacadas de la península con guías locales."
+msgstr "Recommend the peninsula’s standout activities with local guides."
+
+msgid "Contacto · The Paradise"
+msgstr "Contact · The Paradise"
+
+msgid "Contactanos"
+msgstr "Contact us"
+
+msgid "Coordiná tu estadía, reservas gastronómicas o excursiones especiales. Respondemos por WhatsApp, email o formulario."
+msgstr "Coordinate your stay, dining reservations, or special excursions. We reply via WhatsApp, email, or the form."
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Teléfono:"
+msgstr "Phone:"
+
+msgid "WhatsApp:"
+msgstr "WhatsApp:"
+
+msgid "Chatear ahora"
+msgstr "Chat now"
+
+msgid "Instagram:"
+msgstr "Instagram:"
+
+msgid "Dirección:"
+msgstr "Address:"
+
+msgid "Nombre"
+msgstr "Name"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Mensaje"
+msgstr "Message"
+
+msgid "Enviar"
+msgstr "Send"
+
+msgid "Restaurante · The Paradise"
+msgstr "Restaurant · The Paradise"
+
+msgid "Carta ilustrada"
+msgstr "Illustrated menu"
+
+msgid "Te dejamos nuestra carta completa para que puedas explorar platos, vinos y postres antes o durante tu visita.\n          Los precios y opciones pueden variar según temporada."
+msgstr "Here’s our full menu so you can explore dishes, wines, and desserts before or during your visit.\nPrices and options may change by season."
+
+msgid "Ver en pantalla completa"
+msgstr "View full screen"
+
+msgid "No se pudo cargar la carta."
+msgstr "The menu could not be loaded."
+
+msgid "Abrir menú en una nueva pestaña"
+msgstr "Open the menu in a new tab"
+
+msgid "Parrillada de mar"
+msgstr "Sea grill"
+
+msgid "Ostras gratinadas"
+msgstr "Gratin oysters"
+
+msgid "Langostinos con papas"
+msgstr "Prawns with potatoes"
+
+msgid "Pizza de mar"
+msgstr "Sea pizza"
+
+msgid "Ilustración del menú"
+msgstr "Menu illustration"
+
+msgid "Hostería · Habitaciones"
+msgstr "Inn · Rooms"
+
+msgid "Habitaciones boutique inspiradas en el paisaje de Península Valdés. Elegí la categoría que mejor se adapte a tu viaje."
+msgstr "Boutique rooms inspired by the Península Valdés landscape. Choose the category that best fits your trip."
+
+msgid "Doble matrimonial"
+msgstr "Double room"
+
+msgid "Habitaciones para dos con cama matrimonial, luz cálida y una atmósfera tranquila para desconectar después de un día de playa o excursión."
+msgstr "Rooms for two with a double bed, warm lighting, and a calm atmosphere to unwind after a day at the beach or on excursion."
+
+msgid "Ver fotos"
+msgstr "See photos"
+
+msgid "Consultar disponibilidad"
+msgstr "Check availability"
+
+msgid "Doble twin"
+msgstr "Twin room"
+
+msgid "Dos camas individuales para viajar con amigos o en familia, con espacios luminosos y funcionales para descansar cómodamente."
+msgstr "Two single beds for traveling with friends or family, with bright, functional spaces for comfortable rest."
+
+msgid "Triple matrimonial + single"
+msgstr "Triple (double + single)"
+
+msgid "Ideal para familias: cama matrimonial más una simple, ambiente cálido y amplitud para relajarse después de explorar la península."
+msgstr "Ideal for families: a double bed plus a single, a warm ambience, and plenty of room to relax after exploring the peninsula."
+
+msgid "Triple twin"
+msgstr "Triple twin"
+
+msgid "Tres camas individuales, espacio generoso y mucha luz para grupos de amigos o familias que buscan practicidad y confort."
+msgstr "Three single beds, generous space, and lots of light for groups of friends or families seeking practicality and comfort."
+
+msgid "Suites vista al mar"
+msgstr "Sea-view suites"
+
+msgid "Cama king size, ventanales hacia el mar y espacios amplios con toques boutique para descansar con la mejor vista de la hostería."
+msgstr "King-size bed, large windows overlooking the sea, and spacious boutique touches to rest with the inn’s best view."
+
+msgid "Volver a habitaciones"
+msgstr "Back to rooms"
+
+msgid "Capacidad:"
+msgstr "Capacity:"
+
+msgid "huéspedes"
+msgstr "guests"
+
+msgid "Desde"
+msgstr "From"
+
+msgid "Excursiones y actividades"
+msgstr "Excursions and activities"
+
+msgid "Guía de actividades"
+msgstr "Activity guide"
+
+msgid "En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades\n      que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a\n      disponibilidad y condiciones del clima."
+msgstr "At The Paradise we want you to experience Puerto Pirámides to the fullest. These are the activities we usually recommend to our guests. All outings depend on availability and weather conditions."
+
+msgid "Idioma del folleto"
+msgstr "Brochure language"
+
+msgid "Español"
+msgstr "Spanish"
+
+msgid "English"
+msgstr "English"
+
+msgid "Excursión"
+msgstr "Excursion"
+
+msgid "Reservar por WhatsApp"
+msgstr "Book via WhatsApp"
+
+msgid "Más info"
+msgstr "More info"
+
+msgid "Detalles de la experiencia"
+msgstr "Experience details"
+
+msgid "Duración:"
+msgstr "Duration:"
+
+msgid "Dificultad:"
+msgstr "Difficulty:"
+
+msgid "Temporada:"
+msgstr "Season:"

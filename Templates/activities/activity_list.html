@@ -1,20 +1,20 @@
 {% extends "base.html" %}
-{% load static site_extras %}
+{% load static site_extras i18n %}
 
-{% block title %}Excursiones y actividades{% endblock %}
+{% block title %}{% trans "Excursiones y actividades" %}{% endblock %}
 
 {% block content %}
 <section class="excursions-page">
   <header class="excursions-header">
-    <h1>Guía de actividades</h1>
+    <h1>{% trans "Guía de actividades" %}</h1>
     <p>
-      En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades
+      {% blocktrans %}En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades
       que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a
-      disponibilidad y condiciones del clima.
+      disponibilidad y condiciones del clima.{% endblocktrans %}
     </p>
 
     <div class="excursions-toolbar">
-      <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+      <div class="excursions-lang-toggle" role="tablist" aria-label="{% trans 'Idioma del folleto' %}">
         <button
           type="button"
           class="excursions-lang-btn is-active"
@@ -22,7 +22,7 @@
           role="tab"
           aria-selected="true"
         >
-          Español
+          {% trans "Español" %}
         </button>
         <button
           type="button"
@@ -31,7 +31,7 @@
           role="tab"
           aria-selected="false"
         >
-          English
+          {% trans "English" %}
         </button>
       </div>
       <button
@@ -39,7 +39,7 @@
         class="btn menu-fullscreen-btn excursions-fullscreen-btn"
         data-excursions-fullscreen
       >
-        Ver en pantalla completa
+        {% trans "Ver en pantalla completa" %}
       </button>
     </div>
   </header>

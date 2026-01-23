@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-{% load site_extras %}
+{% load site_extras i18n %}
 {% localized activity 'title' as activity_title %}
 {% localized activity 'desc' as activity_desc %}
-{% block title %}{{ activity_title }} · Excursión{% endblock %}
+{% block title %}{{ activity_title }} · {% trans "Excursión" %}{% endblock %}
 {% block content %}
 <section class="activity-hero" style="background-image:url('{{ activity.photo_url }}');">
     <div>
@@ -10,18 +10,18 @@
         <h1>{{ activity_title }}</h1>
         <p>{{ activity_desc|truncatewords:35 }}</p>
         <div class="cta-group">
-            <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-            {% if activity.external_url %}<a class="btn btn-ghost" href="{{ activity.external_url }}" target="_blank" rel="noopener">Más info</a>{% endif %}
+            <a class="btn btn-whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">{% trans "Reservar por WhatsApp" %}</a>
+            {% if activity.external_url %}<a class="btn btn-ghost" href="{{ activity.external_url }}" target="_blank" rel="noopener">{% trans "Más info" %}</a>{% endif %}
         </div>
     </div>
 </section>
 
 <section class="section">
-    <h2>Detalles de la experiencia</h2>
+    <h2>{% trans "Detalles de la experiencia" %}</h2>
     <ul class="details-list">
-        <li>Duración: {{ activity.duration }}</li>
-        <li>Dificultad: {{ activity.difficulty }}</li>
-        <li>Temporada: {{ activity.season }}</li>
+        <li>{% trans "Duración:" %} {{ activity.duration }}</li>
+        <li>{% trans "Dificultad:" %} {{ activity.difficulty }}</li>
+        <li>{% trans "Temporada:" %} {{ activity.season }}</li>
     </ul>
     <p>{{ activity_desc }}</p>
 </section>
