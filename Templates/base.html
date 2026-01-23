@@ -70,21 +70,16 @@
             <div class="footer-col footer-social-block">
                 <p class="footer-social-title">Redes Sociales</p>
                 <div class="footer-social-links">
-                    {% if site_settings %}
-                        <a class="footer-social-btn footer-social-btn--whatsapp" href="{{ site_settings.whatsapp_url }}" target="_blank" rel="noopener">
+                    {% with whatsapp_link=site_settings.whatsapp_url|default:'https://wa.me/5492804305363' %}
+                        <a class="footer-social-btn footer-social-btn--whatsapp" href="{{ whatsapp_link }}" target="_blank" rel="noopener">
                             <span class="sr-only">WhatsApp</span>
                         </a>
-                        <a class="footer-social-btn footer-social-btn--instagram" href="{{ site_settings.instagram_url|default:'https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr' }}" target="_blank" rel="noopener">
+                    {% endwith %}
+                    {% with instagram_link=site_settings.instagram_url|default:'https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr' %}
+                        <a class="footer-social-btn footer-social-btn--instagram" href="{{ instagram_link }}" target="_blank" rel="noopener">
                             <span class="sr-only">Instagram</span>
                         </a>
-                    {% else %}
-                        <a class="footer-social-btn footer-social-btn--whatsapp" href="{% url 'core:contact' %}" target="_blank" rel="noopener">
-                            <span class="sr-only">WhatsApp</span>
-                        </a>
-                        <a class="footer-social-btn footer-social-btn--instagram" href="https://www.instagram.com/theparadisepiramides?igsh=MWV6NWUzejYwaDZpeQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
-                            <span class="sr-only">Instagram</span>
-                        </a>
-                    {% endif %}
+                    {% endwith %}
                     <a class="footer-social-btn footer-social-btn--maps" href="https://maps.app.goo.gl/gLmgnAkg6oezVTpm9?g_st=ipc" target="_blank" rel="noopener">
                         <span class="sr-only">Google Maps</span>
                     </a>
