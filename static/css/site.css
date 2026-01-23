@@ -507,6 +507,10 @@ header.navbar,
     text-align: center;
 }
 
+.paper-card p + p {
+    margin-top: var(--space-sm);
+}
+
 .detail-label {
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -539,6 +543,32 @@ header.navbar,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--space-md);
+    align-items: stretch;
+}
+
+.home-experiencias__grid .paper-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    height: 100%;
+    align-self: stretch;
+}
+
+.home-experiencias__grid .paper-card__copy {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.home-experiencias__grid .paper-card__cta {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.home-experiencias__grid .paper-card__cta .btn {
+    align-self: center;
 }
 
 .home-experiencias__icon {
@@ -563,21 +593,6 @@ header.navbar,
 
 .home-story__collage figure {
     margin: 0;
-}
-
-.home-valores__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-md);
-}
-
-.home-valores__grid article {
-    background: rgba(255,255,255,0.85);
-    border: 1px solid var(--neutral-1);
-    border-radius: var(--radius-soft);
-    padding: var(--space-md);
-    text-align: center;
-    box-shadow: var(--shadow-soft);
 }
 
 .home-valores__grid img {
@@ -1463,11 +1478,33 @@ header.navbar,
 }
 
 .hosteria-grid {
+    --hosteria-gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto 3rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
+    gap: var(--hosteria-gap);
+}
+
+.hosteria-grid__row {
+    display: contents;
+}
+
+@media (min-width: 1024px) {
+    .hosteria-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hosteria-grid__row {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        gap: var(--hosteria-gap);
+    }
+
+    .hosteria-grid__row > .room-card {
+        flex: 0 0 calc((100% - (var(--hosteria-gap) * 2)) / 3);
+    }
 }
 
 .room-card {

@@ -50,33 +50,35 @@
     </div>
   </article>
 
-  <article class="room-card" data-category="triple-twin">
-    <div class="room-card__media">
-      <img src="{% static 'Imagenes/rooms/triple-twin/triple-twin-01.jpg' %}" alt="Triple twin">
-    </div>
-    <div class="room-card__body">
-      <h3>Triple twin</h3>
-      <p>Tres camas individuales, espacio generoso y mucha luz para grupos de amigos o familias que buscan practicidad y confort.</p>
-      <div class="room-card__actions">
-        <button class="btn btn-outline room-photos-btn" data-gallery="triple-twin">Ver fotos</button>
-        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Triple%20twin" target="_blank" rel="noopener">Consultar disponibilidad</a>
+  <div class="hosteria-grid__row">
+    <article class="room-card" data-category="triple-twin">
+      <div class="room-card__media">
+        <img src="{% static 'Imagenes/rooms/triple-twin/triple-twin-01.jpg' %}" alt="Triple twin">
       </div>
-    </div>
-  </article>
+      <div class="room-card__body">
+        <h3>Triple twin</h3>
+        <p>Tres camas individuales, espacio generoso y mucha luz para grupos de amigos o familias que buscan practicidad y confort.</p>
+        <div class="room-card__actions">
+          <button class="btn btn-outline room-photos-btn" data-gallery="triple-twin">Ver fotos</button>
+          <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Triple%20twin" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        </div>
+      </div>
+    </article>
 
-  <article class="room-card" data-category="suites">
-    <div class="room-card__media">
-      <img src="{% static 'Imagenes/rooms/suites/suite-01.jpg' %}" alt="Suites vista al mar">
-    </div>
-    <div class="room-card__body">
-      <h3>Suites vista al mar</h3>
-      <p>Cama king size, ventanales hacia el mar y espacios amplios con toques boutique para descansar con la mejor vista de la hostería.</p>
-      <div class="room-card__actions">
-        <button class="btn btn-outline room-photos-btn" data-gallery="suites">Ver fotos</button>
-        <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Suites%20vista%20al%20mar" target="_blank" rel="noopener">Consultar disponibilidad</a>
+    <article class="room-card" data-category="suites">
+      <div class="room-card__media">
+        <img src="{% static 'Imagenes/rooms/suites/suite-01.jpg' %}" alt="Suites vista al mar">
       </div>
-    </div>
-  </article>
+      <div class="room-card__body">
+        <h3>Suites vista al mar</h3>
+        <p>Cama king size, ventanales hacia el mar y espacios amplios con toques boutique para descansar con la mejor vista de la hostería.</p>
+        <div class="room-card__actions">
+          <button class="btn btn-outline room-photos-btn" data-gallery="suites">Ver fotos</button>
+          <a class="btn btn-primary" href="{{ site_settings.whatsapp_url|default:'https://wa.me/5492804305363' }}?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20de%20Suites%20vista%20al%20mar" target="_blank" rel="noopener">Consultar disponibilidad</a>
+        </div>
+      </div>
+    </article>
+  </div>
 </section>
 
 <div id="room-gallery-modal" class="room-gallery-modal" hidden>
