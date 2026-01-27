@@ -67,24 +67,34 @@
               English
             </button>
           </div>
-          <button
-            type="button"
-            class="btn menu-fullscreen-btn excursions-fullscreen-btn"
+        </div>
+        <div class="menu-toolbar excursions-fullscreen-toolbar">
+          <a
+            href="#"
+            class="menu-fullscreen-btn excursions-fullscreen-trigger"
             data-excursions-fullscreen
           >
             Ver en pantalla completa
-          </button>
+          </a>
         </div>
       </header>
 
       <div class="excursions-pdf-wrapper">
-        <iframe
+        <object
           id="excursions-pdf"
           class="excursions-pdf"
-          src="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+          data="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
           data-src-es="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
           data-src-en="/static/docs/Folleto%20Ingles%20Actividades.pdf"
-        ></iframe>
+          type="application/pdf"
+        >
+          <p>
+            No se pudo cargar el folleto.
+            <a href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf" target="_blank" rel="noopener">
+              Abrir PDF en una nueva pestaña
+            </a>.
+          </p>
+        </object>
       </div>
     </section>
   </main>

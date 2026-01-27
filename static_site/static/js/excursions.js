@@ -1,12 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const iframe = document.getElementById("excursions-pdf");
+  const viewer = document.getElementById("excursions-pdf");
   const langButtons = document.querySelectorAll("[data-lang-toggle]");
   const fullscreenBtn = document.querySelector("[data-excursions-fullscreen]");
 
-  if (!iframe || !langButtons.length) return;
+  if (!viewer || !langButtons.length) return;
 
-  const srcEs = iframe.dataset.srcEs;
-  const srcEn = iframe.dataset.srcEn;
+  const srcEs = viewer.dataset.srcEs;
+  const srcEn = viewer.dataset.srcEn;
+
+  const getCurrentSource = () => {
+    if (viewer.tagName === "OBJECT") {
+      return viewer.data || "";
+    }
+    return viewer.src || "";
+  };
+
+  const setViewerSource = (nextSrc) => {
+    if (viewer.tagName === "OBJECT") {
+      if (viewer.data && viewer.data.endsWith(nextSrc)) return;
+      viewer.data = nextSrc;
+    } else {
+      if (viewer.src && viewer.src.endsWith(nextSrc)) return;
+      viewer.src = nextSrc;
+    }
+  };
 
   const setLang = (lang) => {
     langButtons.forEach((btn) => {
@@ -19,9 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nextSrc = lang === "en" ? srcEn : srcEs;
     if (!nextSrc) return;
-    if (iframe.src && iframe.src.endsWith(nextSrc)) return;
-
-    iframe.src = nextSrc;
+    setViewerSource(nextSrc);
   };
 
   langButtons.forEach((btn) => {
@@ -35,9 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
   setLang("es");
 
   if (fullscreenBtn) {
-    fullscreenBtn.addEventListener("click", () => {
+    fullscreenBtn.addEventListener("click", (event) => {
+      if (event) {
+        event.preventDefault();
+      }
       const openFallback = () => {
-        const pdfUrl = iframe.src || srcEs || srcEn;
+        const pdfUrl = getCurrentSource() || srcEs || srcEn;
         if (pdfUrl) {
           window.open(pdfUrl, "_blank", "noopener");
         }
@@ -45,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         let requestResult;
-        if (iframe.requestFullscreen) {
-          requestResult = iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-          requestResult = iframe.webkitRequestFullscreen();
+        if (viewer.requestFullscreen) {
+          requestResult = viewer.requestFullscreen();
+        } else if (viewer.webkitRequestFullscreen) {
+          requestResult = viewer.webkitRequestFullscreen();
         } else {
           openFallback();
           return;
