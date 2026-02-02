@@ -34,13 +34,15 @@
           {% trans "English" %}
         </button>
       </div>
-      <button
-        type="button"
-        class="btn menu-fullscreen-btn excursions-fullscreen-btn"
-        data-excursions-fullscreen
+      <a
+        class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
+        href="{% static 'docs/Folleto actividades The Paradise Espanol.pdf' %}"
+        target="_blank"
+        rel="noopener"
+        data-excursions-link
       >
         {% trans "Ver en pantalla completa" %}
-      </button>
+      </a>
     </div>
   </header>
 

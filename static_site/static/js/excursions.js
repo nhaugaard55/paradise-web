@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const viewer = document.getElementById("excursions-pdf");
   const langButtons = document.querySelectorAll("[data-lang-toggle]");
-  const fullscreenBtn = document.querySelector("[data-excursions-fullscreen]");
+  const fullscreenLink = document.querySelector("[data-excursions-link]");
 
   if (!viewer || !langButtons.length) return;
 
@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextSrc = lang === "en" ? srcEn : srcEs;
     if (!nextSrc) return;
     setViewerSource(nextSrc);
+    if (fullscreenLink) {
+      fullscreenLink.href = nextSrc;
+    }
   };
 
   langButtons.forEach((btn) => {
@@ -48,36 +51,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setLang("es");
-
-  if (fullscreenBtn) {
-    fullscreenBtn.addEventListener("click", (event) => {
-      if (event) {
-        event.preventDefault();
-      }
-      const openFallback = () => {
-        const pdfUrl = getCurrentSource() || srcEs || srcEn;
-        if (pdfUrl) {
-          window.open(pdfUrl, "_blank", "noopener");
-        }
-      };
-
-      try {
-        let requestResult;
-        if (viewer.requestFullscreen) {
-          requestResult = viewer.requestFullscreen();
-        } else if (viewer.webkitRequestFullscreen) {
-          requestResult = viewer.webkitRequestFullscreen();
-        } else {
-          openFallback();
-          return;
-        }
-
-        if (requestResult && typeof requestResult.catch === "function") {
-          requestResult.catch(openFallback);
-        }
-      } catch (err) {
-        openFallback();
-      }
-    });
-  }
 });
