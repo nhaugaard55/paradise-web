@@ -25,6 +25,16 @@ python3 -m http.server 8000 --bind 0.0.0.0
 
 Luego ingresá a `http://<IP>:8000/` desde el dispositivo. En iOS basta con usar Safari/Chrome y la IP de la Mac; asegurate de que el firewall permita conexiones entrantes para Python.
 
+## Checklist de verificación
+
+1. **Servidor local:** `cd site && python3 -m http.server 8000`.  
+2. **Validador de rutas:** `cd site && python3 validate_static.py`.  
+   - Si todo está en orden imprime “All good…”.  
+   - Si encuentra una ruta rota lista el archivo donde está y el asset faltante.  
+3. **Notas sobre la terminal:**  
+   - Códigos `304` son respuestas “Not Modified” del navegador cuando usa caché; no requieren acción.  
+   - `ConnectionResetError: [Errno 54]` aparece cuando cerrás o recargás una pestaña mientras `http.server` aún está enviando datos; es normal e ignorable.
+
 ## Despliegue
 
 ### Render (hosting estático)
