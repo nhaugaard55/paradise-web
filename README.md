@@ -1,80 +1,62 @@
-# The Paradise · Sitio Django
+# The Paradise · Static Hand-off
 
-Sitio multipágina inspirado en la estructura de https://www.traccionasangre.com.ar con secciones dedicadas para hostería, restaurante y actividades.
+Este repo ahora conserva únicamente la exportación estática lista para integrar en WordPress (o cualquier hosting estático). El viejo proyecto Django quedó archivado en `archive/django/` para referencia histórica.
 
-## Requisitos
+## Estructura clave
 
-- Python 3.13
-- pip
+| Carpeta | Descripción |
+| --- | --- |
+| `site/` | **Fuente de verdad**. Incluye los HTML en `es/` y `en/` más los assets bajo `site/static/`. |
+| `archive/django/` | Copia congelada del proyecto Django original (apps, templates, fixtures, etc.). Podés moverla a un repo aparte siguiendo los pasos de la sección "Resguardar Django". |
 
-> Para despliegue en Render se usa PostgreSQL, por lo que la dependencia `psycopg[binary]` ya está incluida en `requirements.txt`.
-
-## Puesta en marcha
+## Servidor local rápido
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt  # (si ya tenés dependencias instaladas, este paso puede omitirse)
-python manage.py migrate
-python manage.py loaddata core/fixtures/demo_data.json
-python manage.py createsuperuser
-python manage.py runserver
+cd site
+python3 -m http.server 8000
 ```
 
-Luego ingresá a `http://127.0.0.1:8000/`.
+Abrí `http://127.0.0.1:8000/` para navegar. Si necesitás compartir con otra computadora o celular en la misma red:
 
-## Despliegue en Render
+```bash
+IP=$(ipconfig getifaddr en0)   # o usa ifconfig/ipconfig según tu SO
+python3 -m http.server 8000 --bind 0.0.0.0
+```
 
-1. Creá un servicio **Web Service → Python** y una base **PostgreSQL** (free alcanza). Si preferís automatizar todo, podés usar directamente `render.yaml` como blueprint.
-2. Configurá los comandos:
-   - **Build command:** `pip install -r requirements.txt && python manage.py collectstatic --noinput`
-   - **Start command:** `python manage.py migrate --noinput && gunicorn paradise_site.wsgi:application`
-3. Variables recomendadas:
-   - `DJANGO_SECRET_KEY`: generá una random y marcala como secreta.
-   - `DJANGO_ALLOWED_HOSTS`: por ejemplo `localhost,127.0.0.1,paradise-web.onrender.com`.
-   - `DJANGO_DEBUG=0`
-   - `PYTHON_VERSION=3.13.0`
-   - `DATABASE_URL`: Render lo completa automáticamente si ligás la base del paso 1.
-4. Una vez desplegado, abrí una consola en Render y corré `python manage.py loaddata core/fixtures/demo_data.json` si querés precargar la data demo.
+Luego ingresá a `http://<IP>:8000/` desde el dispositivo. En iOS basta con usar Safari/Chrome y la IP de la Mac; asegurate de que el firewall permita conexiones entrantes para Python.
 
-Con esos pasos Render ejecuta `collectstatic` durante el build y corre las migraciones antes de levantar Gunicorn, evitando los errores 500 de tablas inexistentes o manifestos faltantes.
+## Despliegue
 
-## Estructura
+### Render (hosting estático)
+1. Importá el repo en Render.
+2. Elegí **Static Site** y usá `render.yaml` (apunta a `site/` y no necesita build).
+3. Cada cambio en `site/` se publica automáticamente.
 
-- `core` · páginas generales (home, nosotros, contacto) + SiteSettings y formulario de contacto.
-- `menu` · secciones e items de la carta con flags dietarios y descarga de PDF.
-- `hotel` · habitaciones (listado + detalle cada slug).
-- `activities` · actividades con categorías (trekking/mtb/especiales), listado por tabs y fichas detalle estilo Tracción a Sangre.
+### WordPress
+- El HTML/CSS/JS dentro de `site/` puede copiarse sección por sección a bloques personalizados, plantillas de theme o un constructor (Elementor, Gutenberg, etc.).  
+- Las rutas absolutas (`/es/...`, `/static/...`) asumen que el contenido vive en la raíz del dominio; ajustalas si el sitio final usa subdirectorios.
+- Para assets, subí `site/static/` a tu biblioteca/hosting CDN y actualizá las rutas si el CDN entrega otro origen.
 
-Los estilos viven en `static/css/site.css`. Las plantillas se organizan por app en `templates/<app>/`.
+## Resguardar Django (opcional)
 
-## Datos demo
+Para aislar la versión Django en otro repositorio:
 
-El fixture `core/fixtures/demo_data.json` incluye:
+```bash
+cd archive/django
+git init
+git add .
+git commit -m "Bootstrap django archive"
+gh repo create django-archive --private --source=. --remote=origin
+git push -u origin main
+```
 
-- SiteSettings con links reales (mail, WhatsApp, Instagram y Maps).
-- 2 secciones de menú con 6 platos.
-- 4 habitaciones demo.
-- 9 actividades (3 por categoría) con fotos placeholder de Unsplash.
+Luego podés eliminar `archive/django` de este repo si ya no la necesitás.
 
-Podés editar o ampliar la data desde el admin (`/admin/`) usando el superusuario que creaste.
+## Workflow recomendado
 
-## Guía rápida de estilo y assets
+1. Editar HTML/CSS/JS directamente dentro de `site/`.
+2. Probar con `python3 -m http.server`.
+3. Validar en dispositivos reales siguiendo el apartado “Servidor local”.
+4. Deploy a Render u otro hosting estático.
 
-- **Textura y ornamentos**:  
-  - Reemplazá `static/Imagenes/Texturas/paper-texture.jpg` por la textura final (JPG 2000px).  
-  - Los ornamentos del hero fueron removidos (sin ballena/lobos). Otros SVG/PNGs bajo `static/Imagenes/Ornaments/` pueden actualizarse cuando se usen en secciones específicas.
-- **Collages**:  
-  - Las fotos históricas y gastronómicas usan el estilo definido en `static/css/site.css` (bordes suaves + sombra). Solo necesitás colocar las imágenes dentro de las estructuras de collage en `templates/core/about.html` y `templates/menu/menu.html`; no se requieren marcos adicionales.
-- **Cambiar a paleta B**: editá los custom properties del bloque `:root` en `static/css/site.css` (`--brand-*`, `--neutral-*`) y ajustá `--font-heading`/`--font-body` si deseás otras familias.
-- **Cache-buster**: el `<link>` al CSS usa `?v=dev-1`. Incrementá ese sufijo cuando cambies estilos para forzar la recarga.
-- **Verificar fuentes en DevTools**: Network → tildar *Disable cache* → recargar. Confirmá que `site.css?v=dev-1` y las solicitudes a `fonts.googleapis.com`/`fonts.gstatic.com` se descargan con status 200. En *Elements > Computed* inspeccioná un `<h1>` y verificá que `font-family` muestre `Averia Serif Libre`.
-
-### Ornamentos – tamaños por breakpoint
-| Ornamento | Desktop (≥1024px) | Tablet (768–1023px) | Mobile (≤767px) |
-|-----------|-------------------|---------------------|-----------------|
-| Hero overlay | Sin ornamento; overlay oscuro más marcado para legibilidad | | |
-| Watercolor divider | `width: min(100%,1200px)`, `height:110px` | igual que desktop | `height:70px` |
-
-Para reemplazar los archivos:
-- Ajustá `static/Imagenes/Ornaments/watercolor-divider*.{svg,png}` por los nuevos separadores. Ajusta rutas en `site.css` si modificás los nombres.
+Para cambios mayores de diseño mantené sincronizadas las versiones en WordPress copiando el HTML final o usando el archivo como referencia visual.

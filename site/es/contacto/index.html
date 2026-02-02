@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The Paradise · Hostería, Restaurante y Experiencias</title>
-  <meta name="description" content="Hostería, restaurante y excursiones boutique en Puerto Pirámides.">
+<title>Contacto · The Paradise</title>
+  <meta name="description" content="Comunicate con The Paradise en Puerto Pirámides.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,73 +25,53 @@
         <span class="nav-toggle__label">Menú</span>
       </button>
       <nav class="nav-links" id="primary-menu">
-        <a href="/es/" class="is-active">Inicio</a>
+        <a href="/es/">Inicio</a>
         <a href="/es/nosotros/">Nosotros</a>
         <a href="/es/restaurante/">Restaurante</a>
         <a href="/es/hosteria/">Hostería</a>
         <a href="/es/excursiones/">Excursiones</a>
-        <a href="/es/contacto/">Contacto</a>
+        <a href="/es/contacto/" class="is-active">Contacto</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/" class="is-active">ES</a>
+        <a href="/es/contacto/" class="is-active">ES</a>
         <span aria-hidden="true">/</span>
-        <a href="/en/">EN</a>
+        <a href="/en/contact/">EN</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="home-hero fade-in">
-      <div class="hero-slider-bg" aria-hidden="true">
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena 2.JPG');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena.jpg');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio 2.jpg');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio.JPG');"></div>
-      </div>
-      <div class="home-hero__texture" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Puerto Pirámides · Península Valdés</p>
-        <h1>Hostería y restaurante</h1>
-        <p class="hero-subtitle">La atención que esperabas, en el paraíso de la Patagonia.</p>
-        <div class="cta-group">
-          <a class="btn btn-primary" href="/es/hosteria/">Planear estadía</a>
-          <a class="btn btn-ghost" href="/es/restaurante/">Ver restaurante</a>
+    <section class="section">
+      <h1>Contactanos</h1>
+      <p>Coordiná tu estadía, reservas gastronómicas o excursiones especiales. Respondemos por WhatsApp, email o redes sociales.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p><strong>Email:</strong> <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a></p>
+          <p><strong>Teléfono:</strong> <a href="tel:+5492804305363">+54 9 280 4305363</a></p>
+          <p><strong>WhatsApp:</strong> <a class="btn btn-whatsapp" href="https://wa.me/5492804305363" target="_blank" rel="noopener">Chatear ahora</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/theparadisepiramides" target="_blank" rel="noopener">@theparadisepiramides</a></p>
+          <p><strong>Dirección:</strong> Segunda Bajada al Mar, Puerto Pirámides, Chubut - Patagonia Argentina</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section home-experiencias">
-      <div class="home-experiencias__grid">
-        <article class="paper-card">
-          <h3>Hostería</h3>
-          <div class="paper-card__copy">
-            <p>Suites boutique pensadas para el descanso, con luz natural, detalles cálidos y una atmósfera serena frente al paisaje patagónico.</p>
-            <p>12 suites curadas, ambientes tranquilos y el ritmo pausado ideal para desconectar junto al mar.</p>
-          </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/es/hosteria/">Explorar suites</a>
-          </div>
-        </article>
-        <article class="paper-card">
-          <h3>Restaurante</h3>
-          <div class="paper-card__copy">
-            <p>Cocina patagónica de impronta casera, con productos frescos de la región y una carta simple, honesta y cuidada.</p>
-            <p>Sabores locales, vinos seleccionados y una propuesta pensada para disfrutar sin apuro.</p>
-          </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/es/restaurante/">Ver carta</a>
-          </div>
-        </article>
-        <article class="paper-card">
-          <h3>Excursiones</h3>
-          <div class="paper-card__copy">
-            <p>Experiencias para descubrir la Península Valdés y su entorno: naturaleza, fauna y paisajes únicos todo el año.</p>
-            <p>Salidas guiadas por anfitriones locales, con recorridos tranquilos y en contacto directo con el lugar.</p>
-          </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/es/excursiones/">Ver experiencias</a>
-          </div>
-        </article>
+        <div class="contact-card contact-card--cta">
+          <h2>Coordiná tu visita</h2>
+          <p>Completá el formulario y te respondemos con los detalles para tu estadía o reserva.</p>
+          <form id="contactForm" class="contact-form">
+            <div class="form-field">
+              <label for="contactName">Nombre</label>
+              <input type="text" id="contactName" name="name" placeholder="Tu nombre">
+            </div>
+            <div class="form-field">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="tu@email.com">
+            </div>
+            <div class="form-field">
+              <label for="contactMessage">Mensaje</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Contanos qué necesitás"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <p class="contact-help">Si no se abre tu email, escribinos a <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.</p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -131,6 +111,7 @@
     <button class="footer-back-to-top" type="button" aria-label="Volver arriba">⌃</button>
   </footer>
 
+  <script src="/static/js/contact-form.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');

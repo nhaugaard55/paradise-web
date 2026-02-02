@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Excursions · The Paradise</title>
-  <meta name="description" content="Experiences across Valdés Peninsula all year long.">
+<title>Contact · The Paradise</title>
+  <meta name="description" content="Get in touch with The Paradise boutique inn.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,74 +29,49 @@
         <a href="/en/about/">About</a>
         <a href="/en/restaurante/">Restaurant</a>
         <a href="/en/hosteria/">Inn</a>
-        <a href="/en/excursiones/" class="is-active">Excursions</a>
-        <a href="/en/contact/">Contact</a>
+        <a href="/en/excursiones/">Excursions</a>
+        <a href="/en/contact/" class="is-active">Contact</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/excursiones/">ES</a>
+        <a href="/es/contacto/">ES</a>
         <span aria-hidden="true">/</span>
-        <a href="/en/excursiones/" class="is-active">EN</a>
+        <a href="/en/contact/" class="is-active">EN</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="excursions-page">
-      <header class="excursions-header">
-        <h1>Activity guide</h1>
-        <p>At The Paradise we want you to experience Puerto Pirámides to the fullest. These are the activities we usually recommend to our guests. All outings depend on availability and weather conditions.</p>
-
-        <div class="excursions-toolbar">
-          <div class="excursions-lang-toggle" role="tablist" aria-label="Brochure language">
-            <button
-              type="button"
-              class="excursions-lang-btn is-active"
-              data-lang-toggle="es"
-              role="tab"
-              aria-selected="true"
-            >
-              Spanish
-            </button>
-            <button
-              type="button"
-              class="excursions-lang-btn"
-              data-lang-toggle="en"
-              role="tab"
-              aria-selected="false"
-            >
-              English
-            </button>
-          </div>
+    <section class="section">
+      <h1>Contact us</h1>
+      <p>Coordinate your stay, dining reservations, or special excursions. We reply via WhatsApp, email, or social media.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p><strong>Email:</strong> <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+5492804305363">+54 9 280 4305363</a></p>
+          <p><strong>WhatsApp:</strong> <a class="btn btn-whatsapp" href="https://wa.me/5492804305363" target="_blank" rel="noopener">Chat now</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/theparadisepiramides" target="_blank" rel="noopener">@theparadisepiramides</a></p>
+          <p><strong>Address:</strong> Second Beach Access, Puerto Pirámides, Argentine Patagonia</p>
         </div>
-        <div class="menu-toolbar excursions-fullscreen-toolbar">
-          <a
-            class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
-            href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
-            target="_blank"
-            rel="noopener"
-            data-excursions-link
-          >
-            View full screen
-          </a>
+        <div class="contact-card contact-card--cta">
+          <h2>Plan your visit</h2>
+          <p>Complete the form and we'll get back to you with availability and tailored suggestions.</p>
+          <form id="contactForm" class="contact-form">
+            <div class="form-field">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" name="name" placeholder="Your name">
+            </div>
+            <div class="form-field">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" name="email" placeholder="you@email.com">
+            </div>
+            <div class="form-field">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us what you need"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+            <p class="contact-help">If your email app doesn't open, write to <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.</p>
+          </form>
         </div>
-      </header>
-
-      <div class="excursions-pdf-wrapper">
-        <object
-          id="excursions-pdf"
-          class="excursions-pdf"
-          data="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
-          data-src-es="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
-          data-src-en="/static/docs/Folleto%20Ingles%20Actividades.pdf"
-          type="application/pdf"
-        >
-          <p>
-            The brochure could not be loaded.
-            <a href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf" target="_blank" rel="noopener">
-              Open PDF in a new tab
-            </a>.
-          </p>
-        </object>
       </div>
     </section>
   </main>
@@ -136,7 +111,7 @@
     <button class="footer-back-to-top" type="button" aria-label="Back to top">⌃</button>
   </footer>
 
-  <script src="/static/js/excursions.js" defer></script>
+  <script src="/static/js/contact-form.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contacto · The Paradise</title>
-  <meta name="description" content="Comunicate con The Paradise en Puerto Pirámides.">
+<title>Excursiones · The Paradise</title>
+  <meta name="description" content="Experiencias para recorrer Península Valdés todo el año.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
@@ -29,49 +29,74 @@
         <a href="/es/nosotros/">Nosotros</a>
         <a href="/es/restaurante/">Restaurante</a>
         <a href="/es/hosteria/">Hostería</a>
-        <a href="/es/excursiones/">Excursiones</a>
-        <a href="/es/contacto/" class="is-active">Contacto</a>
+        <a href="/es/excursiones/" class="is-active">Excursiones</a>
+        <a href="/es/contacto/">Contacto</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/contacto/" class="is-active">ES</a>
+        <a href="/es/excursiones/" class="is-active">ES</a>
         <span aria-hidden="true">/</span>
-        <a href="/en/contact/">EN</a>
+        <a href="/en/excursiones/">EN</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section">
-      <h1>Contactanos</h1>
-      <p>Coordiná tu estadía, reservas gastronómicas o excursiones especiales. Respondemos por WhatsApp, email o redes sociales.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <p><strong>Email:</strong> <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a></p>
-          <p><strong>Teléfono:</strong> <a href="tel:+5492804305363">+54 9 280 4305363</a></p>
-          <p><strong>WhatsApp:</strong> <a class="btn btn-whatsapp" href="https://wa.me/5492804305363" target="_blank" rel="noopener">Chatear ahora</a></p>
-          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/theparadisepiramides" target="_blank" rel="noopener">@theparadisepiramides</a></p>
-          <p><strong>Dirección:</strong> Segunda Bajada al Mar, Puerto Pirámides, Chubut - Patagonia Argentina</p>
+    <section class="excursions-page">
+      <header class="excursions-header">
+        <h1>Guía de actividades</h1>
+        <p>En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a disponibilidad y condiciones del clima.</p>
+
+        <div class="excursions-toolbar">
+          <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
+            <button
+              type="button"
+              class="excursions-lang-btn is-active"
+              data-lang-toggle="es"
+              role="tab"
+              aria-selected="true"
+            >
+              Español
+            </button>
+            <button
+              type="button"
+              class="excursions-lang-btn"
+              data-lang-toggle="en"
+              role="tab"
+              aria-selected="false"
+            >
+              English
+            </button>
+          </div>
         </div>
-        <div class="contact-card contact-card--cta">
-          <h2>Coordiná tu visita</h2>
-          <p>Completá el formulario y te respondemos con los detalles para tu estadía o reserva.</p>
-          <form id="contactForm" class="contact-form">
-            <div class="form-field">
-              <label for="contactName">Nombre</label>
-              <input type="text" id="contactName" name="name" placeholder="Tu nombre">
-            </div>
-            <div class="form-field">
-              <label for="contactEmail">Email</label>
-              <input type="email" id="contactEmail" name="email" placeholder="tu@email.com">
-            </div>
-            <div class="form-field">
-              <label for="contactMessage">Mensaje</label>
-              <textarea id="contactMessage" name="message" rows="5" placeholder="Contanos qué necesitás"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <p class="contact-help">Si no se abre tu email, escribinos a <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.</p>
-          </form>
+        <div class="menu-toolbar excursions-fullscreen-toolbar">
+          <a
+            class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
+            href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+            target="_blank"
+            rel="noopener"
+            data-excursions-link
+          >
+            Ver en pantalla completa
+          </a>
         </div>
+      </header>
+
+      <div class="excursions-pdf-wrapper">
+        <object
+          id="excursions-pdf"
+          class="excursions-pdf"
+          data="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+          data-src-es="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+          data-src-en="/static/docs/Folleto%20Ingles%20Actividades.pdf"
+          type="application/pdf"
+        >
+          <p>
+            No se pudo cargar el folleto.
+            <a href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf" target="_blank" rel="noopener">
+              Abrir PDF en una nueva pestaña
+            </a>.
+          </p>
+        </object>
       </div>
     </section>
   </main>
@@ -111,7 +136,7 @@
     <button class="footer-back-to-top" type="button" aria-label="Volver arriba">⌃</button>
   </footer>
 
-  <script src="/static/js/contact-form.js" defer></script>
+  <script src="/static/js/excursions.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');

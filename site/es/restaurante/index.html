@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Excursiones · The Paradise</title>
-  <meta name="description" content="Experiencias para recorrer Península Valdés todo el año.">
+<title>Restaurante · The Paradise</title>
+  <meta name="description" content="Carta ilustrada del restaurante The Paradise en Puerto Pirámides.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,81 +25,78 @@
         <span class="nav-toggle__label">Menú</span>
       </button>
       <nav class="nav-links" id="primary-menu">
-        <a href="/es/">Inicio</a>
+        <a href="/es/" class="is-active">Inicio</a>
         <a href="/es/nosotros/">Nosotros</a>
         <a href="/es/restaurante/">Restaurante</a>
         <a href="/es/hosteria/">Hostería</a>
-        <a href="/es/excursiones/" class="is-active">Excursiones</a>
+        <a href="/es/excursiones/">Excursiones</a>
         <a href="/es/contacto/">Contacto</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/excursiones/" class="is-active">ES</a>
+        <a href="/es/restaurante/" class="is-active">ES</a>
         <span aria-hidden="true">/</span>
-        <a href="/en/excursiones/">EN</a>
+        <a href="/en/restaurante/">EN</a>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="excursions-page">
-      <header class="excursions-header">
-        <h1>Guía de actividades</h1>
-        <p>En The Paradise queremos que vivas Puerto Pirámides al máximo. Estas son las actividades que solemos recomendar a nuestros huéspedes. Todas las salidas están sujetas a disponibilidad y condiciones del clima.</p>
-
-        <div class="excursions-toolbar">
-          <div class="excursions-lang-toggle" role="tablist" aria-label="Idioma del folleto">
-            <button
-              type="button"
-              class="excursions-lang-btn is-active"
-              data-lang-toggle="es"
-              role="tab"
-              aria-selected="true"
-            >
-              Español
-            </button>
-            <button
-              type="button"
-              class="excursions-lang-btn"
-              data-lang-toggle="en"
-              role="tab"
-              aria-selected="false"
-            >
-              English
-            </button>
-          </div>
+  <section class="menu-section">
+    <div class="menu-section-inner">
+      <div class="menu-header">
+        <div class="menu-header__copy">
+          <h1 class="menu-title">Carta ilustrada</h1>
+          <p class="menu-lead">
+            Te dejamos nuestra carta completa para que puedas explorar platos, vinos y postres antes o durante tu visita.
+            Los precios y opciones pueden variar según temporada.
+          </p>
         </div>
-        <div class="menu-toolbar excursions-fullscreen-toolbar">
+        <div class="menu-toolbar">
           <a
-            class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
-            href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+            href="/static/docs/Menu%20digital%20paradise.pdf"
             target="_blank"
             rel="noopener"
-            data-excursions-link
+            class="btn btn-outline menu-fullscreen-btn"
           >
             Ver en pantalla completa
           </a>
         </div>
-      </header>
-
-      <div class="excursions-pdf-wrapper">
-        <object
-          id="excursions-pdf"
-          class="excursions-pdf"
-          data="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
-          data-src-es="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
-          data-src-en="/static/docs/Folleto%20Ingles%20Actividades.pdf"
-          type="application/pdf"
-        >
-          <p>
-            No se pudo cargar el folleto.
-            <a href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf" target="_blank" rel="noopener">
-              Abrir PDF en una nueva pestaña
-            </a>.
-          </p>
-        </object>
       </div>
-    </section>
-  </main>
+      <div class="menu-pdf-wrapper">
+        <div class="menu-pdf-frame">
+          <object
+            id="menu-pdf-embed"
+            data="/static/docs/Menu%20digital%20paradise.pdf"
+            type="application/pdf"
+          >
+            <p>
+              No se pudo cargar la carta.
+              <a href="/static/docs/Menu%20digital%20paradise.pdf" target="_blank" rel="noopener">
+                Abrir menú en una nueva pestaña
+              </a>.
+            </p>
+          </object>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section collage-nosotros">
+    <figure class="collage-item" tabindex="0">
+      <img src="/static/Imagenes/Platos/plato-01.jpg" alt="Parrillada de mar">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+      <img src="/static/Imagenes/Platos/plato-02.jpg" alt="Ostras gratinadas">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+      <img src="/static/Imagenes/Platos/plato-03.jpg" alt="Langostinos con papas">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+      <img src="/static/Imagenes/Platos/plato-04.jpg" alt="Pizza de mar">
+    </figure>
+    <figure class="collage-item" tabindex="0">
+      <img src="/static/Imagenes/Platos/plato-05.jpg" alt="Ilustración del menú">
+    </figure>
+  </section>
 
   <footer class="site-footer legacy-footer">
     <div class="footer-inner">
@@ -136,7 +133,6 @@
     <button class="footer-back-to-top" type="button" aria-label="Volver arriba">⌃</button>
   </footer>
 
-  <script src="/static/js/excursions.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');
