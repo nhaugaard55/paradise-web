@@ -1976,3 +1976,39 @@ header.navbar,
     display: contents;
   }
 }
+
+/* Nosotros: ocultar captions del lightbox */
+.lightbox-nosotros .lightbox-caption,
+.lightbox-caption,
+p.lightbox-caption,
+[data-lightbox-caption] {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Nosotros: ocultar captions del lightbox */
+.lightbox-nosotros .lightbox-caption,
+.lightbox-caption,
+p.lightbox-caption,
+[data-lightbox-caption] {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* Nosotros: ocultar captions del lightbox */
+.lightbox-nosotros .lightbox-caption,
+.lightbox-caption,
+p.lightbox-caption,
+[data-lightbox-caption] {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
