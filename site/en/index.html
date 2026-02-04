@@ -29,74 +29,380 @@
         <span class="nav-toggle__label">Menu</span>
       </button>
       <nav class="nav-links" id="primary-menu">
-        <a href="/en/" class="is-active">Home</a>
-        <a href="/en/about/">About</a>
-        <a href="/en/restaurante/">Restaurant</a>
-        <a href="/en/hosteria/">Inn</a>
-        <a href="/en/excursiones/">Excursions</a>
-        <a href="/en/contact/">Contact</a>
+        <a href="#home" class="is-active" data-scroll>Home</a>
+        <a href="#about" data-scroll>About</a>
+        <a href="#restaurant" data-scroll>Restaurant</a>
+        <a href="#lodging" data-scroll>Inn</a>
+        <a href="#excursions" data-scroll>Excursions</a>
+        <a href="#contact" data-scroll>Contact</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/">ES</a>
+        <a href="/es/#home" data-lang-link="es">ES</a>
         <span aria-hidden="true">/</span>
-        <a href="/en/" class="is-active">EN</a>
+        <a href="/en/#home" class="is-active" data-lang-link="en">EN</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="home-hero fade-in">
-      <div class="hero-slider-bg" aria-hidden="true">
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena 2.JPG');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena.jpg');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio 2.jpg');"></div>
-        <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio.JPG');"></div>
+    <section id="home">
+      <section class="home-hero fade-in">
+        <div class="hero-slider-bg" aria-hidden="true">
+          <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena 2.JPG');"></div>
+          <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Patio cola de ballena.jpg');"></div>
+          <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio 2.jpg');"></div>
+          <div class="hero-slide" style="background-image:url('/static/Imagenes/Home/Atardecer vista patio.JPG');"></div>
+        </div>
+        <div class="home-hero__texture" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Puerto Pirámides · Valdés Peninsula</p>
+          <h1>Boutique inn & restaurant</h1>
+          <p class="hero-subtitle">Warm hospitality in Patagonia's paradise.</p>
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#lodging" data-scroll>Plan your stay</a>
+            <a class="btn btn-ghost" href="#restaurant" data-scroll>Explore the restaurant</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-experiencias">
+        <div class="home-experiencias__grid">
+          <article class="paper-card">
+            <h3>Inn</h3>
+            <div class="paper-card__copy">
+              <p>Boutique suites designed for rest, with natural light, warm details and a serene atmosphere facing the Patagonian landscape.</p>
+              <p>Twelve curated suites, quiet spaces and the slow rhythm that invites you to switch off by the sea.</p>
+            </div>
+            <div class="paper-card__cta">
+              <a class="btn btn-ghost" href="#lodging" data-scroll>Discover the suites</a>
+            </div>
+          </article>
+          <article class="paper-card">
+            <h3>Restaurant</h3>
+            <div class="paper-card__copy">
+              <p>Patagonian cuisine with a homemade spirit, fresh regional produce and a simple, honest, carefully crafted menu.</p>
+              <p>Local flavors, selected wines and a proposal created to be enjoyed without rushing.</p>
+            </div>
+            <div class="paper-card__cta">
+              <a class="btn btn-ghost" href="#restaurant" data-scroll>View the menu</a>
+            </div>
+          </article>
+          <article class="paper-card">
+            <h3>Excursions</h3>
+            <div class="paper-card__copy">
+              <p>Experiences to discover Valdés Peninsula and its surroundings: nature, wildlife and unique landscapes all year round.</p>
+              <p>Guided outings with local hosts, relaxed routes and close contact with the place.</p>
+            </div>
+            <div class="paper-card__cta">
+              <a class="btn btn-ghost" href="#excursions" data-scroll>See the experiences</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section id="about">
+      <section class="section">
+        <h1>Our story</h1>
+        <p>Since 1986 we've chosen Puerto Pirámides as our place in the world. Everything began when Mumo discovered this small coastal town and, together with Malvina, fell in love with a corner that would stay with them forever. In those youthful years, between studies and travels, the dream of building a space of their own by the sea was born.</p>
+        <p>The old Hotel Español was the setting for the first steps: an empty hall, a simple pub, and a great desire to welcome families, travelers, and friends. That small beginning eventually became a boutique inn with its own restaurant, where Patagonian warmth and a family spirit can be felt in every detail.</p>
+        <p>Over the years, The Paradise grew step by step. We improved spaces, expanded services, and learned from every guest who chose us. Our families, friends, and community joined the project, helping shape a place that now combines comfort, Patagonian cuisine, and the simple, authentic essence of life on the peninsula.</p>
+        <p>We're inspired by the nature around us, the history of this place, and the people who pass through it. We believe in welcoming with kindness, listening, improving, and sharing everything that makes Puerto Pirámides special. Every served table, every conversation, every visit, and every return are part of the heart of The Paradise.</p>
+        <p>Today, decades later, we continue with the same passion: creating a warm, honest, close space where every guest feels at home and can discover the best of this Patagonian corner we love so much.</p>
+      </section>
+
+      <section class="section collage-nosotros" data-lightbox-gallery>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-01.jpg" alt="Original facade of The Paradise">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-02.jpg" alt="Team in the early days of The Paradise">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-03.jpg" alt="Interior of the old pub">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-04.jpg" alt="Classic restaurant dish">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-05.jpg" alt="Moments on the peninsula">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-06.jpg" alt="Family and friends at The Paradise">
+        </figure>
+      </section>
+
+      <div class="lightbox-nosotros" data-lightbox-modal hidden aria-modal="true" role="dialog" aria-label="Historic gallery">
+        <div class="lightbox-inner" role="document">
+          <button class="lightbox-close" type="button" aria-label="Close">×</button>
+          <button class="lightbox-nav prev" type="button" aria-label="Previous photo">‹</button>
+          <img src="" alt="" data-lightbox-image>
+          <p class="lightbox-caption" data-lightbox-caption></p>
+          <button class="lightbox-nav next" type="button" aria-label="Next photo">›</button>
+        </div>
       </div>
-      <div class="home-hero__texture" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Puerto Pirámides · Valdés Peninsula</p>
-        <h1>Boutique inn & restaurant</h1>
-        <p class="hero-subtitle">Warm hospitality in Patagonia's paradise.</p>
-        <div class="cta-group">
-          <a class="btn btn-primary" href="/en/hosteria/">Plan your stay</a>
-          <a class="btn btn-ghost" href="/en/restaurante/">Explore the restaurant</a>
+
+      <section class="section">
+        <h2>Our identity</h2>
+        <ul class="details-list">
+          <li>Embrace the love for the land, wildlife, and natural treasures around us.</li>
+          <li>Pass on a living heritage to new generations, shared among guests, neighbors, and our team.</li>
+          <li>Create comfortable, safe experiences, listening to every comment to keep improving.</li>
+          <li>Recommend the peninsula's standout activities with local guides.</li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="restaurant">
+      <section class="menu-section">
+        <div class="menu-section-inner">
+          <div class="menu-header">
+            <div class="menu-header__copy">
+              <h1 class="menu-title">Illustrated menu</h1>
+              <p class="menu-lead">
+                Browse the full menu so you can explore dishes, wines and desserts before or during your visit.
+                Prices and availability may change depending on the season.
+              </p>
+            </div>
+            <div class="menu-toolbar">
+              <a
+                href="/static/docs/Menu%20digital%20paradise.pdf"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline menu-fullscreen-btn"
+              >
+                View fullscreen
+              </a>
+            </div>
+          </div>
+          <div class="menu-pdf-wrapper">
+            <div class="menu-pdf-frame">
+              <object
+                id="menu-pdf-embed"
+                data="/static/docs/Menu%20digital%20paradise.pdf"
+                type="application/pdf"
+              >
+                <p>
+                  The menu could not be loaded.
+                  <a href="/static/docs/Menu%20digital%20paradise.pdf" target="_blank" rel="noopener">
+                    Open menu in a new tab
+                  </a>.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section collage-nosotros">
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Platos/plato-01.jpg" alt="Seafood grill">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Platos/plato-02.jpg" alt="Gratinated oysters">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Platos/plato-03.jpg" alt="Prawns with potatoes">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Platos/plato-04.jpg" alt="Sea pizza">
+        </figure>
+        <figure class="collage-item" tabindex="0">
+          <img src="/static/Imagenes/Platos/plato-05.jpg" alt="Menu illustration">
+        </figure>
+      </section>
+    </section>
+
+    <section id="lodging">
+      <section class="section hosteria-hero">
+        <h1>Inn</h1>
+        <p>Boutique rooms inspired by the Valdés Peninsula landscape. Pick the category that fits your getaway.</p>
+      </section>
+
+      <section class="section hosteria-grid">
+        <article class="room-card" data-category="doble-matrimonial">
+          <div class="room-card__media">
+            <img src="/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-01.jpg" alt="King double">
+          </div>
+          <div class="room-card__body">
+            <h3>King double</h3>
+            <p>Rooms for two with a king bed, warm light and a peaceful vibe to unwind after a beach day or excursion.</p>
+            <div class="room-card__actions">
+              <button class="btn btn-outline room-photos-btn" data-gallery="doble-matrimonial">View photos</button>
+              <a class="btn btn-primary" href="https://wa.me/5492804305363?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20for%20the%20King%20double" target="_blank" rel="noopener">Check availability</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card" data-category="doble-twin">
+          <div class="room-card__media">
+            <img src="/static/Imagenes/rooms/doble-twin/doble-twin-01.jpg" alt="Twin double">
+          </div>
+          <div class="room-card__body">
+            <h3>Twin double</h3>
+            <p>Two individual beds for friends or family, in bright and functional spaces that favor true rest.</p>
+            <div class="room-card__actions">
+              <button class="btn btn-outline room-photos-btn" data-gallery="doble-twin">View photos</button>
+              <a class="btn btn-primary" href="https://wa.me/5492804305363?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20for%20the%20Twin%20double" target="_blank" rel="noopener">Check availability</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="room-card" data-category="triple-matrimonial-single">
+          <div class="room-card__media">
+            <img src="/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-01.jpg" alt="Triple king + single">
+          </div>
+          <div class="room-card__body">
+            <h3>Triple king + single</h3>
+            <p>Perfect for families: a king bed plus an extra single, lots of warmth and room to relax after exploring.</p>
+            <div class="room-card__actions">
+              <button class="btn btn-outline room-photos-btn" data-gallery="triple-matrimonial-single">View photos</button>
+              <a class="btn btn-primary" href="https://wa.me/5492804305363?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20for%20the%20Triple%20king%20%2B%20single" target="_blank" rel="noopener">Check availability</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="hosteria-grid__row">
+          <article class="room-card" data-category="triple-twin">
+            <div class="room-card__media">
+              <img src="/static/Imagenes/rooms/triple-twin/triple-twin-01.jpg" alt="Triple twin">
+            </div>
+            <div class="room-card__body">
+              <h3>Triple twin</h3>
+              <p>Three single beds, generous space and plenty of light for groups who want practicality without giving up comfort.</p>
+              <div class="room-card__actions">
+                <button class="btn btn-outline room-photos-btn" data-gallery="triple-twin">View photos</button>
+                <a class="btn btn-primary" href="https://wa.me/5492804305363?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20for%20the%20Triple%20twin" target="_blank" rel="noopener">Check availability</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="room-card" data-category="suites">
+            <div class="room-card__media">
+              <img src="/static/Imagenes/rooms/suites/suite-01.jpg" alt="Oceanfront suites">
+            </div>
+            <div class="room-card__body">
+              <h3>Oceanfront suites</h3>
+              <p>King-size bed, picture windows facing the sea and spacious boutique interiors for the best view in the inn.</p>
+              <div class="room-card__actions">
+                <button class="btn btn-outline room-photos-btn" data-gallery="suites">View photos</button>
+                <a class="btn btn-primary" href="https://wa.me/5492804305363?text=Hi%2C%20I%20would%20like%20to%20check%20availability%20for%20the%20Oceanfront%20suites" target="_blank" rel="noopener">Check availability</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div id="room-gallery-modal" class="room-gallery-modal" hidden>
+        <div class="room-gallery-modal__backdrop" data-close="true"></div>
+        <div class="room-gallery-modal__dialog" role="dialog" aria-modal="true" aria-label="Room gallery">
+          <button class="room-gallery-modal__close" type="button" aria-label="Close">×</button>
+          <div class="room-gallery-modal__content">
+            <img id="room-gallery-image" src="" alt="Room photo">
+            <div class="room-gallery-modal__controls">
+              <button class="room-gallery-modal__nav room-gallery-modal__nav--prev" type="button" aria-label="Previous photo">‹</button>
+              <button class="room-gallery-modal__nav room-gallery-modal__nav--next" type="button" aria-label="Next photo">›</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section home-experiencias">
-      <div class="home-experiencias__grid">
-        <article class="paper-card">
-          <h3>Inn</h3>
-          <div class="paper-card__copy">
-            <p>Boutique suites designed for rest, with natural light, warm details and a serene atmosphere facing the Patagonian landscape.</p>
-            <p>Twelve curated suites, quiet spaces and the slow rhythm that invites you to switch off by the sea.</p>
+    <section id="excursions">
+      <section class="excursions-page">
+        <header class="excursions-header">
+          <h1>Activity guide</h1>
+          <p>At The Paradise we want you to experience Puerto Pirámides to the fullest. These are the activities we usually recommend to our guests. All outings depend on availability and weather conditions.</p>
+
+          <div class="excursions-toolbar">
+            <div class="excursions-lang-toggle" role="tablist" aria-label="Brochure language">
+              <button
+                type="button"
+                class="excursions-lang-btn is-active"
+                data-lang-toggle="es"
+                role="tab"
+                aria-selected="true"
+              >
+                Spanish
+              </button>
+              <button
+                type="button"
+                class="excursions-lang-btn"
+                data-lang-toggle="en"
+                role="tab"
+                aria-selected="false"
+              >
+                English
+              </button>
+            </div>
           </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/en/hosteria/">Discover the suites</a>
+          <div class="menu-toolbar excursions-fullscreen-toolbar">
+            <a
+              class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
+              href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+              target="_blank"
+              rel="noopener"
+              data-excursions-link
+            >
+              View full screen
+            </a>
           </div>
-        </article>
-        <article class="paper-card">
-          <h3>Restaurant</h3>
-          <div class="paper-card__copy">
-            <p>Patagonian cuisine with a homemade spirit, fresh regional produce and a simple, honest, carefully crafted menu.</p>
-            <p>Local flavors, selected wines and a proposal created to be enjoyed without rushing.</p>
+        </header>
+
+        <div class="excursions-pdf-wrapper">
+          <object
+            id="excursions-pdf"
+            class="excursions-pdf"
+            data="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+            data-src-es="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf"
+            data-src-en="/static/docs/Folleto%20Ingles%20Actividades.pdf"
+            type="application/pdf"
+          >
+            <p>
+              The brochure could not be loaded.
+              <a href="/static/docs/Folleto%20actividades%20The%20Paradise%20Espanol.pdf" target="_blank" rel="noopener">
+                Open PDF in a new tab
+              </a>.
+            </p>
+          </object>
+        </div>
+      </section>
+    </section>
+
+    <section id="contact">
+      <section class="section">
+        <h1>Contact us</h1>
+        <p>Coordinate your stay, dining reservations, or special excursions. We reply via WhatsApp, email, or social media.</p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <p><strong>Email:</strong> <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+5492804305363">+54 9 280 4305363</a></p>
+            <p><strong>WhatsApp:</strong> <a class="btn btn-whatsapp" href="https://wa.me/5492804305363" target="_blank" rel="noopener">Chat now</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/theparadisepiramides" target="_blank" rel="noopener">@theparadisepiramides</a></p>
+            <p><strong>Address:</strong> Second Beach Access, Puerto Pirámides, Argentine Patagonia</p>
           </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/en/restaurante/">View the menu</a>
+          <div class="contact-card contact-card--cta">
+            <h2>Plan your visit</h2>
+            <p>Complete the form and we'll get back to you with availability and tailored suggestions.</p>
+            <form id="contactForm" class="contact-form">
+              <div class="form-field">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Your name">
+              </div>
+              <div class="form-field">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" name="email" placeholder="you@email.com">
+              </div>
+              <div class="form-field">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us what you need"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send</button>
+              <p class="contact-help">If your email app doesn't open, write to <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.</p>
+            </form>
           </div>
-        </article>
-        <article class="paper-card">
-          <h3>Excursions</h3>
-          <div class="paper-card__copy">
-            <p>Experiences to discover Valdés Peninsula and its surroundings: nature, wildlife and unique landscapes all year round.</p>
-            <p>Guided outings with local hosts, relaxed routes and close contact with the place.</p>
-          </div>
-          <div class="paper-card__cta">
-            <a class="btn btn-ghost" href="/en/excursiones/">See the experiences</a>
-          </div>
-        </article>
-      </div>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -135,6 +441,54 @@
     <button class="footer-back-to-top" type="button" aria-label="Back to top">⌃</button>
   </footer>
 
+  <script>
+    window.hosteriaGalleries = {
+      'doble-matrimonial': [
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-01.jpg',
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-02.jpg',
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-03.jpg',
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-04.jpg',
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-05.jpg',
+        '/static/Imagenes/rooms/doble-matrimonial/doble-matrimonial-06.jpg'
+      ],
+      'doble-twin': [
+        '/static/Imagenes/rooms/doble-twin/doble-twin-01.jpg',
+        '/static/Imagenes/rooms/doble-twin/doble-twin-02.jpg',
+        '/static/Imagenes/rooms/doble-twin/doble-twin-03.jpg',
+        '/static/Imagenes/rooms/doble-twin/doble-twin-04.jpg',
+        '/static/Imagenes/rooms/doble-twin/doble-twin-05.jpg',
+        '/static/Imagenes/rooms/doble-twin/doble-twin-06.jpg'
+      ],
+      'triple-matrimonial-single': [
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-01.jpg',
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-02.jpg',
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-03.jpg',
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-04.jpg',
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-05.jpg',
+        '/static/Imagenes/rooms/triple-matrimonial-single/triple-matrimonial-single-06.jpg'
+      ],
+      'triple-twin': [
+        '/static/Imagenes/rooms/triple-twin/triple-twin-01.jpg',
+        '/static/Imagenes/rooms/triple-twin/triple-twin-02.jpg',
+        '/static/Imagenes/rooms/triple-twin/triple-twin-03.jpg',
+        '/static/Imagenes/rooms/triple-twin/triple-twin-04.jpg',
+        '/static/Imagenes/rooms/triple-twin/triple-twin-05.jpg'
+      ],
+      'suites': [
+        '/static/Imagenes/rooms/suites/suite-01.jpg',
+        '/static/Imagenes/rooms/suites/suite-02.jpg',
+        '/static/Imagenes/rooms/suites/suite-03.jpg',
+        '/static/Imagenes/rooms/suites/suite-04.jpg',
+        '/static/Imagenes/rooms/suites/suite-05.jpg',
+        '/static/Imagenes/rooms/suites/suite-06.jpg'
+      ]
+    };
+  </script>
+  <script src="/static/js/lightbox-nosotros.js" defer></script>
+  <script src="/static/js/hosteria-gallery.js" defer></script>
+  <script src="/static/js/excursions.js" defer></script>
+  <script src="/static/js/contact-form.js" defer></script>
+  <script src="/static/js/onepage.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');

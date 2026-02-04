@@ -8,6 +8,7 @@
     --neutral-1: #d9c9ba;
     --neutral-2: #a28d7d;
     --neutral-3: #6b5a4d;
+    --nav-offset: 110px;
 
     /* Typography */
     --font-heading: 'Averia Serif Libre', 'Playfair Display', 'Times New Roman', serif;
@@ -45,6 +46,10 @@ body {
     background-size: cover;
     background-attachment: fixed;
     line-height: 1.6;
+}
+
+main > section[id] {
+    scroll-margin-top: var(--nav-offset, 110px);
 }
 
 img {

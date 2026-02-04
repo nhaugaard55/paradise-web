@@ -68,7 +68,7 @@ def main():
             if not target.exists():
                 missing_assets.append((file_path.relative_to(SITE_DIR), "/" + cleaned))
 
-        if 'href="#' in text:
+        if re.search(r'href\s*=\s*[\'\"]#\s*[\'\"]', text):
             bad_links.append(file_path.relative_to(SITE_DIR))
 
     missing_pages = [path.relative_to(SITE_DIR) for path in REQUIRED_PAGES if not path.exists()]
