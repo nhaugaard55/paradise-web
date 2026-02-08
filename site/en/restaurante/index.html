@@ -67,18 +67,20 @@
       </div>
       <div class="menu-pdf-wrapper">
         <div class="menu-pdf-frame">
-          <object
+          <iframe
             id="menu-pdf-embed"
-            data="/static/docs/Menu-digital-paradise.pdf"
-            type="application/pdf"
-          >
-            <p>
-              The document could not be loaded.
-              <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
-                Open in a new tab
-              </a>.
-            </p>
-          </object>
+            src="/static/docs/Menu-digital-paradise.pdf"
+            title="The Paradise menu"
+            loading="lazy"
+            style="border: 0;"
+            data-pdf-embed
+          ></iframe>
+          <p class="pdf-fallback" data-pdf-fallback hidden>
+            The document could not be loaded.
+            <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
+              Open in a new tab
+            </a>.
+          </p>
         </div>
       </div>
     </div>
@@ -137,6 +139,7 @@
     <button class="footer-back-to-top" type="button" aria-label="Back to top">⌃</button>
   </footer>
 
+  <script src="/static/js/excursions.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var backTop = document.querySelector('.footer-back-to-top');

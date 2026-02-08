@@ -1,4 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const setupPdfFallback = (iframe, fallback) => {
+    if (!iframe || !fallback) return;
+    fallback.hidden = true;
+    let didLoad = false;
+
+    const showFallback = () => {
+      if (didLoad) return;
+      fallback.hidden = false;
+    };
+
+    const hideFallback = () => {
+      didLoad = true;
+      fallback.hidden = true;
+    };
+
+    const timeoutId = window.setTimeout(showFallback, 2500);
+
+    iframe.addEventListener("load", () => {
+      window.clearTimeout(timeoutId);
+      hideFallback();
+    });
+
+    iframe.addEventListener("error", () => {
+      window.clearTimeout(timeoutId);
+      showFallback();
+    });
+  };
+
+  document.querySelectorAll("iframe[data-pdf-embed]").forEach((iframe) => {
+    const fallback = iframe.parentElement?.querySelector("[data-pdf-fallback]");
+    if (fallback) {
+      setupPdfFallback(iframe, fallback);
+    }
+  });
+
   const viewer = document.getElementById("excursions-pdf");
   const langButtons = document.querySelectorAll("[data-lang-toggle]");
   const fullscreenLink = document.querySelector("[data-excursions-link]");
@@ -7,21 +42,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const srcEs = viewer.dataset.srcEs;
   const srcEn = viewer.dataset.srcEn;
+  const pdfTitle = viewer.dataset.pdfTitle || "Excursions brochure";
+  const fallbackTemplate = viewer.querySelector("[data-pdf-fallback]");
 
-  const getCurrentSource = () => {
-    if (viewer.tagName === "OBJECT") {
-      return viewer.data || "";
-    }
-    return viewer.src || "";
+  const withCacheBuster = (src) => {
+    const separator = src.includes("?") ? "&" : "?";
+    return `${src}${separator}v=${Date.now()}`;
   };
 
-  const setViewerSource = (nextSrc) => {
-    if (viewer.tagName === "OBJECT") {
-      if (viewer.data && viewer.data.endsWith(nextSrc)) return;
-      viewer.data = nextSrc;
-    } else {
-      if (viewer.src && viewer.src.endsWith(nextSrc)) return;
-      viewer.src = nextSrc;
+  const buildIframe = (src) => {
+    const iframe = document.createElement("iframe");
+    iframe.className = "excursions-pdf";
+    iframe.src = withCacheBuster(src);
+    iframe.title = pdfTitle;
+    iframe.loading = "lazy";
+    iframe.style.border = "0";
+    iframe.setAttribute("data-pdf-embed", "");
+    return iframe;
+  };
+
+  const buildFallback = (src) => {
+    if (!fallbackTemplate) return null;
+    const fallback = fallbackTemplate.cloneNode(true);
+    fallback.hidden = true;
+    const link = fallback.querySelector("a");
+    if (link) {
+      link.href = src;
+    }
+    return fallback;
+  };
+
+  const mountViewer = (nextSrc) => {
+    if (!nextSrc) return;
+    viewer.innerHTML = "";
+
+    const iframe = buildIframe(nextSrc);
+    viewer.appendChild(iframe);
+
+    const fallback = buildFallback(nextSrc);
+    if (fallback) {
+      viewer.appendChild(fallback);
+      setupPdfFallback(iframe, fallback);
     }
   };
 
@@ -36,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nextSrc = lang === "en" ? srcEn : srcEs;
     if (!nextSrc) return;
-    setViewerSource(nextSrc);
+    mountViewer(nextSrc);
     if (fullscreenLink) {
       fullscreenLink.href = nextSrc;
     }
@@ -50,5 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  setLang("es");
+  const pageLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+  const initialLang = pageLang.startsWith("en") ? "en" : "es";
+  setLang(initialLang);
 });

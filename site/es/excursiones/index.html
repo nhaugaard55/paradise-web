@@ -86,21 +86,27 @@
       </header>
 
       <div class="excursions-pdf-wrapper">
-        <object
+        <div
           id="excursions-pdf"
-          class="excursions-pdf"
-          data="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
           data-src-es="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
           data-src-en="/static/docs/Folleto-Ingles-Actividades.pdf"
-          type="application/pdf"
+          data-pdf-title="Folleto de excursiones"
         >
-          <p>
+          <iframe
+            class="excursions-pdf"
+            src="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
+            title="Folleto de excursiones"
+            loading="lazy"
+            style="border: 0;"
+            data-pdf-embed
+          ></iframe>
+          <p class="pdf-fallback" data-pdf-fallback hidden>
             No se pudo cargar el documento.
             <a href="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf" target="_blank" rel="noopener">
               Abrir en una nueva pestaña
             </a>.
           </p>
-        </object>
+        </div>
       </div>
     </section>
   </main>
