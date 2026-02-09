@@ -169,7 +169,7 @@
                 href="/static/docs/Menu-digital-paradise.pdf"
                 target="_blank"
                 rel="noopener"
-                class="btn btn-outline menu-fullscreen-btn"
+                class="btn btn-outline menu-fullscreen-btn pdf-desktop-cta"
               >
                 Ver en pantalla completa
               </a>
@@ -177,20 +177,35 @@
           </div>
           <div class="menu-pdf-wrapper">
             <div class="menu-pdf-frame">
-              <iframe
-                id="menu-pdf-embed"
-                src="/static/docs/Menu-digital-paradise.pdf"
-                title="Carta de The Paradise"
-                loading="lazy"
-                style="border: 0;"
-                data-pdf-embed
-              ></iframe>
-              <p class="pdf-fallback" data-pdf-fallback hidden>
-                No se pudo cargar el documento.
-                <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
-                  Abrir en una nueva pestaña
-                </a>.
-              </p>
+              <div class="pdf-desktop">
+                <iframe
+                  id="menu-pdf-embed"
+                  src="/static/docs/Menu-digital-paradise.pdf"
+                  title="Carta de The Paradise"
+                  loading="lazy"
+                  style="border: 0;"
+                  data-pdf-embed
+                ></iframe>
+                <p class="pdf-fallback" data-pdf-fallback hidden>
+                  No se pudo cargar el documento.
+                  <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
+                    Abrir en una nueva pestaña
+                  </a>.
+                </p>
+              </div>
+              <div class="pdf-mobile">
+                <figure class="pdf-mobile-preview">
+                  <img class="pdf-thumb" src="/static/docs/menu-preview.jpg" alt="Vista previa del menú" loading="lazy">
+                </figure>
+                <a
+                  class="btn btn-outline menu-fullscreen-btn pdf-mobile-btn"
+                  href="/static/docs/Menu-digital-paradise.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Ver menú completo
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -340,7 +355,7 @@
           </div>
           <div class="menu-toolbar excursions-fullscreen-toolbar">
             <a
-              class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn"
+              class="btn btn-outline menu-fullscreen-btn excursions-fullscreen-btn pdf-desktop-cta"
               href="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
               target="_blank"
               rel="noopener"
@@ -352,26 +367,49 @@
         </header>
 
         <div class="excursions-pdf-wrapper">
-          <div
-            id="excursions-pdf"
-            data-src-es="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
-            data-src-en="/static/docs/Folleto-Ingles-Actividades.pdf"
-            data-pdf-title="Folleto de excursiones"
-          >
-            <iframe
-              class="excursions-pdf"
-              src="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
-              title="Folleto de excursiones"
-              loading="lazy"
-              style="border: 0;"
-              data-pdf-embed
-            ></iframe>
-            <p class="pdf-fallback" data-pdf-fallback hidden>
-              No se pudo cargar el documento.
-              <a href="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf" target="_blank" rel="noopener">
-                Abrir en una nueva pestaña
-              </a>.
-            </p>
+          <div class="pdf-desktop">
+            <div
+              id="excursions-pdf"
+              data-src-es="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
+              data-src-en="/static/docs/Folleto-Ingles-Actividades.pdf"
+              data-preview-es="/static/docs/actividades-preview-es.jpg"
+              data-preview-en="/static/docs/actividades-preview-en.jpg"
+              data-pdf-title="Folleto de excursiones"
+            >
+              <iframe
+                class="excursions-pdf"
+                src="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
+                title="Folleto de excursiones"
+                loading="lazy"
+                style="border: 0;"
+                data-pdf-embed
+              ></iframe>
+              <p class="pdf-fallback" data-pdf-fallback hidden>
+                No se pudo cargar el documento.
+                <a href="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf" target="_blank" rel="noopener">
+                  Abrir en una nueva pestaña
+                </a>.
+              </p>
+            </div>
+          </div>
+          <div class="pdf-mobile">
+            <figure class="pdf-mobile-preview">
+              <img
+                class="pdf-thumb" src="/static/docs/actividades-preview-es.jpg"
+                alt="Vista previa del folleto de actividades"
+                loading="lazy"
+                data-excursions-mobile-img
+              >
+            </figure>
+            <a
+              class="btn btn-outline menu-fullscreen-btn pdf-mobile-btn"
+              href="/static/docs/Folleto-actividades-The-Paradise-Espanol.pdf"
+              target="_blank"
+              rel="noopener"
+              data-excursions-mobile-link
+            >
+              Ver folleto completo
+            </a>
           </div>
         </div>
       </section>

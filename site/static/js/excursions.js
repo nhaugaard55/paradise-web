@@ -37,11 +37,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const viewer = document.getElementById("excursions-pdf");
   const langButtons = document.querySelectorAll("[data-lang-toggle]");
   const fullscreenLink = document.querySelector("[data-excursions-link]");
+  const mobilePreviewImg = document.querySelector("[data-excursions-mobile-img]");
+  const mobilePreviewLink = document.querySelector("[data-excursions-mobile-link]");
+  const mobileQuery = window.matchMedia("(max-width: 900px)");
+  let currentLang = null;
 
   if (!viewer || !langButtons.length) return;
 
   const srcEs = viewer.dataset.srcEs;
   const srcEn = viewer.dataset.srcEn;
+  const previewEs = viewer.dataset.previewEs;
+  const previewEn = viewer.dataset.previewEn;
   const pdfTitle = viewer.dataset.pdfTitle || "Excursions brochure";
   const fallbackTemplate = viewer.querySelector("[data-pdf-fallback]");
 
@@ -87,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setLang = (lang) => {
+    currentLang = lang;
     langButtons.forEach((btn) => {
       const isActive = btn.dataset.langToggle === lang;
       btn.classList.toggle("is-active", isActive);
@@ -97,7 +104,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const nextSrc = lang === "en" ? srcEn : srcEs;
     if (!nextSrc) return;
-    mountViewer(nextSrc);
+    const nextPreview = lang === "en" ? previewEn : previewEs;
+
+    if (mobilePreviewImg && nextPreview) {
+      mobilePreviewImg.src = nextPreview;
+    }
+    if (mobilePreviewLink) {
+      mobilePreviewLink.href = nextSrc;
+    }
+
+    if (mobileQuery.matches) {
+      viewer.innerHTML = "";
+    } else {
+      mountViewer(nextSrc);
+    }
     if (fullscreenLink) {
       fullscreenLink.href = nextSrc;
     }
@@ -114,4 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const pageLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
   const initialLang = pageLang.startsWith("en") ? "en" : "es";
   setLang(initialLang);
+
+  const handleMediaChange = () => {
+    if (currentLang) {
+      setLang(currentLang);
+    }
+  };
+
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener("change", handleMediaChange);
+  } else if (mobileQuery.addListener) {
+    mobileQuery.addListener(handleMediaChange);
+  }
 });

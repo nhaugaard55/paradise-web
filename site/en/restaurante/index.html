@@ -59,7 +59,7 @@
             href="/static/docs/Menu-digital-paradise.pdf"
             target="_blank"
             rel="noopener"
-            class="btn btn-outline menu-fullscreen-btn"
+            class="btn btn-outline menu-fullscreen-btn pdf-desktop-cta"
           >
             View fullscreen
           </a>
@@ -67,20 +67,35 @@
       </div>
       <div class="menu-pdf-wrapper">
         <div class="menu-pdf-frame">
-          <iframe
-            id="menu-pdf-embed"
-            src="/static/docs/Menu-digital-paradise.pdf"
-            title="The Paradise menu"
-            loading="lazy"
-            style="border: 0;"
-            data-pdf-embed
-          ></iframe>
-          <p class="pdf-fallback" data-pdf-fallback hidden>
-            The document could not be loaded.
-            <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
-              Open in a new tab
-            </a>.
-          </p>
+          <div class="pdf-desktop">
+            <iframe
+              id="menu-pdf-embed"
+              src="/static/docs/Menu-digital-paradise.pdf"
+              title="The Paradise menu"
+              loading="lazy"
+              style="border: 0;"
+              data-pdf-embed
+            ></iframe>
+            <p class="pdf-fallback" data-pdf-fallback hidden>
+              The document could not be loaded.
+              <a href="/static/docs/Menu-digital-paradise.pdf" target="_blank" rel="noopener">
+                Open in a new tab
+              </a>.
+            </p>
+          </div>
+          <div class="pdf-mobile">
+            <figure class="pdf-mobile-preview">
+              <img class="pdf-thumb" src="/static/docs/menu-preview.jpg" alt="Menu preview" loading="lazy">
+            </figure>
+            <a
+              class="btn btn-outline menu-fullscreen-btn pdf-mobile-btn"
+              href="/static/docs/Menu-digital-paradise.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              View full menu
+            </a>
+          </div>
         </div>
       </div>
     </div>
