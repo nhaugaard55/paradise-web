@@ -1896,14 +1896,30 @@ header.navbar,
 
 .pdf-mobile {
   display: none !important;
+  text-align: center;
 }
 
 .pdf-desktop-cta {
   display: inline-flex;
 }
 
-.pdf-mobile-preview {
-  margin: 0;
+.pdf-mobile-frame {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu-section .pdf-mobile-frame {
+  background: #555;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.excursions-page .pdf-mobile-frame {
+  background: #000;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
 }
 
 .pdf-thumb {
@@ -1911,10 +1927,6 @@ header.navbar,
   height: auto;
   display: block;
   border-radius: 12px;
-}
-
-.pdf-mobile-btn {
-  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -1951,9 +1963,18 @@ header.navbar,
     display: block !important;
   }
 
-  .pdf-mobile-btn {
-    width: 100%;
-    justify-content: center;
+  .menu-section .menu-pdf-frame {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .excursions-pdf-wrapper {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
   .pdf-desktop-cta {
@@ -2034,6 +2055,11 @@ header.navbar,
   padding: 0.4rem 1.1rem;
   font-size: var(--fs-btn);
   white-space: nowrap;
+}
+
+.pdf-mobile-link {
+  display: inline-block;
+  margin-top: 14px;
 }
 
 .menu-pdf-wrapper {
