@@ -11,8 +11,8 @@
     --nav-offset: 110px;
 
     /* Typography */
-    --font-heading: 'Averia Serif Libre', 'Playfair Display', 'Times New Roman', serif;
-    --font-body: 'Cabin', 'Inter', 'Source Sans Pro', sans-serif;
+    --font-heading: 'FONT_HEADING', serif;
+    --font-body: 'FONT_BODY', sans-serif;
     --fs-h1: 2.8rem;
     --fs-h2: 2.2rem;
     --fs-h3: 1.5rem;
