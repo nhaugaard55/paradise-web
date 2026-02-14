@@ -99,6 +99,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: var(--lh-title);
 }
 
+.section-title,
+.section-subtitle,
+.card-title,
+.hero-title,
+.hero-subtitle,
+.room-card h3,
+.room-card .title {
+    font-family: var(--font-heading);
+}
+
 h1 {
     font-size: var(--fs-h1);
 }
@@ -122,6 +132,7 @@ p {
     text-align: center;
     font-size: var(--fs-body);
     line-height: var(--lh-body);
+    font-family: var(--font-body);
 }
 
 ul,
@@ -136,6 +147,11 @@ li {
     text-align: center;
     font-size: var(--fs-body);
     line-height: var(--lh-body);
+    font-family: var(--font-body);
+}
+
+small {
+    font-family: var(--font-body);
 }
 
 button,
@@ -144,6 +160,7 @@ a.button {
     text-align: center;
     font-size: var(--fs-btn);
     line-height: var(--lh-body);
+    font-family: var(--font-body);
 }
 
 label,
@@ -152,6 +169,7 @@ textarea,
 select {
     font-size: var(--fs-body);
     line-height: var(--lh-body);
+    font-family: var(--font-body);
 }
 
 .eyebrow {
