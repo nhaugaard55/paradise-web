@@ -1591,9 +1591,82 @@ header.navbar,
     justify-content: center;
 }
 
+.quiz-home-promo {
+    padding-top: 0;
+}
+
+.quiz-home-promo__card {
+    position: relative;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3.25rem);
+    border-radius: 28px;
+    overflow: hidden;
+    background: #102432;
+    box-shadow: 0 24px 54px rgba(31, 41, 53, 0.18);
+}
+
+.quiz-home-promo__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(11, 28, 42, 0.88), rgba(79, 136, 168, 0.38)),
+        url("../Imagenes/quiz/whale.webp") center 42%/cover no-repeat;
+    transform: scale(1.03);
+}
+
+.quiz-home-promo__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 32%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.46));
+}
+
+.quiz-home-promo__content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.95rem;
+}
+
+.quiz-home-promo__content h2,
+.quiz-home-promo__content p {
+    color: #fff;
+}
+
+.quiz-home-promo__content .eyebrow {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.quiz-home-promo__content .btn-primary {
+    justify-self: center;
+    background: #fff;
+    color: var(--brand-text);
+}
+
+.quiz-home-promo__content .btn-primary:hover,
+.quiz-home-promo__content .btn-primary:focus-visible {
+    color: var(--brand-text);
+    background: #f8f2ea;
+}
+
 @media (max-width: 640px) {
     .contact-card {
         padding: 1.2rem;
+    }
+
+    .quiz-home-promo__card {
+        border-radius: 22px;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .quiz-home-promo__content .btn-primary {
+        width: 100%;
     }
 }
 
