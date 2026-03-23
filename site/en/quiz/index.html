@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png">
+
+  <title>Wildlife Quiz · The Paradise</title>
+  <meta name="description" content="Test how much you know about Península Valdés, its wildlife, and its natural surroundings with The Paradise interactive quiz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/site.css?v=5">
+  <link rel="stylesheet" href="/static/css/quiz.css?v=6">
+</head>
+<body class="quiz-page">
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="/en/" class="navbar-logo">
+        <img src="/static/Imagenes/Iconos/Logo.png" alt="The Paradise" id="navbar-logo">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu">
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+      <nav class="nav-links" id="primary-menu">
+        <a href="/en/#home">Home</a>
+        <a href="/en/#about">About</a>
+        <a href="/en/#restaurant">Restaurant</a>
+        <a href="/en/#lodging">Inn</a>
+        <a href="/en/#excursions">Excursions</a>
+        <a href="/en/quiz/" class="is-active">Quiz</a>
+        <a href="/en/#contact">Contact</a>
+      </nav>
+      <div class="lang-switcher">
+        <a href="/es/quiz/">ES</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/quiz/" class="is-active">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section quiz-shell-section">
+      <!-- Quiz images currently use placeholders in /static/Imagenes/quiz/. Replace them with final photography while keeping filenames stable. -->
+      <div class="quiz-shell" data-quiz-app data-quiz-lang="en"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer legacy-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-copy">
+        <p>Copyrights © 2020 All rights reserved - The Paradise Hotel</p>
+        <p>
+          <span class="footer-icon">✉️</span>
+          <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>
+        </p>
+        <p>
+          <span class="footer-icon">📞</span>
+          <a href="tel:+5492804305363">+54 9 280 4305363</a>
+        </p>
+      </div>
+      <div class="footer-col footer-address">
+        <p>Segunda Bajada al Mar, Puerto Pirámides,</p>
+        <p>Chubut - Argentine Patagonia</p>
+      </div>
+      <div class="footer-col footer-social-block">
+        <p class="footer-social-title">Social</p>
+        <div class="footer-social-links">
+          <a class="footer-social-btn footer-social-btn--whatsapp" href="https://wa.me/5492804305363" target="_blank" rel="noopener">
+            <span class="sr-only">WhatsApp</span>
+          </a>
+          <a class="footer-social-btn footer-social-btn--instagram" href="https://www.instagram.com/theparadisepiramides" target="_blank" rel="noopener">
+            <span class="sr-only">Instagram</span>
+          </a>
+          <a class="footer-social-btn footer-social-btn--maps" href="https://maps.app.goo.gl/gLmgnAkg6oezVTpm9" target="_blank" rel="noopener">
+            <span class="sr-only">Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <button class="footer-back-to-top" type="button" aria-label="Back to top">⌃</button>
+  </footer>
+
+  <script src="/static/js/quiz.js?v=5" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var backTop = document.querySelector('.footer-back-to-top');
+      if (backTop) {
+        backTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      var navToggle = document.querySelector('.nav-toggle');
+      var siteMenu = document.getElementById('primary-menu');
+      if (navToggle && siteMenu) {
+        navToggle.addEventListener('click', function () {
+          var isOpen = siteMenu.classList.toggle('is-open');
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        siteMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            siteMenu.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

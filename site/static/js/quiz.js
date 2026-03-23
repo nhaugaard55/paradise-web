@@ -1,0 +1,631 @@
+(function () {
+  var QUIZ_CONTENT = {
+    es: {
+      labels: {
+        question: 'Pregunta',
+        of: 'de',
+        score: 'Aciertos',
+        startBadge: '20 preguntas',
+        startTitle: '¿Cuánto sabés de Península Valdés?',
+        startSubtitle: 'Un recorrido breve por la fauna, las temporadas y los paisajes que hacen única a esta esquina de la Patagonia.',
+        startButton: 'Empezar quiz',
+        nextButton: 'Siguiente',
+        correct: 'Respuesta correcta',
+        incorrect: 'Respuesta incorrecta',
+        explanationTitle: 'Dato de la península',
+        playAgain: 'Volver a jugar',
+        finalScore: 'Tu resultado',
+        scoreSummary: 'Acertaste {score} de {total} preguntas.',
+        backHome: 'Volver al sitio',
+        viewExcursions: 'Ver excursiones',
+        checkAvailability: 'Consultar disponibilidad'
+      },
+      results: [
+        {
+          min: 0,
+          max: 7,
+          title: 'Explorador principiante',
+          description: 'Recién empezás a descubrir los secretos de la península. La próxima salida entre mar y estepa te va a enseñar muchísimo más.'
+        },
+        {
+          min: 8,
+          max: 14,
+          title: 'Amante de la Patagonia',
+          description: 'Ya reconocés gran parte de la fauna y las temporadas clave. Estás muy cerca de convertirte en una referencia local.'
+        },
+        {
+          min: 15,
+          max: 20,
+          title: 'Experto en Península Valdés',
+          description: 'Tu mirada ya está afinada para leer el mar, la estepa y la vida silvestre como un verdadero conocedor de Puerto Pirámides.'
+        }
+      ],
+      ctas: {
+        backHomeUrl: '/es/',
+        excursionsUrl: '/es/#excursiones',
+        availabilityUrl: '/es/reservas/'
+      },
+      questions: [
+        {
+          image: '/static/Imagenes/quiz/whale.webp',
+          imageAlt: 'Ballena franca austral en Península Valdés.',
+          prompt: '¿Qué especie es esta?',
+          options: ['Ballena jorobada', 'Ballena franca austral', 'Orca', 'Delfín'],
+          correctIndex: 1,
+          explanation: 'La ballena franca austral visita Península Valdés todos los años entre junio y diciembre para reproducirse y tener sus crías.'
+        },
+        {
+          image: '/static/Imagenes/quiz/orca.webp',
+          imageAlt: 'Orca en la costa de Península Valdés.',
+          prompt: '¿En qué zona de Península Valdés es más famoso el avistaje de orcas?',
+          options: ['Puerto Pirámides', 'Punta Norte', 'Trelew', 'Gaiman'],
+          correctIndex: 1,
+          explanation: 'En Punta Norte se pueden ver orcas cazando en la costa, un comportamiento único en el mundo.'
+        },
+        {
+          image: '/static/Imagenes/quiz/penguins.webp',
+          imageAlt: 'Pingüinos de Magallanes en la región.',
+          prompt: '¿En qué época del año se pueden ver pingüinos en la región?',
+          options: ['Solo en invierno', 'Todo el año', 'De septiembre a abril aproximadamente', 'Solo en verano'],
+          correctIndex: 2,
+          explanation: 'Los pingüinos de Magallanes llegan en primavera para reproducirse y se quedan hasta el otoño.'
+        },
+        {
+          image: '/static/Imagenes/quiz/elephant-seal.webp',
+          imageAlt: 'Elefante marino sobre la costa patagónica.',
+          prompt: '¿Qué animal es este?',
+          options: ['Lobo marino', 'Foca', 'Elefante marino', 'Nutria'],
+          correctIndex: 2,
+          explanation: 'El elefante marino es el pinnípedo más grande del mundo y los machos tienen una trompa característica.'
+        },
+        {
+          image: '/static/Imagenes/quiz/sea-lion.webp',
+          imageAlt: 'Lobo marino en Península Valdés.',
+          prompt: '¿Cuál es la principal diferencia entre el lobo marino y el elefante marino?',
+          options: ['El color', 'El tamaño y la trompa del macho', 'La velocidad', 'No hay diferencia'],
+          correctIndex: 1,
+          explanation: 'Los elefantes marinos son mucho más grandes y los machos tienen una trompa inflable.'
+        },
+        {
+          image: '/static/Imagenes/quiz/puerto-piramides.webp',
+          imageAlt: 'Vista de Puerto Pirámides.',
+          prompt: '¿Qué actividad es la más emblemática de Puerto Pirámides?',
+          options: ['Esquí', 'Avistaje de ballenas', 'Paracaidismo', 'Snowboard'],
+          correctIndex: 1,
+          explanation: 'Puerto Pirámides es el único lugar de Argentina donde se realiza avistaje embarcado de ballenas.'
+        },
+        {
+          image: '/static/Imagenes/quiz/guanacos.webp',
+          imageAlt: 'Guanacos en la estepa patagónica.',
+          prompt: 'Además de fauna marina, ¿qué otros animales podés ver en Península Valdés?',
+          options: ['Guanacos', 'Maras', 'Zorros', 'Todas las anteriores'],
+          correctIndex: 3,
+          explanation: 'La estepa patagónica está llena de fauna terrestre que también forma parte de la experiencia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-calf.webp',
+          imageAlt: 'Ballena franca austral con su cría.',
+          prompt: '¿En qué meses suele ser más fuerte la temporada de ballenas?',
+          options: ['Enero a marzo', 'Junio a diciembre', 'Abril a mayo', 'Solo en invierno'],
+          correctIndex: 1,
+          explanation: 'La temporada comienza en junio y alcanza su punto más alto entre septiembre y octubre.'
+        },
+        {
+          image: '/static/Imagenes/quiz/orca-jumping.webp',
+          imageAlt: 'Orca saltando frente a la costa.',
+          prompt: '¿Qué técnica de caza famosa utilizan las orcas en Península Valdés?',
+          options: ['Caza en grupo en mar abierto', 'Varamiento intencional en la costa', 'Buceo profundo', 'Uso de eco para cazar'],
+          correctIndex: 1,
+          explanation: 'Las orcas se varan intencionalmente para capturar crías de lobos marinos en la orilla.'
+        },
+        {
+          image: '/static/Imagenes/quiz/elephant-seal-colony.webp',
+          imageAlt: 'Colonia de elefantes marinos en la playa.',
+          prompt: '¿Dónde se concentran grandes colonias de elefantes marinos?',
+          options: ['Punta Norte', 'Caleta Valdés', 'Puerto Pirámides', 'Trelew'],
+          correctIndex: 1,
+          explanation: 'Caleta Valdés es uno de los principales puntos para observar elefantes marinos.'
+        },
+        {
+          image: '/static/Imagenes/quiz/steppe-landscape.webp',
+          imageAlt: 'Paisaje de estepa patagónica.',
+          prompt: '¿Cómo se llama el ecosistema predominante en la región?',
+          options: ['Selva tropical', 'Bosque andino', 'Estepa patagónica', 'Desierto cálido'],
+          correctIndex: 2,
+          explanation: 'La estepa patagónica es un ambiente árido con vegetación baja y fauna adaptada.'
+        },
+        {
+          image: '/static/Imagenes/quiz/mara.webp',
+          imageAlt: 'Mara patagónica.',
+          prompt: '¿Qué animal es la mara?',
+          options: ['Un tipo de zorro', 'Un roedor patagónico similar a una liebre', 'Un ave', 'Un reptil'],
+          correctIndex: 1,
+          explanation: 'La mara es un roedor grande típico de la Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/guanacos-herd.webp',
+          imageAlt: 'Grupo de guanacos en la estepa.',
+          prompt: '¿A qué familia pertenecen los guanacos?',
+          options: ['Felinos', 'Cérvidos', 'Camélidos', 'Roedores'],
+          correctIndex: 2,
+          explanation: 'Los guanacos son parientes de las llamas y vicuñas.'
+        },
+        {
+          image: '/static/Imagenes/quiz/rocky-coast.webp',
+          imageAlt: 'Costa rocosa y acantilados.',
+          prompt: '¿Qué caracteriza las costas de Península Valdés?',
+          options: ['Playas tropicales', 'Acantilados y playas de canto rodado', 'Selvas densas', 'Dunas de arena blanca únicamente'],
+          correctIndex: 1,
+          explanation: 'La costa combina acantilados, restingas y playas de piedras.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-tail.webp',
+          imageAlt: 'Ballena mostrando la cola fuera del agua.',
+          prompt: '¿Qué comportamiento es común ver en las ballenas?',
+          options: ['Volar', 'Saltar y golpear la superficie con la cola', 'Caminar en la costa', 'Dormir fuera del agua'],
+          correctIndex: 1,
+          explanation: 'Las ballenas suelen golpear el agua con sus aletas o cola como forma de comunicación.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-watching-boat.webp',
+          imageAlt: 'Turistas en una lancha de avistaje.',
+          prompt: '¿Cómo se realiza el avistaje de ballenas en Puerto Pirámides?',
+          options: ['Desde helicóptero', 'Desde submarino', 'En embarcaciones autorizadas', 'Desde autos'],
+          correctIndex: 2,
+          explanation: 'El avistaje se realiza con operadores habilitados en lanchas.'
+        },
+        {
+          image: '/static/Imagenes/quiz/coast-sunset.webp',
+          imageAlt: 'Atardecer en la costa.',
+          prompt: '¿Qué hace especial a Puerto Pirámides además de la fauna?',
+          options: ['Sus montañas nevadas', 'Sus paisajes costeros únicos y tranquilidad', 'Sus rascacielos', 'Su vida nocturna intensa'],
+          correctIndex: 1,
+          explanation: 'Es un pueblo pequeño con naturaleza intacta y paisajes únicos.'
+        },
+        {
+          image: '/static/Imagenes/quiz/punta-tombo.webp',
+          imageAlt: 'Colonia de pingüinos en Punta Tombo.',
+          prompt: '¿Dónde se encuentra una de las colonias más grandes de pingüinos cercanas?',
+          options: ['Punta Tombo', 'Buenos Aires', 'Mendoza', 'Ushuaia'],
+          correctIndex: 0,
+          explanation: 'Punta Tombo alberga una de las mayores colonias de pingüinos de Magallanes.'
+        },
+        {
+          image: '/static/Imagenes/quiz/starry-sky.webp',
+          imageAlt: 'Cielo estrellado en la zona.',
+          prompt: '¿Qué característica natural destaca por la noche en la zona?',
+          options: ['Aurora boreal', 'Cielos muy despejados y estrellados', 'Lluvias constantes', 'Niebla permanente'],
+          correctIndex: 1,
+          explanation: 'La baja contaminación lumínica permite ver cielos increíbles.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-calf-near-shore.webp',
+          imageAlt: 'Ballena con cría cerca de la costa.',
+          prompt: '¿Por qué las ballenas vienen a Península Valdés?',
+          options: ['A alimentarse', 'A reproducirse y tener crías en aguas tranquilas', 'A migrar hacia el norte', 'A esconderse de depredadores'],
+          correctIndex: 1,
+          explanation: 'Las aguas calmas son ideales para el nacimiento y cuidado de las crías.'
+        }
+      ]
+    },
+    en: {
+      labels: {
+        question: 'Question',
+        of: 'of',
+        score: 'Score',
+        startBadge: '20 questions',
+        startTitle: 'How much do you know about Península Valdés?',
+        startSubtitle: 'A short journey through wildlife, seasons, and the landscapes that make this corner of Patagonia unique.',
+        startButton: 'Start quiz',
+        nextButton: 'Next',
+        correct: 'Correct answer',
+        incorrect: 'Incorrect answer',
+        explanationTitle: 'Learn something new',
+        playAgain: 'Play again',
+        finalScore: 'Your result',
+        scoreSummary: 'You got {score} out of {total} questions right.',
+        backHome: 'Back to the site',
+        viewExcursions: 'See excursions',
+        checkAvailability: 'Check availability'
+      },
+      results: [
+        {
+          min: 0,
+          max: 7,
+          title: 'Beginner Explorer',
+          description: 'You are just starting to uncover the secrets of the peninsula. Your next outing between sea and steppe will teach you a lot more.'
+        },
+        {
+          min: 8,
+          max: 14,
+          title: 'Patagonia Lover',
+          description: 'You already recognize much of the wildlife and the key seasons. You are very close to becoming a true local reference.'
+        },
+        {
+          min: 15,
+          max: 20,
+          title: 'Península Valdés Expert',
+          description: 'Your eye is already trained to read the sea, the steppe, and the wildlife like a true connoisseur of Puerto Pirámides.'
+        }
+      ],
+      ctas: {
+        backHomeUrl: '/en/',
+        excursionsUrl: '/en/#excursions',
+        availabilityUrl: '/en/booking/'
+      },
+      questions: [
+        {
+          image: '/static/Imagenes/quiz/whale.webp',
+          imageAlt: 'Southern right whale in Península Valdés.',
+          prompt: 'Which species is this?',
+          options: ['Humpback whale', 'Southern right whale', 'Orca', 'Dolphin'],
+          correctIndex: 1,
+          explanation: 'The southern right whale visits Península Valdés every year between June and December to breed and give birth.'
+        },
+        {
+          image: '/static/Imagenes/quiz/orca.webp',
+          imageAlt: 'Orca near the coast of Península Valdés.',
+          prompt: 'In which area of Península Valdés is orca watching most famous?',
+          options: ['Puerto Pirámides', 'Punta Norte', 'Trelew', 'Gaiman'],
+          correctIndex: 1,
+          explanation: 'At Punta Norte you can sometimes see orcas hunting close to shore, a behavior that is unique in the world.'
+        },
+        {
+          image: '/static/Imagenes/quiz/penguins.webp',
+          imageAlt: 'Magellanic penguins in the region.',
+          prompt: 'At what time of year can penguins be seen in the region?',
+          options: ['Only in winter', 'All year round', 'Roughly from September to April', 'Only in summer'],
+          correctIndex: 2,
+          explanation: 'Magellanic penguins arrive in spring to breed and stay until autumn.'
+        },
+        {
+          image: '/static/Imagenes/quiz/elephant-seal.webp',
+          imageAlt: 'Elephant seal on the Patagonian coast.',
+          prompt: 'What animal is this?',
+          options: ['Sea lion', 'Seal', 'Elephant seal', 'Otter'],
+          correctIndex: 2,
+          explanation: 'The elephant seal is the largest pinniped in the world, and adult males have a distinctive trunk-like nose.'
+        },
+        {
+          image: '/static/Imagenes/quiz/sea-lion.webp',
+          imageAlt: 'Sea lion in Península Valdés.',
+          prompt: 'What is the main difference between a sea lion and an elephant seal?',
+          options: ['The color', 'The size and the male trunk', 'The speed', 'There is no difference'],
+          correctIndex: 1,
+          explanation: 'Elephant seals are much larger, and the males have an inflatable trunk.'
+        },
+        {
+          image: '/static/Imagenes/quiz/puerto-piramides.webp',
+          imageAlt: 'View of Puerto Pirámides.',
+          prompt: 'Which activity is the most iconic in Puerto Pirámides?',
+          options: ['Skiing', 'Whale watching', 'Skydiving', 'Snowboarding'],
+          correctIndex: 1,
+          explanation: 'Puerto Pirámides is the only place in Argentina where boat-based whale watching takes place.'
+        },
+        {
+          image: '/static/Imagenes/quiz/guanacos.webp',
+          imageAlt: 'Guanacos on the Patagonian steppe.',
+          prompt: 'Besides marine wildlife, what other animals can you see in Península Valdés?',
+          options: ['Guanacos', 'Maras', 'Foxes', 'All of the above'],
+          correctIndex: 3,
+          explanation: 'The Patagonian steppe is full of land animals that are also part of the experience.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-calf.webp',
+          imageAlt: 'Southern right whale with calf.',
+          prompt: 'During which months is whale season usually strongest?',
+          options: ['January to March', 'June to December', 'April to May', 'Only in winter'],
+          correctIndex: 1,
+          explanation: 'The season starts in June and reaches its peak between September and October.'
+        },
+        {
+          image: '/static/Imagenes/quiz/orca-jumping.webp',
+          imageAlt: 'Breaching orca near the coast.',
+          prompt: 'What famous hunting technique do orcas use in Península Valdés?',
+          options: ['Group hunting in open water', 'Intentional stranding on the shore', 'Deep diving', 'Using echo to hunt'],
+          correctIndex: 1,
+          explanation: 'Orcas intentionally strand themselves to catch sea lion pups close to the shoreline.'
+        },
+        {
+          image: '/static/Imagenes/quiz/elephant-seal-colony.webp',
+          imageAlt: 'Elephant seals gathered on the beach.',
+          prompt: 'Where do large elephant seal colonies gather?',
+          options: ['Punta Norte', 'Caleta Valdés', 'Puerto Pirámides', 'Trelew'],
+          correctIndex: 1,
+          explanation: 'Caleta Valdés is one of the main places to observe elephant seals.'
+        },
+        {
+          image: '/static/Imagenes/quiz/steppe-landscape.webp',
+          imageAlt: 'Patagonian steppe landscape.',
+          prompt: 'What is the main ecosystem in the region called?',
+          options: ['Tropical rainforest', 'Andean forest', 'Patagonian steppe', 'Hot desert'],
+          correctIndex: 2,
+          explanation: 'The Patagonian steppe is an arid environment with low vegetation and highly adapted wildlife.'
+        },
+        {
+          image: '/static/Imagenes/quiz/mara.webp',
+          imageAlt: 'Patagonian mara.',
+          prompt: 'What kind of animal is a mara?',
+          options: ['A type of fox', 'A Patagonian rodent similar to a hare', 'A bird', 'A reptile'],
+          correctIndex: 1,
+          explanation: 'The mara is a large rodent native to Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/guanacos-herd.webp',
+          imageAlt: 'Guanaco herd on the steppe.',
+          prompt: 'Which family do guanacos belong to?',
+          options: ['Felines', 'Deer', 'Camelids', 'Rodents'],
+          correctIndex: 2,
+          explanation: 'Guanacos are relatives of llamas and vicuñas.'
+        },
+        {
+          image: '/static/Imagenes/quiz/rocky-coast.webp',
+          imageAlt: 'Rocky coastline and cliffs.',
+          prompt: 'What characterizes the coasts of Península Valdés?',
+          options: ['Tropical beaches', 'Cliffs and pebble beaches', 'Dense forests', 'Only white-sand dunes'],
+          correctIndex: 1,
+          explanation: 'The coastline combines cliffs, rocky platforms, and pebble beaches.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-tail.webp',
+          imageAlt: 'Whale lifting its tail out of the water.',
+          prompt: 'What behavior is common to see in whales?',
+          options: ['Flying', 'Breaching and slapping the surface with the tail', 'Walking on shore', 'Sleeping out of the water'],
+          correctIndex: 1,
+          explanation: 'Whales often slap the water with their fins or tails as a form of communication.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-watching-boat.webp',
+          imageAlt: 'Tourists on an authorized whale-watching boat.',
+          prompt: 'How is whale watching done in Puerto Pirámides?',
+          options: ['By helicopter', 'By submarine', 'On authorized boats', 'From cars'],
+          correctIndex: 2,
+          explanation: 'Whale watching is carried out by licensed operators in small boats.'
+        },
+        {
+          image: '/static/Imagenes/quiz/coast-sunset.webp',
+          imageAlt: 'Sunset on the coast.',
+          prompt: 'What makes Puerto Pirámides special besides its wildlife?',
+          options: ['Its snowy mountains', 'Its unique coastal landscapes and peaceful atmosphere', 'Its skyscrapers', 'Its intense nightlife'],
+          correctIndex: 1,
+          explanation: 'It is a small town with unspoiled nature, silence, and distinctive coastal scenery.'
+        },
+        {
+          image: '/static/Imagenes/quiz/punta-tombo.webp',
+          imageAlt: 'Penguin colony at Punta Tombo.',
+          prompt: 'Where is one of the largest nearby penguin colonies located?',
+          options: ['Punta Tombo', 'Buenos Aires', 'Mendoza', 'Ushuaia'],
+          correctIndex: 0,
+          explanation: 'Punta Tombo is home to one of the largest Magellanic penguin colonies.'
+        },
+        {
+          image: '/static/Imagenes/quiz/starry-sky.webp',
+          imageAlt: 'Starry night sky.',
+          prompt: 'What natural feature stands out at night in the area?',
+          options: ['Northern lights', 'Very clear starry skies', 'Constant rain', 'Permanent fog'],
+          correctIndex: 1,
+          explanation: 'Low light pollution makes it possible to enjoy remarkable night skies.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-calf-near-shore.webp',
+          imageAlt: 'Whale and calf near the shore.',
+          prompt: 'Why do whales come to Península Valdés?',
+          options: ['To feed', 'To breed and have calves in calm waters', 'To migrate north', 'To hide from predators'],
+          correctIndex: 1,
+          explanation: 'These calm waters are ideal for giving birth and caring for newborn calves.'
+        }
+      ]
+    }
+  };
+
+  function ready(callback) {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', callback);
+      return;
+    }
+    callback();
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function formatLabel(template, replacements) {
+    return template.replace(/\{(\w+)\}/g, function (_, key) {
+      return replacements[key];
+    });
+  }
+
+  function getResult(content, score) {
+    return content.results.find(function (result) {
+      return score >= result.min && score <= result.max;
+    }) || content.results[content.results.length - 1];
+  }
+
+  function createQuestionOrder(total) {
+    var order = [];
+    var index;
+
+    for (index = 0; index < total; index += 1) {
+      order.push(index);
+    }
+
+    for (index = order.length - 1; index > 0; index -= 1) {
+      var swapIndex = Math.floor(Math.random() * (index + 1));
+      var currentValue = order[index];
+      order[index] = order[swapIndex];
+      order[swapIndex] = currentValue;
+    }
+
+    return order;
+  }
+
+  function renderStart(root, content, state) {
+    root.innerHTML = [
+      '<div class="quiz-screen quiz-screen--start">',
+      '  <div class="quiz-screen__intro">',
+      '    <span class="quiz-badge">' + escapeHtml(content.labels.startBadge) + '</span>',
+      '    <h2>' + escapeHtml(content.labels.startTitle) + '</h2>',
+      '    <p>' + escapeHtml(content.labels.startSubtitle) + '</p>',
+      '  </div>',
+      '  <div class="quiz-screen__actions">',
+      '    <button type="button" class="btn btn-primary" data-quiz-start>' + escapeHtml(content.labels.startButton) + '</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+
+    root.querySelector('[data-quiz-start]').addEventListener('click', function () {
+      state.currentIndex = 0;
+      state.score = 0;
+      state.answered = false;
+      state.questionOrder = createQuestionOrder(content.questions.length);
+      renderQuestion(root, content, state);
+    });
+  }
+
+  function renderQuestion(root, content, state) {
+    var questionIndex = state.questionOrder[state.currentIndex];
+    var question = content.questions[questionIndex];
+    var total = content.questions.length;
+    var progress = ((state.currentIndex + 1) / total) * 100;
+
+    root.innerHTML = [
+      '<div class="quiz-screen quiz-screen--question">',
+      '  <div class="quiz-card__meta">',
+      '    <span class="quiz-badge">' + escapeHtml(content.labels.question) + ' ' + (state.currentIndex + 1) + ' ' + escapeHtml(content.labels.of) + ' ' + total + '</span>',
+      '    <span class="quiz-badge quiz-badge--secondary" data-score-live>' + escapeHtml(content.labels.score) + ': ' + state.score + '</span>',
+      '  </div>',
+      '  <div class="quiz-progress" aria-hidden="true"><span style="width:' + progress + '%"></span></div>',
+      '  <figure class="quiz-card__media">',
+      '    <img src="' + escapeHtml(question.image) + '" alt="' + escapeHtml(question.imageAlt) + '" loading="lazy">',
+      '  </figure>',
+      '  <div class="quiz-card__body">',
+      '    <h2>' + escapeHtml(question.prompt) + '</h2>',
+      '    <div class="quiz-options" role="list">',
+             question.options.map(function (option, index) {
+               return '<button type="button" class="quiz-option" data-option="' + index + '" role="listitem">' + escapeHtml(option) + '</button>';
+             }).join(''),
+      '    </div>',
+      '    <div class="quiz-feedback" data-feedback hidden aria-live="polite">',
+      '      <div class="quiz-feedback__label" data-feedback-label></div>',
+      '      <h3>' + escapeHtml(content.labels.explanationTitle) + '</h3>',
+      '      <p data-feedback-copy></p>',
+      '      <button type="button" class="btn btn-primary" data-next-button>' + escapeHtml(content.labels.nextButton) + '</button>',
+      '    </div>',
+      '  </div>',
+      '</div>'
+    ].join('');
+
+    var optionButtons = root.querySelectorAll('[data-option]');
+    var feedback = root.querySelector('[data-feedback]');
+    var feedbackLabel = root.querySelector('[data-feedback-label]');
+    var feedbackCopy = root.querySelector('[data-feedback-copy]');
+    var nextButton = root.querySelector('[data-next-button]');
+    var scoreLive = root.querySelector('[data-score-live]');
+
+    optionButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (state.answered) {
+          return;
+        }
+
+        state.answered = true;
+        var selectedIndex = Number(button.getAttribute('data-option'));
+        var isCorrect = selectedIndex === question.correctIndex;
+
+        if (isCorrect) {
+          state.score += 1;
+          scoreLive.textContent = content.labels.score + ': ' + state.score;
+        }
+
+        optionButtons.forEach(function (optionButton, index) {
+          optionButton.disabled = true;
+
+          if (index === question.correctIndex) {
+            optionButton.classList.add('is-correct');
+            return;
+          }
+
+          if (index === selectedIndex && !isCorrect) {
+            optionButton.classList.add('is-incorrect');
+            return;
+          }
+
+          optionButton.classList.add('is-muted');
+        });
+
+        feedback.hidden = false;
+        feedback.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+        feedbackLabel.textContent = isCorrect ? content.labels.correct : content.labels.incorrect;
+        feedbackCopy.textContent = question.explanation;
+      });
+    });
+
+    nextButton.addEventListener('click', function () {
+      state.currentIndex += 1;
+      state.answered = false;
+
+      if (state.currentIndex >= total) {
+        renderResult(root, content, state);
+        return;
+      }
+
+      renderQuestion(root, content, state);
+    });
+  }
+
+  function renderResult(root, content, state) {
+    var total = content.questions.length;
+    var result = getResult(content, state.score);
+    var scoreSummary = formatLabel(content.labels.scoreSummary, {
+      score: state.score,
+      total: total
+    });
+
+    root.innerHTML = [
+      '<div class="quiz-screen quiz-screen--result">',
+      '  <span class="quiz-badge">' + escapeHtml(content.labels.finalScore) + '</span>',
+      '  <div class="quiz-result__score">' + state.score + '/' + total + '</div>',
+      '  <h2>' + escapeHtml(result.title) + '</h2>',
+      '  <p class="quiz-result__summary">' + escapeHtml(scoreSummary) + '</p>',
+      '  <p class="quiz-result__description">' + escapeHtml(result.description) + '</p>',
+      '  <div class="quiz-result__actions">',
+      '    <a class="btn btn-primary" href="' + escapeHtml(content.ctas.backHomeUrl) + '">' + escapeHtml(content.labels.backHome) + '</a>',
+      '    <a class="btn btn-ghost" href="' + escapeHtml(content.ctas.excursionsUrl) + '">' + escapeHtml(content.labels.viewExcursions) + '</a>',
+      '    <a class="btn btn-ghost" href="' + escapeHtml(content.ctas.availabilityUrl) + '">' + escapeHtml(content.labels.checkAvailability) + '</a>',
+      '    <button type="button" class="btn btn-ghost" data-play-again>' + escapeHtml(content.labels.playAgain) + '</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+
+    root.querySelector('[data-play-again]').addEventListener('click', function () {
+      state.currentIndex = -1;
+      state.score = 0;
+      state.answered = false;
+      renderStart(root, content, state);
+    });
+  }
+
+  ready(function () {
+    var root = document.querySelector('[data-quiz-app]');
+    if (!root) {
+      return;
+    }
+
+    var lang = root.getAttribute('data-quiz-lang') || document.documentElement.getAttribute('lang') || 'es';
+    var content = QUIZ_CONTENT[lang] || QUIZ_CONTENT.es;
+    var state = {
+      currentIndex: -1,
+      score: 0,
+      answered: false,
+      questionOrder: []
+    };
+
+    renderStart(root, content, state);
+  });
+})();
