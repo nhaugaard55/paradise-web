@@ -1,11 +1,12 @@
 (function () {
+  var QUESTIONS_PER_GAME = 10;
   var QUIZ_CONTENT = {
     es: {
       labels: {
         question: 'Pregunta',
         of: 'de',
         score: 'Aciertos',
-        startBadge: '20 preguntas',
+        startBadge: '10 preguntas',
         startTitle: '¿Cuánto sabés de Península Valdés?',
         startSubtitle: 'Un recorrido breve por la fauna, las temporadas y los paisajes que hacen única a esta esquina de la Patagonia.',
         startButton: 'Empezar quiz',
@@ -23,19 +24,19 @@
       results: [
         {
           min: 0,
-          max: 7,
+          max: 3,
           title: 'Explorador principiante',
           description: 'Recién empezás a descubrir los secretos de la península. La próxima salida entre mar y estepa te va a enseñar muchísimo más.'
         },
         {
-          min: 8,
-          max: 14,
+          min: 4,
+          max: 7,
           title: 'Amante de la Patagonia',
           description: 'Ya reconocés gran parte de la fauna y las temporadas clave. Estás muy cerca de convertirte en una referencia local.'
         },
         {
-          min: 15,
-          max: 20,
+          min: 8,
+          max: 10,
           title: 'Experto en Península Valdés',
           description: 'Tu mirada ya está afinada para leer el mar, la estepa y la vida silvestre como un verdadero conocedor de Puerto Pirámides.'
         }
@@ -213,7 +214,7 @@
         question: 'Question',
         of: 'of',
         score: 'Score',
-        startBadge: '20 questions',
+        startBadge: '10 questions',
         startTitle: 'How much do you know about Península Valdés?',
         startSubtitle: 'A short journey through wildlife, seasons, and the landscapes that make this corner of Patagonia unique.',
         startButton: 'Start quiz',
@@ -231,19 +232,19 @@
       results: [
         {
           min: 0,
-          max: 7,
+          max: 3,
           title: 'Beginner Explorer',
           description: 'You are just starting to uncover the secrets of the peninsula. Your next outing between sea and steppe will teach you a lot more.'
         },
         {
-          min: 8,
-          max: 14,
+          min: 4,
+          max: 7,
           title: 'Patagonia Lover',
           description: 'You already recognize much of the wildlife and the key seasons. You are very close to becoming a true local reference.'
         },
         {
-          min: 15,
-          max: 20,
+          min: 8,
+          max: 10,
           title: 'Península Valdés Expert',
           description: 'Your eye is already trained to read the sea, the steppe, and the wildlife like a true connoisseur of Puerto Pirámides.'
         }
@@ -447,7 +448,7 @@
     }) || content.results[content.results.length - 1];
   }
 
-  function createQuestionOrder(total) {
+  function createQuestionOrder(total, limit) {
     var order = [];
     var index;
 
@@ -462,7 +463,7 @@
       order[swapIndex] = currentValue;
     }
 
-    return order;
+    return order.slice(0, Math.min(limit, total));
   }
 
   function renderStart(root, content, state) {
@@ -483,7 +484,7 @@
       state.currentIndex = 0;
       state.score = 0;
       state.answered = false;
-      state.questionOrder = createQuestionOrder(content.questions.length);
+      state.questionOrder = createQuestionOrder(content.questions.length, QUESTIONS_PER_GAME);
       renderQuestion(root, content, state);
     });
   }
@@ -491,7 +492,7 @@
   function renderQuestion(root, content, state) {
     var questionIndex = state.questionOrder[state.currentIndex];
     var question = content.questions[questionIndex];
-    var total = content.questions.length;
+    var total = state.questionOrder.length;
     var progress = ((state.currentIndex + 1) / total) * 100;
 
     root.innerHTML = [
@@ -580,7 +581,7 @@
   }
 
   function renderResult(root, content, state) {
-    var total = content.questions.length;
+    var total = state.questionOrder.length;
     var result = getResult(content, state.score);
     var scoreSummary = formatLabel(content.labels.scoreSummary, {
       score: state.score,
