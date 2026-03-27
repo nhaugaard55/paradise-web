@@ -466,6 +466,35 @@
     return order.slice(0, Math.min(limit, total));
   }
 
+  function preloadImage(state, src) {
+    if (!src) {
+      return;
+    }
+
+    if (state.preloadedImages[src]) {
+      return;
+    }
+
+    state.preloadedImages[src] = true;
+    var image = new Image();
+    image.decoding = 'async';
+    image.src = src;
+  }
+
+  function preloadUpcomingImages(content, state) {
+    var indexesToWarm = [state.currentIndex, state.currentIndex + 1, state.currentIndex + 2];
+
+    indexesToWarm.forEach(function (orderIndex) {
+      if (orderIndex < 0 || orderIndex >= state.questionOrder.length) {
+        return;
+      }
+
+      var questionIndex = state.questionOrder[orderIndex];
+      var question = content.questions[questionIndex];
+      preloadImage(state, question.image);
+    });
+  }
+
   function renderStart(root, content, state) {
     root.innerHTML = [
       '<div class="quiz-screen quiz-screen--start">',
@@ -485,6 +514,7 @@
       state.score = 0;
       state.answered = false;
       state.questionOrder = createQuestionOrder(content.questions.length, QUESTIONS_PER_GAME);
+      preloadUpcomingImages(content, state);
       renderQuestion(root, content, state);
     });
   }
@@ -495,6 +525,8 @@
     var total = state.questionOrder.length;
     var progress = ((state.currentIndex + 1) / total) * 100;
 
+    preloadUpcomingImages(content, state);
+
     root.innerHTML = [
       '<div class="quiz-screen quiz-screen--question">',
       '  <div class="quiz-card__meta">',
@@ -503,7 +535,7 @@
       '  </div>',
       '  <div class="quiz-progress" aria-hidden="true"><span style="width:' + progress + '%"></span></div>',
       '  <figure class="quiz-card__media">',
-      '    <img src="' + escapeHtml(question.image) + '" alt="' + escapeHtml(question.imageAlt) + '" loading="lazy">',
+      '    <img src="' + escapeHtml(question.image) + '" alt="' + escapeHtml(question.imageAlt) + '" loading="eager" decoding="async">',
       '  </figure>',
       '  <div class="quiz-card__body">',
       '    <h2>' + escapeHtml(question.prompt) + '</h2>',
@@ -624,7 +656,8 @@
       currentIndex: -1,
       score: 0,
       answered: false,
-      questionOrder: []
+      questionOrder: [],
+      preloadedImages: {}
     };
 
     renderStart(root, content, state);
