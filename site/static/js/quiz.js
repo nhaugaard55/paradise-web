@@ -541,12 +541,19 @@
       '    <h2>' + escapeHtml(question.prompt) + '</h2>',
       '    <div class="quiz-options" role="list">',
              question.options.map(function (option, index) {
-               return '<button type="button" class="quiz-option" data-option="' + index + '" role="listitem">' + escapeHtml(option) + '</button>';
+               return [
+                 '<button type="button" class="quiz-option" data-option="' + index + '" role="listitem">',
+                 '  <span class="quiz-option__text">' + escapeHtml(option) + '</span>',
+                 '  <span class="quiz-option__icon" aria-hidden="true"></span>',
+                 '</button>'
+               ].join('');
              }).join(''),
       '    </div>',
       '    <div class="quiz-feedback" data-feedback hidden aria-live="polite">',
-      '      <div class="quiz-feedback__label" data-feedback-label></div>',
-      '      <h3>' + escapeHtml(content.labels.explanationTitle) + '</h3>',
+      '      <div class="quiz-feedback__status">',
+      '        <span class="quiz-feedback__icon" data-feedback-icon aria-hidden="true"></span>',
+      '        <div class="quiz-feedback__label" data-feedback-label></div>',
+      '      </div>',
       '      <p data-feedback-copy></p>',
       '      <button type="button" class="btn btn-primary" data-next-button>' + escapeHtml(content.labels.nextButton) + '</button>',
       '    </div>',
@@ -556,6 +563,7 @@
 
     var optionButtons = root.querySelectorAll('[data-option]');
     var feedback = root.querySelector('[data-feedback]');
+    var feedbackIcon = root.querySelector('[data-feedback-icon]');
     var feedbackLabel = root.querySelector('[data-feedback-label]');
     var feedbackCopy = root.querySelector('[data-feedback-copy]');
     var nextButton = root.querySelector('[data-next-button]');
@@ -593,7 +601,9 @@
         });
 
         feedback.hidden = false;
+        feedback.classList.remove('is-correct', 'is-incorrect');
         feedback.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+        feedbackIcon.textContent = isCorrect ? '✅' : '❌';
         feedbackLabel.textContent = isCorrect ? content.labels.correct : content.labels.incorrect;
         feedbackCopy.textContent = question.explanation;
       });
