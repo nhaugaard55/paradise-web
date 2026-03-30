@@ -466,6 +466,25 @@
     return order.slice(0, Math.min(limit, total));
   }
 
+  function createShuffledOptions(question) {
+    var options = question.options.map(function (option, index) {
+      return {
+        text: option,
+        isCorrect: index === question.correctIndex
+      };
+    });
+    var index;
+
+    for (index = options.length - 1; index > 0; index -= 1) {
+      var swapIndex = Math.floor(Math.random() * (index + 1));
+      var currentValue = options[index];
+      options[index] = options[swapIndex];
+      options[swapIndex] = currentValue;
+    }
+
+    return options;
+  }
+
   function preloadImage(state, src) {
     if (!src) {
       return;
@@ -522,6 +541,7 @@
   function renderQuestion(root, content, state) {
     var questionIndex = state.questionOrder[state.currentIndex];
     var question = content.questions[questionIndex];
+    var shuffledOptions = createShuffledOptions(question);
     var total = state.questionOrder.length;
     var progress = ((state.currentIndex + 1) / total) * 100;
 
@@ -540,10 +560,10 @@
       '  <div class="quiz-card__body">',
       '    <h2>' + escapeHtml(question.prompt) + '</h2>',
       '    <div class="quiz-options" role="list">',
-             question.options.map(function (option, index) {
+             shuffledOptions.map(function (option, index) {
                return [
                  '<button type="button" class="quiz-option" data-option="' + index + '" role="listitem">',
-                 '  <span class="quiz-option__text">' + escapeHtml(option) + '</span>',
+                 '  <span class="quiz-option__text">' + escapeHtml(option.text) + '</span>',
                  '  <span class="quiz-option__icon" aria-hidden="true"></span>',
                  '</button>'
                ].join('');
@@ -577,7 +597,7 @@
 
         state.answered = true;
         var selectedIndex = Number(button.getAttribute('data-option'));
-        var isCorrect = selectedIndex === question.correctIndex;
+        var isCorrect = Boolean(shuffledOptions[selectedIndex] && shuffledOptions[selectedIndex].isCorrect);
 
         if (isCorrect) {
           state.score += 1;
@@ -587,7 +607,7 @@
         optionButtons.forEach(function (optionButton, index) {
           optionButton.disabled = true;
 
-          if (index === question.correctIndex) {
+          if (shuffledOptions[index] && shuffledOptions[index].isCorrect) {
             optionButton.classList.add('is-correct');
             return;
           }
