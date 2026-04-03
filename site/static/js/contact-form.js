@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sending        : 'Sending…',
         send           : 'Send',
         success        : 'Message sent! We\'ll get back to you soon.',
-        error          : 'Something went wrong. Write to us directly at <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.'
+        error          : 'Something went wrong. Write to us directly at <a href="mailto:paradisepiramides26@gmail.com">paradisepiramides26@gmail.com</a>.'
       }
     : {
         missingMessage : 'Por favor, contanos en el mensaje qué necesitás.',
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sending        : 'Enviando…',
         send           : 'Enviar',
         success        : '¡Mensaje enviado! Te respondemos pronto.',
-        error          : 'Algo salió mal. Escribinos directamente a <a href="mailto:info@hosteriaparadise.com.ar">info@hosteriaparadise.com.ar</a>.'
+        error          : 'Algo salió mal. Escribinos directamente a <a href="mailto:paradisepiramides26@gmail.com">paradisepiramides26@gmail.com</a>.'
       };
 
   form.addEventListener('submit', function (event) {
