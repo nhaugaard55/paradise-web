@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
           statusEl.className  = 'form-status form-status--ok';
           statusEl.hidden     = false;
           form.reset();
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'form_submit_contact' });
         } else {
           return response.json().then(function (body) {
             throw new Error(body.error || 'error');
