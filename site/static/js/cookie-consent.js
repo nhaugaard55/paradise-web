@@ -30,12 +30,12 @@
   banner.setAttribute('aria-label', isEn ? 'Cookie consent' : 'Consentimiento de cookies');
 
   banner.innerHTML = isEn
-    ? '<p>We use cookies to analyze traffic and improve your experience.</p>'
+    ? '<p>We use cookies to analyze traffic and improve your experience. <a href="/en/privacy/" style="color:inherit;text-decoration:underline;">Privacy policy</a>.</p>'
         + '<div class="cookie-actions">'
         + '<button id="cookie-reject" class="cookie-btn cookie-btn--reject">Reject</button>'
         + '<button id="cookie-accept" class="cookie-btn cookie-btn--accept">Accept</button>'
         + '</div>'
-    : '<p>Usamos cookies para analizar el tráfico y mejorar tu experiencia.</p>'
+    : '<p>Usamos cookies para analizar el tráfico y mejorar tu experiencia. <a href="/es/privacidad/" style="color:inherit;text-decoration:underline;">Política de privacidad</a>.</p>'
         + '<div class="cookie-actions">'
         + '<button id="cookie-reject" class="cookie-btn cookie-btn--reject">Rechazar</button>'
         + '<button id="cookie-accept" class="cookie-btn cookie-btn--accept">Aceptar</button>'
