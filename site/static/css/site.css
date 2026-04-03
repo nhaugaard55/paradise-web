@@ -11,8 +11,8 @@
     --nav-offset: 110px;
 
     /* Typography */
-    --font-heading: 'FONT_HEADING', serif;
-    --font-body: 'FONT_BODY', sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --fs-h1: 2.8rem;
     --fs-h2: 2.2rem;
     --fs-h3: 1.5rem;
