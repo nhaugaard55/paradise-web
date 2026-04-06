@@ -31,13 +31,13 @@
         {
           min: 4,
           max: 7,
-          title: 'Amante de la Patagonia',
+          title: 'Explorador intermedio',
           description: 'Ya reconocés gran parte de la fauna y las temporadas clave. Estás muy cerca de convertirte en una referencia local.'
         },
         {
           min: 8,
           max: 10,
-          title: 'Experto en Península Valdés',
+          title: 'Explorador experto',
           description: 'Tu mirada ya está afinada para leer el mar, la estepa y la vida silvestre como un verdadero conocedor de Puerto Pirámides.'
         }
       ],
@@ -206,6 +206,86 @@
           options: ['Para alimentarse exclusivamente', 'Para reproducirse y tener crías', 'Para migrar hacia el sur', 'Para evitar depredadores en mar abierto'],
           correctIndex: 1,
           explanation: 'Las aguas calmas son ideales para el nacimiento y cuidado de las crías.'
+        },
+        {
+          image: '/static/Imagenes/quiz/cormorants.webp',
+          imageAlt: 'Cormoranes en los acantilados de Península Valdés.',
+          prompt: '¿Qué ave marina aparece en la imagen?',
+          options: ['Gaviota cocinera', 'Cormorán imperial', 'Albatros', 'Pingüino de Magallanes'],
+          correctIndex: 1,
+          explanation: 'El cormorán imperial forma grandes colonias en los acantilados costeros de Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/patagonian-fox.webp',
+          imageAlt: 'Zorro patagónico en la estepa.',
+          prompt: '¿Qué especie de zorro habita la estepa patagónica?',
+          options: ['Zorro colorado', 'Zorro gris patagónico', 'Zorro culpeo', 'Zorro del monte'],
+          correctIndex: 1,
+          explanation: 'El zorro gris patagónico es el más común en la región y puede verse al atardecer.'
+        },
+        {
+          image: '/static/Imagenes/quiz/southern-sea.webp',
+          imageAlt: 'Vista del Golfo Nuevo desde la costa.',
+          prompt: '¿Cómo se llama el golfo donde se encuentra Puerto Pirámides?',
+          options: ['Golfo San Jorge', 'Golfo San Matías', 'Golfo Nuevo', 'Golfo Dulce'],
+          correctIndex: 2,
+          explanation: 'El Golfo Nuevo es el escenario principal del avistaje embarcado de ballenas francas australes.'
+        },
+        {
+          image: '/static/Imagenes/quiz/rhea.webp',
+          imageAlt: 'Choique en la estepa patagónica.',
+          prompt: '¿Cuál es la relación del choique con el avestruz?',
+          options: ['Son la misma especie', 'Son primos lejanos que evolucionaron en continentes distintos', 'El choique es una subespecie del avestruz', 'No tienen relación'],
+          correctIndex: 1,
+          explanation: 'El choique y el avestruz son aves ratites que evolucionaron por separado en América del Sur y África respectivamente.'
+        },
+        {
+          image: '/static/Imagenes/quiz/armadillo.webp',
+          imageAlt: 'Armadillo en la Patagonia.',
+          prompt: '¿Qué animal acorazado podés encontrar en la estepa patagónica?',
+          options: ['Tatú carreta', 'Piche patagónico', 'Mulita', 'Armadillo gigante'],
+          correctIndex: 1,
+          explanation: 'El piche patagónico (Zaedyus pichiy) es el armadillo más común de la Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/salt-flats.webp',
+          imageAlt: 'Salinas en Península Valdés.',
+          prompt: '¿Qué característica geológica distingue el interior de Península Valdés?',
+          options: ['Depresiones con lagunas permanentes de agua dulce', 'Valles glaciares activos', 'Salinas ubicadas por debajo del nivel del mar', 'Deltas formados por ríos caudalosos'],
+          correctIndex: 2,
+          explanation: 'Las Salinas Grandes y Salinas Chicas son depresiones bajo el nivel del mar, un rasgo único de la península.'
+        },
+        {
+          image: '/static/Imagenes/quiz/diving.webp',
+          imageAlt: 'Buzos en las aguas de Puerto Pirámides.',
+          prompt: '¿Con qué fauna marina es más común interactuar en actividades como snorkeling o buceo en Puerto Pirámides?',
+          options: ['Pingüinos de Magallanes', 'Delfines', 'Lobos marinos', 'Orcas'],
+          correctIndex: 2,
+          explanation: 'El buceo con lobos marinos en Puerto Pirámides es una experiencia única disponible gran parte del año.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-breach.webp',
+          imageAlt: 'Ballena saltando completamente fuera del agua.',
+          prompt: '¿Qué comportamiento de la ballena se observa en la imagen?',
+          options: ['Lobtailing', 'Spy-hopping', 'Salto', 'Nado superficial'],
+          correctIndex: 2,
+          explanation: 'El "breach" es uno de los comportamientos más espectaculares de las ballenas y se observa frecuentemente en Golfo Nuevo.'
+        },
+        {
+          image: '/static/Imagenes/quiz/kayak.webp',
+          imageAlt: 'Kayakistas en las aguas de Puerto Pirámides.',
+          prompt: '¿Qué actividad es la más característica para recorrer la costa de Puerto Pirámides desde el agua?',
+          options: ['Surf', 'Windsurf', 'Kitesurf', 'Kayak de mar'],
+          correctIndex: 3,
+          explanation: 'El kayak de mar permite recorrer la costa y acercarse a la fauna marina de una forma silenciosa y respetuosa.'
+        },
+        {
+          image: '/static/Imagenes/quiz/unesco.webp',
+          imageAlt: 'Logo de Patrimonio Natural de la Humanidad.',
+          prompt: '¿Qué distinción internacional tiene Península Valdés?',
+          options: ['Reserva de la Biosfera MAB', 'Patrimonio Natural de la Humanidad UNESCO', 'Parque Nacional IUCN categoría I', 'Zona Ramsar de humedales'],
+          correctIndex: 1,
+          explanation: 'Península Valdés fue declarada Patrimonio Natural de la Humanidad por la UNESCO en 1999.'
         }
       ]
     },
@@ -239,13 +319,13 @@
         {
           min: 4,
           max: 7,
-          title: 'Patagonia Lover',
+          title: 'Intermediate Explorer',
           description: 'You already recognize much of the wildlife and the key seasons. You are very close to becoming a true local reference.'
         },
         {
           min: 8,
           max: 10,
-          title: 'Península Valdés Expert',
+          title: 'Expert Explorer',
           description: 'Your eye is already trained to read the sea, the steppe, and the wildlife like a true connoisseur of Puerto Pirámides.'
         }
       ],
@@ -414,6 +494,86 @@
           options: ['To feed exclusively', 'To breed and have calves', 'To migrate south', 'To avoid predators in the open sea'],
           correctIndex: 1,
           explanation: 'These calm waters are ideal for giving birth and caring for newborn calves.'
+        },
+        {
+          image: '/static/Imagenes/quiz/cormorants.webp',
+          imageAlt: 'Cormorants on the cliffs of Península Valdés.',
+          prompt: 'Which seabird appears in the image?',
+          options: ['Kelp gull', 'Imperial cormorant', 'Albatross', 'Magellanic penguin'],
+          correctIndex: 1,
+          explanation: 'The imperial cormorant forms large colonies on the coastal cliffs of Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/patagonian-fox.webp',
+          imageAlt: 'Patagonian fox on the steppe.',
+          prompt: 'Which fox species lives on the Patagonian steppe?',
+          options: ['Red fox', 'Patagonian grey fox', 'Culpeo fox', 'Pampas fox'],
+          correctIndex: 1,
+          explanation: 'The Patagonian grey fox is the most common in the region and is often spotted at dusk.'
+        },
+        {
+          image: '/static/Imagenes/quiz/southern-sea.webp',
+          imageAlt: 'View of Golfo Nuevo from the coast.',
+          prompt: 'What is the name of the gulf where Puerto Pirámides is located?',
+          options: ['Golfo San Jorge', 'Golfo San Matías', 'Golfo Nuevo', 'Golfo Dulce'],
+          correctIndex: 2,
+          explanation: 'Golfo Nuevo is the main setting for boat-based southern right whale watching.'
+        },
+        {
+          image: '/static/Imagenes/quiz/rhea.webp',
+          imageAlt: 'Lesser rhea on the Patagonian steppe.',
+          prompt: 'What is the relationship between the lesser rhea and the ostrich?',
+          options: ['They are the same species', 'They are distant relatives that evolved on different continents', 'The lesser rhea is a subspecies of the ostrich', 'They share no relationship'],
+          correctIndex: 1,
+          explanation: 'The lesser rhea and the ostrich are ratite birds that evolved separately in South America and Africa respectively.'
+        },
+        {
+          image: '/static/Imagenes/quiz/armadillo.webp',
+          imageAlt: 'Armadillo in Patagonia.',
+          prompt: 'Which armored animal can you find on the Patagonian steppe?',
+          options: ['Giant armadillo', 'Patagonian pichi', 'Nine-banded armadillo', 'Southern three-banded armadillo'],
+          correctIndex: 1,
+          explanation: 'The Patagonian pichi (Zaedyus pichiy) is the most common armadillo in Patagonia.'
+        },
+        {
+          image: '/static/Imagenes/quiz/salt-flats.webp',
+          imageAlt: 'Salt flats in Península Valdés.',
+          prompt: 'What geological feature sets the interior of Península Valdés apart?',
+          options: ['Depressions with permanent freshwater lagoons', 'Active glacial valleys', 'Salt flats located below sea level', 'Deltas formed by large rivers'],
+          correctIndex: 2,
+          explanation: 'Las Salinas Grandes and Salinas Chicas are depressions below sea level, a unique feature of the peninsula.'
+        },
+        {
+          image: '/static/Imagenes/quiz/diving.webp',
+          imageAlt: 'Divers in the waters of Puerto Pirámides.',
+          prompt: 'Which marine wildlife is most commonly encountered while snorkeling or diving in Puerto Pirámides?',
+          options: ['Magellanic penguins', 'Dolphins', 'Sea lions', 'Orcas'],
+          correctIndex: 2,
+          explanation: 'Diving with sea lions in Puerto Pirámides is a unique experience available for much of the year.'
+        },
+        {
+          image: '/static/Imagenes/quiz/whale-breach.webp',
+          imageAlt: 'Whale breaching completely out of the water.',
+          prompt: 'What behavior is the whale displaying in the image?',
+          options: ['Lobtailing', 'Spy-hopping', 'Breaching', 'Surface swimming'],
+          correctIndex: 2,
+          explanation: 'A breach is one of the most spectacular whale behaviors and is frequently observed in Golfo Nuevo.'
+        },
+        {
+          image: '/static/Imagenes/quiz/kayak.webp',
+          imageAlt: 'Kayakers on the waters of Puerto Pirámides.',
+          prompt: 'Which activity is the most characteristic way to explore the coast of Puerto Pirámides from the water?',
+          options: ['Surfing', 'Windsurfing', 'Kitesurfing', 'Sea kayaking'],
+          correctIndex: 3,
+          explanation: 'Sea kayaking lets you explore the coastline and approach marine wildlife quietly and respectfully.'
+        },
+        {
+          image: '/static/Imagenes/quiz/unesco.webp',
+          imageAlt: 'UNESCO World Natural Heritage emblem.',
+          prompt: 'What international recognition does Península Valdés hold?',
+          options: ['UNESCO Man and Biosphere Reserve', 'UNESCO World Natural Heritage Site', 'IUCN Category I National Park', 'Ramsar Wetland Site'],
+          correctIndex: 1,
+          explanation: 'Península Valdés was declared a UNESCO World Natural Heritage Site in 1999.'
         }
       ]
     }
