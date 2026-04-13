@@ -64,10 +64,17 @@ body {
     font-size: var(--fs-body);
     color: var(--brand-text);
     background-color: var(--brand-bg-paper);
+    line-height: var(--lh-body);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
     background-image: url("../Imagenes/Texturas/paper-texture.jpg");
     background-size: cover;
-    background-attachment: fixed;
-    line-height: var(--lh-body);
+    z-index: -1;
+    pointer-events: none;
     text-align: center;
 }
 
@@ -1229,9 +1236,8 @@ header.navbar,
 
 @media (max-width: 768px) {
     .collage-nosotros {
-        padding: var(--space-lg) 1rem;
+        padding: var(--space-md) 1rem 0;
         grid-auto-rows: 50px;
-        overflow: hidden;
     }
 
     .collage-nosotros figure {
@@ -1456,7 +1462,6 @@ header.navbar,
 @media (max-width: 768px) {
     body {
         padding-top: 0;
-        background-attachment: scroll;
     }
 
     .section {
