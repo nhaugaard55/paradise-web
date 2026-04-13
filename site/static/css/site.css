@@ -1200,8 +1200,15 @@ header.navbar,
 
 @media (max-width: 600px) {
     .lightbox-platos .lightbox-inner {
-        width: 90vw;
-        height: 70vh;
+        width: 82vw;
+        height: 82vw;
+    }
+
+    .lightbox-platos .lightbox-inner img {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
