@@ -1109,8 +1109,9 @@ header.navbar,
     }
 }
 
-/* Lightbox Nosotros */
-.lightbox-nosotros {
+/* Lightbox Nosotros / Platos */
+.lightbox-nosotros,
+.lightbox-platos {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
@@ -1121,7 +1122,8 @@ header.navbar,
     padding: var(--space-md);
 }
 
-.lightbox-nosotros[hidden] {
+.lightbox-nosotros[hidden],
+.lightbox-platos[hidden] {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -1182,6 +1184,26 @@ header.navbar,
 
 .lightbox-nav.prev { left: var(--space-sm); }
 .lightbox-nav.next { right: var(--space-sm); }
+
+/* Lightbox platos: dimensiones fijas para que no cambie de forma entre fotos */
+.lightbox-platos .lightbox-inner {
+    width: min(900px, 90vw);
+    height: min(600px, 80vh);
+}
+
+.lightbox-platos .lightbox-inner img {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .lightbox-platos .lightbox-inner {
+        width: 90vw;
+        height: 70vh;
+    }
+}
 
 @media (max-width: 600px) {
     .lightbox-inner {
