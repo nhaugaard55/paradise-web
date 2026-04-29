@@ -99,7 +99,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/site.css?v=6">
+  <link rel="stylesheet" href="/static/css/site.css?v=9">
 </head>
 <body>
   <header class="navbar">
@@ -125,8 +125,15 @@
         <a href="#contact" data-scroll>Contact</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/#home" data-lang-link="es" aria-label="Español">🇦🇷</a>
-        <a href="/en/#home" class="is-active" data-lang-link="en" aria-label="English">🇬🇧</a>
+        <a href="/es/#home" data-lang-link="es" aria-label="Español">
+          <img class="lang-switcher__flag" src="/static/Imagenes/Iconos/flag-es.svg" alt="" aria-hidden="true">
+          <span class="lang-switcher__code">ES</span>
+        </a>
+        <span class="lang-switcher__divider" aria-hidden="true"></span>
+        <a href="/en/#home" class="is-active" data-lang-link="en" aria-label="English">
+          <span class="lang-switcher__code">EN</span>
+          <img class="lang-switcher__flag" src="/static/Imagenes/Iconos/flag-en.svg" alt="" aria-hidden="true">
+        </a>
       </div>
     </div>
   </header>

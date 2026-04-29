@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Cabin:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/site.css?v=5">
+  <link rel="stylesheet" href="/static/css/site.css?v=9">
   <link rel="stylesheet" href="/static/css/quiz.css?v=7">
 </head>
 <body class="quiz-page">
@@ -55,9 +55,15 @@
         <a href="/es/#contacto">Contacto</a>
       </nav>
       <div class="lang-switcher">
-        <a href="/es/quiz/" class="is-active">ES</a>
-        <span aria-hidden="true">/</span>
-        <a href="/en/quiz/">EN</a>
+        <a href="/es/quiz/" class="is-active" aria-label="Español">
+          <img class="lang-switcher__flag" src="/static/Imagenes/Iconos/flag-es.svg" alt="" aria-hidden="true">
+          <span class="lang-switcher__code">ES</span>
+        </a>
+        <span class="lang-switcher__divider" aria-hidden="true"></span>
+        <a href="/en/quiz/" aria-label="English">
+          <span class="lang-switcher__code">EN</span>
+          <img class="lang-switcher__flag" src="/static/Imagenes/Iconos/flag-en.svg" alt="" aria-hidden="true">
+        </a>
       </div>
     </div>
   </header>
