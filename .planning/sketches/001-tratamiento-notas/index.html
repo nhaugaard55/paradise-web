@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sketch · The Paradise en los medios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap">
+  <link rel="stylesheet" href="../themes/default.css">
+  <style>
+    *{box-sizing:border-box} body{margin:0;padding-top:56px;background:var(--color-bg);color:var(--color-text);font-family:var(--font-sans);background-image:linear-gradient(rgba(245,237,224,.88),rgba(245,237,224,.88)),url('../../../site/static/Imagenes/Texturas/paper-texture.jpg');background-size:cover;background-attachment:fixed}.variant-nav{position:fixed;inset:0 0 auto;z-index:20;display:flex;gap:8px;padding:10px 16px;background:#faf6eff2;border-bottom:1px solid var(--color-border);overflow:auto}.variant-tab{border:1px solid var(--color-border);background:transparent;color:var(--color-text);border-radius:999px;padding:8px 14px;white-space:nowrap;cursor:pointer}.variant-tab.active{background:var(--color-text);color:var(--color-bg)}.variant{display:none;min-height:100vh}.variant.active{display:block}.context{padding:52px 20px 0;text-align:center}.context small{text-transform:uppercase;letter-spacing:.16em;color:var(--color-text-muted)}.context h1{font:700 clamp(2.2rem,5vw,4rem)/1.05 var(--font-serif);margin:10px auto 14px}.context p{max-width:700px;margin:0 auto 38px;color:var(--color-text-muted);line-height:1.65}.press{padding:0 0 70px;overflow:hidden}.track-wrap{position:relative}.track-wrap:before,.track-wrap:after{content:"";position:absolute;inset:0 auto 0;z-index:4;width:8vw;pointer-events:none;background:linear-gradient(90deg,var(--color-bg),transparent)}.track-wrap:after{left:auto;right:0;transform:scaleX(-1)}.track{display:flex;width:max-content;gap:22px;padding:10px 11px;animation:marquee 34s linear infinite}.track:hover,.track:focus-within,.track.paused{animation-play-state:paused}@keyframes marquee{to{transform:translateX(calc(-50% - 11px))}}.card{display:block;color:inherit;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}.card:hover,.card:focus-visible{transform:translateY(-7px);outline:3px solid color-mix(in srgb,var(--color-primary) 45%,transparent);outline-offset:3px}.card img{width:100%;height:210px;object-fit:cover}.set{display:flex;gap:22px}.variant-a .card{width:330px;background:var(--color-surface);border:1px solid rgba(208,185,164,.7);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}.variant-a .copy{padding:20px 22px 24px}.medium{text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:600;color:var(--color-primary)}.card h2{font:600 1.35rem/1.22 var(--font-serif);margin:8px 0 16px}.read{font-size:.9rem;font-weight:600;color:var(--color-primary)}.variant-b .card{width:350px;height:430px;position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);background:#24313a}.variant-b .card img{height:100%;filter:saturate(.78)}.variant-b .card:after{content:"";position:absolute;inset:25% 0 0;background:linear-gradient(transparent,rgba(18,25,30,.94))}.variant-b .copy{position:absolute;inset:auto 25px 24px;z-index:2;color:white}.variant-b .medium,.variant-b .read{color:#f0d8b8}.variant-b h2{color:white;font-size:1.55rem}.variant-c .card{width:360px;display:grid;grid-template-columns:125px 1fr;min-height:230px;padding:14px;background:#f8f1e7;border:1px solid var(--color-border);border-radius:var(--radius-sm);box-shadow:8px 9px 0 rgba(208,185,164,.4)}.variant-c .card img{height:100%;min-height:200px;filter:sepia(.2) contrast(.95);border-radius:4px}.variant-c .copy{padding:8px 8px 8px 17px}.variant-c h2{font-size:1.18rem}.hint{text-align:center;font-size:.82rem;color:var(--color-text-muted);margin-top:18px}.controls{display:flex;justify-content:center;margin-top:20px}.pause{border:1px solid var(--color-border);border-radius:999px;background:var(--color-surface);padding:9px 16px;color:var(--color-text);cursor:pointer}.tools{position:fixed;right:12px;bottom:12px;z-index:30;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,.75);color:white;font:12px system-ui;opacity:.42;transition:.2s}.tools:hover{opacity:1}.tools button{font:inherit}@media(max-width:600px){.context{padding-top:36px}.track{gap:14px}.set{gap:14px}.variant-a .card{width:280px}.variant-b .card{width:285px;height:390px}.variant-c .card{width:310px;grid-template-columns:105px 1fr}.track-wrap:before,.track-wrap:after{width:24px}}@media(prefers-reduced-motion:reduce){.track{animation:none;transform:none}.track-wrap{overflow-x:auto}.pause{display:none}}
+  </style>
+</head>
+<body>
+  <nav class="variant-nav" aria-label="Variantes">
+    <button class="variant-tab active" data-variant="a">A: Revista editorial</button>
+    <button class="variant-tab" data-variant="b">B: Portadas inmersivas</button>
+    <button class="variant-tab" data-variant="c">C: Archivo de prensa ★ Seleccionada</button>
+  </nav>
+  <main>
+    <section class="variant variant-a active" id="variant-a"></section>
+    <section class="variant variant-b" id="variant-b"></section>
+    <section class="variant variant-c" id="variant-c"></section>
+  </main>
+  <div class="tools">Vista: <button data-width="375px">Móvil</button> <button data-width="100%">Escritorio</button></div>
+  <script>
+    const stories=[
+      {medium:'Diario Río Negro',title:'La épica historia de una hostería pionera en una joya oculta de la Patagonia',image:'../../../site/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-01.jpg',url:'https://www.rionegro.com.ar/arquitectura/tenian-19-anos-y-el-pueblo-solo-37-habitantes-la-epica-historia-de-una-hosteria-pionera-en-una-joya-oculta-de-la-patagonia-4650701/'},
+      {medium:'La Nación',title:'El comedor de mar que visitaban Borges y Sábato y se volvió de culto',image:'../../../site/static/Imagenes/Platos/plato-01.jpg',url:'https://www.lanacion.com.ar/sociedad/el-comedor-de-mar-que-visitaban-borges-y-sabato-y-se-volvio-de-culto-por-su-plato-estrella-nid06032023/'},
+      {medium:'Diario Río Negro',title:'Puerto Pirámides y un pub que hizo historia en la Patagonia',image:'../../../site/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-04.jpg',url:'https://www.rionegro.com.ar/voy-turismo/a-los-18-abrieron-un-pub-en-un-paraiso-de-la-patagonia-de-37-habitantes-recuerdos-de-un-boom-inesperado-3351802/'},
+      {medium:'Revista Pirámides · Julio 2020',title:'Historia de vida: Malvina Trespailhié',image:'../../../site/static/Imagenes/quiz/whale-calf-near-shore.webp',url:'https://f411a176-985c-42d8-b3bd-babe3f07b63f.filesusr.com/ugd/cd9e9c_8a8965f6d6be4899a738da271b70294a.pdf'}
+    ];
+    const card=s=>`<a class="card" href="${s.url}" target="_blank" rel="noopener"><img src="${s.image}" alt="" loading="lazy"><div class="copy"><div class="medium">${s.medium}</div><h2>${s.title}</h2><span class="read">Leer publicación ↗</span></div></a>`;
+    function render(el){const set=`<div class="set">${stories.map(card).join('')}</div>`;el.innerHTML=`<header class="context"><small>Historias que viajan</small><h1>The Paradise en los medios</h1><p>Notas, encuentros y recuerdos que cuentan nuestra historia en Puerto Pirámides.</p></header><div class="press"><div class="track-wrap"><div class="track">${set}${set}</div></div><p class="hint">El movimiento se pausa al pasar el cursor o enfocar una nota.</p></div>`}
+    document.querySelectorAll('.variant').forEach(render);
+    document.querySelectorAll('.variant-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.variant,.variant-tab').forEach(x=>x.classList.remove('active'));document.querySelector('#variant-'+btn.dataset.variant).classList.add('active');btn.classList.add('active')}));
+    document.querySelectorAll('.tools button').forEach(b=>b.addEventListener('click',()=>{document.body.style.maxWidth=b.dataset.width;document.body.style.margin='0 auto'}));
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+:root {
+  --color-bg: #f5ede0;
+  --color-surface: #faf6ef;
+  --color-border: #d0b9a4;
+  --color-text: #3a2c24;
+  --color-text-muted: #7a6052;
+  --color-primary: #3b7a9e;
+  --color-primary-hover: #b35e52;
+  --color-accent: #e6d0af;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --radius-sm: .75rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --shadow: 0 20px 45px rgba(58, 44, 36, .12);
+}
