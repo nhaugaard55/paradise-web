@@ -99,7 +99,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/site.css?v=11">
+  <link rel="stylesheet" href="/static/css/site.css?v=13">
 </head>
 <body>
   <header class="navbar">
@@ -531,6 +531,40 @@
       </div>
     </section>
 
+    <section class="press-section" aria-labelledby="press-title">
+      <header class="press-section__header">
+        <p class="eyebrow">Stories that travel</p>
+        <h2 id="press-title">The Paradise in the press</h2>
+        <p>Articles, encounters and memories that tell our story in Puerto Pirámides.</p>
+      </header>
+      <div class="press-carousel-shell">
+        <button class="press-carousel__nav press-carousel__nav--prev" type="button" data-press-prev aria-label="View previous publications">‹</button>
+        <div class="press-carousel" data-press-carousel aria-label="Publications about The Paradise">
+          <div class="press-carousel__track" data-press-track>
+            <div class="press-carousel__set" data-press-set>
+            <a class="press-card" href="https://www.rionegro.com.ar/arquitectura/tenian-19-anos-y-el-pueblo-solo-37-habitantes-la-epica-historia-de-una-hosteria-pionera-en-una-joya-oculta-de-la-patagonia-4650701/" target="_blank" rel="noopener">
+              <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-01.jpg" alt="The early years of The Paradise in Puerto Pirámides" loading="lazy">
+              <span class="press-card__body"><span class="press-card__medium">Diario Río Negro</span><span class="press-card__title">The epic story of a pioneering inn in a hidden Patagonian gem</span><span class="press-card__link">Read article <span aria-hidden="true">↗</span></span></span>
+            </a>
+            <a class="press-card" href="https://www.lanacion.com.ar/sociedad/el-comedor-de-mar-que-visitaban-borges-y-sabato-y-se-volvio-de-culto-por-su-plato-estrella-nid06032023/" target="_blank" rel="noopener">
+              <img src="/static/Imagenes/Platos/plato-01.jpg" alt="The Paradise cuisine" loading="lazy">
+              <span class="press-card__body"><span class="press-card__medium">La Nación</span><span class="press-card__title">The seaside dining room visited by Borges and Sábato that became a cult favorite</span><span class="press-card__link">Read article <span aria-hidden="true">↗</span></span></span>
+            </a>
+            <a class="press-card" href="https://www.rionegro.com.ar/voy-turismo/a-los-18-abrieron-un-pub-en-un-paraiso-de-la-patagonia-de-37-habitantes-recuerdos-de-un-boom-inesperado-3351802/" target="_blank" rel="noopener">
+              <img src="/static/Imagenes/Fotos-historicas-Paradise/paradise-retro-04.jpg" alt="The historic The Paradise pub" loading="lazy">
+              <span class="press-card__body"><span class="press-card__medium">Diario Río Negro</span><span class="press-card__title">Puerto Pirámides and a pub that made history in Patagonia</span><span class="press-card__link">Read article <span aria-hidden="true">↗</span></span></span>
+            </a>
+            <a class="press-card" href="https://f411a176-985c-42d8-b3bd-babe3f07b63f.filesusr.com/ugd/cd9e9c_8a8965f6d6be4899a738da271b70294a.pdf" target="_blank" rel="noopener">
+              <img src="/static/docs/revista-piramides-julio-2020.jpg" alt="Cover of Pirámides magazine, July 2020" loading="lazy">
+              <span class="press-card__body"><span class="press-card__medium">Pirámides Magazine · July 2020</span><span class="press-card__title">Life story: Malvina Trespailhié</span><span class="press-card__link">Read publication <span aria-hidden="true">↗</span></span></span>
+            </a>
+            </div>
+          </div>
+        </div>
+        <button class="press-carousel__nav press-carousel__nav--next" type="button" data-press-next aria-label="View next publications">›</button>
+      </div>
+    </section>
+
     <section id="contact">
       <section class="section">
         <h1>Contact us</h1>
@@ -663,6 +697,7 @@
   <script src="/static/js/hosteria-gallery.js" defer></script>
   <script src="/static/js/excursions.js" defer></script>
   <script src="/static/js/contact-form.js" defer></script>
+  <script src="/static/js/press-carousel.js?v=3" defer></script>
   <script src="/static/js/onepage.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {

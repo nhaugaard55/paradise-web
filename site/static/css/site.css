@@ -1716,6 +1716,201 @@ header.navbar,
 }
 
 /* ================================================================
+   THE PARADISE EN LOS MEDIOS
+   ================================================================ */
+.press-section {
+    padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+    overflow: hidden;
+}
+
+.press-section__header {
+    width: min(760px, calc(100% - 2rem));
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.press-section__header .eyebrow {
+    margin-bottom: 0.55rem;
+    color: var(--brand-accent-sea);
+}
+
+.press-section__header h2 { margin-bottom: 0.85rem; }
+
+.press-section__header > p:last-child {
+    margin: 0;
+    color: var(--brand-text-muted);
+}
+
+.press-carousel-shell {
+    position: relative;
+    width: 100%;
+}
+
+.press-carousel {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+.press-carousel::-webkit-scrollbar { display: none; }
+
+.press-carousel-shell::before,
+.press-carousel-shell::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: 2;
+    width: clamp(1.5rem, 7vw, 7rem);
+    background: linear-gradient(90deg, var(--brand-bg-paper), transparent);
+    pointer-events: none;
+}
+
+.press-carousel-shell::after {
+    right: 0;
+    left: auto;
+    transform: scaleX(-1);
+}
+
+.press-carousel__track {
+    display: flex;
+    width: max-content;
+}
+
+.press-carousel__set {
+    display: flex;
+    flex: none;
+    gap: 1.5rem;
+    padding: 0.75rem 1.5rem 1.25rem 0;
+}
+
+.press-card {
+    width: 365px;
+    min-height: 245px;
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    padding: 0.85rem;
+    color: var(--brand-text);
+    background: rgba(250, 246, 239, 0.96);
+    border: 1px solid rgba(156, 128, 110, 0.42);
+    border-radius: var(--radius-sm);
+    box-shadow: 9px 10px 0 rgba(208, 185, 164, 0.42);
+    text-decoration: none;
+    transition:
+        color var(--dur-base) ease,
+        transform var(--dur-base) var(--ease-spring),
+        box-shadow var(--dur-base) var(--ease-expo),
+        border-color var(--dur-base) ease;
+}
+
+.press-card:hover,
+.press-card:focus-visible {
+    color: var(--brand-text);
+    border-color: var(--brand-accent-sea);
+    box-shadow: 12px 14px 0 rgba(59, 122, 158, 0.18);
+    transform: translateY(-5px);
+    outline: none;
+}
+
+.press-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 215px;
+    border-radius: 0.3rem;
+    object-fit: cover;
+    filter: sepia(0.12) saturate(0.88) contrast(0.96);
+}
+
+.press-card:nth-child(4) img { object-position: center top; }
+
+.press-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.45rem 0.35rem 0.35rem 1rem;
+}
+
+.press-card__medium {
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--brand-accent-sea);
+}
+
+.press-card__title {
+    margin: 0.65rem 0 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.18rem;
+    font-weight: 600;
+    line-height: 1.24;
+    text-wrap: balance;
+}
+
+.press-card__link {
+    margin-top: auto;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--brand-accent-sea);
+}
+
+.press-carousel__nav {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    padding: 0 0 0.15rem;
+    border: 1px solid rgba(156, 128, 110, 0.5);
+    border-radius: 50%;
+    color: var(--brand-text);
+    background: rgba(250, 246, 239, 0.94);
+    box-shadow: var(--shadow-soft);
+    font: 400 2rem/1 var(--font-body);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition:
+        color var(--dur-fast) ease,
+        background var(--dur-fast) ease,
+        transform var(--dur-base) var(--ease-spring);
+}
+
+.press-carousel__nav:hover,
+.press-carousel__nav:focus-visible {
+    color: #fff;
+    background: var(--brand-accent-sea);
+    outline: none;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.press-carousel__nav--prev { left: 1.25rem; }
+.press-carousel__nav--next { right: 1.25rem; }
+
+@media (max-width: 640px) {
+    .press-section { padding: 3.5rem 0; }
+    .press-section__header { margin-bottom: 1.75rem; }
+    .press-carousel__set { gap: 1rem; padding-right: 1rem; }
+    .press-card { width: 310px; min-height: 225px; grid-template-columns: 105px 1fr; }
+    .press-card img { min-height: 195px; }
+    .press-card__body { padding-left: 0.8rem; }
+    .press-card__title { font-size: 1.03rem; }
+    .press-carousel__nav { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .press-carousel { scrollbar-width: thin; }
+    .press-carousel-shell::before,
+    .press-carousel-shell::after { display: none; }
+}
+
+/* ================================================================
    HOSTERÍA
    ================================================================ */
 .hosteria-hero {
