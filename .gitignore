@@ -36,6 +36,10 @@ archive/django/staticfiles/
 *.swp
 *.swo
 
+# Local design skills and tooling
+.UI-UX-Pro-Max/
+.taste-skill/
+
 # Node/Build cache
 dist/
 .parcel-cache/
